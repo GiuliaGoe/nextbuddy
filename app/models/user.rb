@@ -10,27 +10,24 @@ class User < ApplicationRecord
   has_many :job_titles, through: :career_positions
   has_many :companies, through: :career_positions
   has_many :industries, through: :career_positions
+  has_many :activities
+  has_many :professional_interests
+  has_many :skills
 
   include PgSearch
-    # multisearchable against: [ :address, :radius ]
+  # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
   against: [:address, :radius],
   associated_against: {
-    # activity: [ :description ],
-    # availability: [ :day_of_week, :period_of_day ],
-    # company: [ :name ],
-    # industry: [ :name ],
+    activities: [:description],
+    companies: [:name],
+    industries: [:name],
     job_functions: [:name],
-    # job_title: [ :name ],
-    # professional_interest: [ :name ],
-    # skill: [ :name ]
+    job_titles: [:name],
+    professional_interests: [:name],
+    skills: [:name]
   },
   using: {
     tsearch: { prefix: true }
   }
-    # pg_search_scope :search_by_address_and_radius,
-    #   against: [ :address, :radius ],
-    #   using: {
-    #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    #   }
 end
