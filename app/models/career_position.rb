@@ -3,4 +3,5 @@ class CareerPosition < ApplicationRecord
   belongs_to :industry
   belongs_to :job_function
   belongs_to :company
+  belongs_to :user
 end
