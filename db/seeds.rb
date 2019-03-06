@@ -181,7 +181,7 @@ walkthedog = Activity.create(
   user: filippo,
   description: 'Walk the dog')
 
-puts 'Finished creating #{Activity.all.count} activities'
+puts "Finished creating #{Activity.all.count} activities"
 
 puts "Creating some Availabilities!"
 
@@ -258,7 +258,7 @@ filippo_avail2 = Availability.create(
   day_of_week: 'Thursday',
   period_of_day: 'Afternoon' )
 
-puts 'Created #{Availability.all.count} availabilities'
+puts "Created #{Availability.all.count} availabilities"
 
 puts "Creating some Job Titles!"
 
@@ -291,7 +291,7 @@ title2 = JobTitle.create(
   )
 
 
-puts 'Finished creating #{JobTitle.all.count} Job Titles'
+puts "Finished creating #{JobTitle.all.count} Job Titles"
 
 puts "Creating some Companies!"
 
@@ -329,7 +329,7 @@ stern = Company.create(
 hyve = Company.create(
   name: 'Hyve')
 
-puts 'Finished creating #{Company.all.count} Companies'
+puts "Finished creating #{Company.all.count} Companies"
 
 puts "Creating some Job Functions!"
 
@@ -367,7 +367,7 @@ job_function2 = JobFunction.create(
   )
 
 
-puts 'Finished creating #{JobFunction.all.count} Functions'
+puts "Finished creating #{JobFunction.all.count} Functions"
 
 puts "Creating some Industries!"
 
@@ -468,8 +468,10 @@ filippos_career_position = CareerPosition.create(
   industry: lighting,
   job_function: procurement)
 
-puts 'Finished creating #{CareerPosition.all.count} Career Positions'
-puts "Creating some Meetings!"
+puts "Finished creating #{CareerPosition.all.count} Career Positions"
+puts ''
+puts "Creating NO Meetings -- SEED UPDATED NEEDED FOR THIS!"
+puts ''
 
 # hannah_meeting = Meeting.create!(
 #   status: 'accepted',
@@ -574,9 +576,9 @@ algebra = Skill.create(
   user: filippo,
   name: 'Algebra')
 
-puts 'Finished creating #{Skill.all.count} skills'
+puts "Finished creating #{Skill.all.count} skills"
 
-puts '... Creating some professional interests...'
+puts 'Creating some professional interests'
 
 uxdesign = ProfessionalInterest.create(
   user: marco,
@@ -607,7 +609,7 @@ marketing = ProfessionalInterest.create(
   user: filippo,
   name: 'marketing')
 
-puts 'Finished creating #{ProfessionalInterest.all.count} professional interests'
+puts "Finished creating #{ProfessionalInterest.all.count} professional interests"
 
 # puts "Creating Journal Entries"
 
