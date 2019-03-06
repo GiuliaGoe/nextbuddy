@@ -1,10 +1,4 @@
 class Industry < ApplicationRecord
-
-  include PgSearch
-  # multisearchable against: [ :name ]
-  #   pg_search_scope :search_by_name,
-  #     against: [ :name ],
-  #     using: {
-  #       tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  #     }
+  belongs_to :career_position
+  has_many :users, through: :career_position
 end
