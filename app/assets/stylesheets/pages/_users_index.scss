@@ -5,10 +5,17 @@
   padding-top: 150px;
 }
 
-.horizontal-list {
-  list-style: none;
+// This scrolling wrapper makes the cards inside there scrollable to the right.
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  .card-user {
+    display: inline-block;
+  }
 }
 
-.horizontal-list li {
-  display: inline;
-}
