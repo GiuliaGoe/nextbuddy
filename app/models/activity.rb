@@ -15,7 +15,7 @@ class Activity < ApplicationRecord
       skill: [ :name ]
     },
     using: {
-      tsearch: { prefix: true }
+      trigram: { prefix: true }
     }
   # multisearchable against: [ :description ]
   # pg_search_scope :search_by_description,

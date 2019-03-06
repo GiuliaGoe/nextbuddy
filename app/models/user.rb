@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :career_positions
 
   include PgSearch
-    # multisearchable against: [ :address, :radius ]
-    pg_search_scope :global_search_user_and_user_characteristics,
+  # multisearchable against: [ :address, :radius ]
+  pg_search_scope :global_search_user_and_user_characteristics,
     against: [ :address, :radius ],
     associated_against: {
       activity: [ :description ],
