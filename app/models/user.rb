@@ -17,6 +17,7 @@ class User < ApplicationRecord
   include PgSearch
   # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
+
   against: [:address, :radius],
   associated_against: {
     activities: [:description],
