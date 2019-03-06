@@ -1,1 +1,31 @@
-hello index users
+<div class="placeholder-userindex">
+  <p> This is a placeholder for a really cool Map! </p>
+</div>
+
+<ul class="horizontal-list">
+  <% @users.each do |user| %>
+    <li>
+      <div class="card-user">
+        <div class="card-user-infos">
+          <div>
+            <h2>
+              <%= user.first_name %>
+              <%= user.last_name %>
+            </h2>
+            <p>@LeWagon</p>
+            <br>
+            <h3> Senior Developer </h3>
+          </div>
+        </div>
+        <div class="card-user-user">
+          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-user-user avatar-bordered"/>
+        </div>
+        <div class="card-user-distance">
+            <p> ~350m away </p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+
