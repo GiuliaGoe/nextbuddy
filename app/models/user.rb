@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :companies, through: :career_positions
   has_many :industries, through: :career_positions
   has_many :activities
+  has_many :availabilities
   has_many :professional_interests
   has_many :skills
 
