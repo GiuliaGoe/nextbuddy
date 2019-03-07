@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @professional_interests = ProfessionalInterest.where(:user_id == @user.id)
   end
 
   private

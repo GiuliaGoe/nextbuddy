@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'omniauth-linkedin-oauth2'
-gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'bootsnap', require: false
 gem 'devise'

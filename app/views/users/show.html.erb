@@ -1,23 +1,59 @@
-<div class="scrolling-wrapper">
-  <div class="card-user">
-    <div class="card-user-infos">
-      <div>
-        <h2>
-          <%= @user.first_name %>
-          <%= @user.last_name %>
-        </h2>
-        <p>@LeWagon</p>
-        <br>
-        <h3> Senior Developer </h3>
-      </div>
+<div class="card-user-show">
+  <div class="card-user-name-photo">
+    <div class="card-user-name">
+      First name: <%= @user.first_name %>
+      Last name: <%= @user.last_name %>
     </div>
-    <div class="card-user-user">
-      <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-user-user avatar-bordered"/>
+    <div class="card-user-photo avatar-bordered"">
+      <%= @user.photo %>
     </div>
-    <div class="card-user-distance">
-        <p> ~350m away </p>
-    </div>
-    <%= link_to "Book a meeting with me...", mymeetings_path %>
+  </div>
+  <div class="card-user-career-position">
+      <% @user.career_positions.each do |career| %>
+      <%= career.job_title.name %>
+      <%= career.company.name %>
+      <%= career.industry.name %>
+      <%= career.job_function.name %>
+      <% end %>
+  </div>
+  <div class="card-user-interests">
+    <p>
+      <% @professional_interests.each do |interest| %>
+        <%= interest.name %>
+      <% end %>
+    </p>
+  </div>
+  <div class="card-user-skills">
+    <p>
+      <% @user.skills.each do |skill| %>
+      <%= skill.name %>
+      <% end %>
+    </p>
+  </div>
+  <div class="card-user-bio">
+    <p>
+      <%= @user.bio %>
+    </p>
+  </div>
+  <div class="card-user-professional-goal">
+    <p>
+      <%= @user.professional_goal %>
+    </p>
+  </div>
+  <div class="card-user-availability">
+    <p>
+      <% @user.availabilities.each do |availability| %>
+        <%= availability.day_of_week %>
+        <%= availability.period_of_day %>
+      <% end %>
+    </p>
+  </div>
+  <div class="card-user-activity">
+    <p>
+      <% @user.activities.each do |activity| %>
+      <%= activity.description %>
+      <% end %>
+    </p>
   </div>
 </div>
 
