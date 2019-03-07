@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def index
-    @users = User.all
+    if params[:search]
+      @users = User.global_search_user_and_user_characteristics(params[:search])
+    else
+      @users = User.all
+    end
   end
 
   def show
