@@ -136,6 +136,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_002817) do
     t.float "longitude"
     t.text "professional_goal"
     t.text "bio"
+    t.string "provider"
+    t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
