@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   include PgSearch
   # Include default devise modules. Others available are:
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   #  :confirmable, :lockable and :timeoutable, :trackable
   devise :database_authenticatable, :validatable, :registerable,
          :recoverable, :rememberable,
