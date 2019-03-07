@@ -1,18 +1,29 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def index
-    @users = User.where.not(latitude: nil, longitude: nil)
-
-    @markers = @users.map do |user|
-      {
-        lng: user.longitude,
-        lat: user.latitude
-      }
+    if params[:search]
+      @users = User.global_search_user_and_user_characteristics(params[:search])
+      @users = @users.where.not(latitude: nil, longitude: nil)
+      @markers = @users.map do |user|
+        {
+          lng: user.longitude,
+          lat: user.latitude
+        }
+      end
+    else
+      @users = User.all
+      @users = @users.where.not(latitude: nil, longitude: nil)
+      @markers = @users.map do |user|
+        {
+          lng: user.longitude,
+          lat: user.latitude
+        }
+      end
     end
-    # raise
   end
 
   def show
+    @professional_interests = ProfessionalInterest.where(:user_id == @user.id)
   end
 
   private

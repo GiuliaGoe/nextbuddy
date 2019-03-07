@@ -1,10 +1,4 @@
 class JobTitle < ApplicationRecord
-
-  include PgSearch
-  # multisearchable against: [ :name ]
-  #   pg_search_scope :search_by_name,
-  #     against: [ :name ],
-  #     using: {
-  #       tsearch: { prefix: true } # <-- now `superman batm` will return something!
-  #     }
+  has_many :users, through: :career_position
+  has_many :career_positions
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:index, :show] do
@@ -15,5 +15,4 @@ Rails.application.routes.draw do
 
   get '/profile/meeting_availability', to: 'user_characteristics#edit_meeting_availability'
   patch '/profile/meeting_availability', to: 'user_characteristics#update_meeting_availability'
-
 end

@@ -1,8 +1,8 @@
-<div class="navbar-wagon">
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+<div class="navbar-nextbuddy">
+  <div class="navbar-nextbuddy-right hidden-xs hidden-sm">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1551839613/depositphotos_109277460-stock-illustration-arrow-sign-icon-next-button.jpg", height: 50 %>
+  <%= link_to root_path, class: "navbar-nextbuddy-brand" do %>
+    <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1551855617/NB100.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,25 +10,19 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
+      <%= link_to "Profile", "#", class: "navbar-wagon-item navbar-nextbuddy-link" %>
+      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-nextbuddy-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-nextbuddy-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-nextbuddy-dropdown-menu">
+
             <li>
+            </li>
               <%= link_to "#" do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -44,19 +38,32 @@
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="navbar-nextbuddy-item hidden-md hidden-lg">
       <!-- Logo -->
     <div class="navbar-logo">
-      <%= link_to root_path, class: "navbar-wagon-brand" do %>
-        <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1551839613/depositphotos_109277460-stock-illustration-arrow-sign-icon-next-button.jpg", height: 50 %>
+      <%= link_to root_path, class: "navbar-nextbuddy-brand" do %>
+        <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1551855617/NB100.png", height: 50 %>
       <% end %>
     </div>
     <div class="navbar-dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu", height: 80 >
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Logout</a></li>
+      <ul class="dropdown-menu dropdown-menu-right navbar-nextbuddy-dropdown-menu", height: 80 >
+        <li>
+          <%= link_to profile_personal_path do %>
+            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
       </ul>
+    </div>
+    <div class="navbar-search">
+      <%= form_tag(users_path, method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "E.g. company name..." %>
+      <% end %>
     </div>
   </div>
 </div>
