@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.5.3'
 
 gem 'omniauth-linkedin-oauth2'
-gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -18,9 +17,10 @@ gem 'font-awesome-sass', '~> 5.5.0'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '~> 3.5.5'
 gem 'pg_search'
 gem 'cloudinary', '~> 1.9.1'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -8,17 +8,17 @@
 
 
 puts "Cleaning DB"
-User.destroy_all
-Meeting.destroy_all
 JobTitle.destroy_all
 JobFunction.destroy_all
 Industry.destroy_all
 Company.destroy_all
-CareerPosition.destroy_all
-ProfessionalInterest.destroy_all
-Skill.destroy_all
+Meeting.destroy_all
 Activity.destroy_all
 Availability.destroy_all
+ProfessionalInterest.destroy_all
+Skill.destroy_all
+CareerPosition.destroy_all
+User.destroy_all
 
 
 puts "Creating Users"
@@ -121,64 +121,64 @@ puts "Creating some Activities!"
 
 lunch = Activity.create!(
   description: 'lunch',
-  user: jonas
+  user_id: jonas.id
 )
 
 running = Activity.create!(
   description: 'running',
-  user: juan
+  user_id: juan.id
 )
 
 lunch = Activity.create!(
   description: 'lunch',
-  user: juan
+  user_id: juan.id
 )
 
 swimming = Activity.create!(
   description: 'swimming',
-  user: hannah
+  user_id: hannah.id
 )
 
 swimming = Activity.create!(
   description: 'swimming',
-  user: jonas
+  user_id: jonas.id
 )
 
 jogging = Activity.create(
-  user: marco,
+  user_id: marco.id,
   description: 'Jogging')
 
 walking = Activity.create(
-  user: marco,
+  user_id: marco.id,
   description: 'Walking')
 
 coffee = Activity.create(
-  user: marco,
+  user_id: marco.id,
   description: 'Have a coffee')
 
 running = Activity.create(
-  user: filippo,
+  user_id: filippo.id,
   description: 'Go running')
 
 tea = Activity.create(
-  user: filippo,
+  user_id: filippo.id,
   description: 'Drink tea')
 
 activity0 = Activity.create(
   description: 'Blow bubbles',
-  user: dale
+  user_id: dale.id
   )
 activity1 = Activity.create(
   description: 'Drink a Beer',
-  user: damon
+  user_id: damon.id
   )
 activity2 = Activity.create(
   description: 'Lunch',
-  user: ben
+  user_id: ben.id
   )
 
 walkthedog = Activity.create(
-  user: filippo,
+  user_id: filippo.id,
   description: 'Walk the dog')
 
 puts "Finished creating #{Activity.all.count} activities"
@@ -188,90 +188,92 @@ puts "Creating some Availabilities!"
 afternoon = Availability.create!(
   day_of_week: 'Tuesday',
   period_of_day: 'afternoon',
-  user: jonas
+  user_id: jonas.id
 )
 
 morning = Availability.create!(
   day_of_week: 'Wednesday',
   period_of_day: 'morning',
-  user: jonas
+  user_id: jonas.id
 )
 
 afternoon = Availability.create!(
   day_of_week: 'Monday',
   period_of_day: 'afternoon',
-  user: juan
+  user_id: juan.id
 )
 
 availability0 = Availability.create(
   day_of_week: 'Monday',
   period_of_day: 'noon',
-  user: dale
+  user_id: dale.id
   )
 availability1 = Availability.create(
   day_of_week: 'Tuesday',
   period_of_day: 'afternoon',
-  user: damon
+  user_id: damon.id
   )
 availability2 = Availability.create(
   day_of_week: 'Friday',
   period_of_day: 'evening',
-  user: ben
+  user_id: ben.id
   )
 
 
 morning = Availability.create!(
   day_of_week: 'Friday',
   period_of_day: 'morning',
-  user: hannah
+  user_id: hannah.id
 )
 
 noon = Availability.create!(
   day_of_week: 'Friday',
   period_of_day: 'morning',
-  user: jonas
+  user_id: jonas.id
 )
 
 noon = Availability.create!(
   day_of_week: 'Friday',
   period_of_day: 'morning',
-  user: juan
+  user_id: juan.id
 )
 
 marco_avail1 = Availability.create(
-  user: marco,
+  user_id: marco.id,
   day_of_week: 'Tuesday',
   period_of_day: 'Morning' )
 
 marco_avail2 = Availability.create(
-  user: marco,
+  user_id: marco.id,
   day_of_week: 'Friday',
   period_of_day: 'Evening' )
 
 filippo_avail1 = Availability.create(
-  user: filippo,
+  user_id: filippo.id,
   day_of_week: 'Monday',
   period_of_day: 'Noon' )
 
 filippo_avail2 = Availability.create(
-  user: filippo,
+  user_id: filippo.id,
   day_of_week: 'Thursday',
   period_of_day: 'Afternoon' )
 
 puts "Created #{Availability.all.count} availabilities"
 
+
+
 puts "Creating some Job Titles!"
 
 agile_coach = JobTitle.create!(
-  name: 'Agile Coach',
+  name: 'Agile Coach'
 )
 
 junior_developer = JobTitle.create!(
-  name: 'Junior Developer',
+  name: 'Junior Developer'
 )
 
 ux_designer = JobTitle.create!(
-  name: 'UX Designer',
+  name: 'UX Designer'
 )
 
 designer = JobTitle.create(
@@ -404,12 +406,13 @@ automotive = Industry.create(
 lighting = Industry.create(
   name: 'Lighting')
 
+
 puts "Finished creating #{Industry.all.count} industries"
 
 puts "Creating some Career Positions!"
 
 juan_career = CareerPosition.create(
-  user_id: 2,
+  user_id: juan.id,
   job_title: junior_developer,
   job_function: it,
   company: apple,
@@ -417,7 +420,7 @@ juan_career = CareerPosition.create(
 )
 
 jonas_career = CareerPosition.create(
-  user_id: 1,
+  user_id: jonas.id,
   job_title: agile_coach,
   job_function: strategy,
   company: mckinsey,
@@ -425,44 +428,53 @@ jonas_career = CareerPosition.create(
 )
 
 career_position0 = CareerPosition.create(
-  user_id: 3,
+  user_id: dale.id,
   job_function: job_function0,
   industry: industry0,
   company: company0,
   job_title: title0
   )
 career_position1 = CareerPosition.create(
-  user_id: 4,
+  user_id: damon.id,
   job_function: job_function1,
   industry: industry1,
   company: company1,
   job_title: title1
   )
 career_position2 = CareerPosition.create(
-  user_id: 5,
+  user_id: ben.id,
   job_function: job_function2,
   industry: industry2,
   company: company2,
   job_title: title2
   )
 
-hannah_career = CareerPosition.create!(
-  user_id: 6,
+hannah_career1 = CareerPosition.create!(
+  user_id: hannah.id,
   job_title: ux_designer,
   job_function: design,
   company: merck,
   industry: healthcare
 )
 
+hannah_career2 = CareerPosition.create!(
+  user_id: hannah.id,
+  job_title: ux_designer,
+  job_function: job_function1,
+  company: company1,
+  industry: industry1
+)
+
+
 marcos_career_position = CareerPosition.create(
-  user_id: 7,
+  user_id: marco.id,
   job_title: designer,
   company: stern,
   industry: automotive,
   job_function: it)
 
 filippos_career_position = CareerPosition.create(
-  user_id: 8,
+  user_id: filippo.id,
   job_title: analyst,
   company: hyve,
   industry: lighting,
@@ -470,6 +482,7 @@ filippos_career_position = CareerPosition.create(
 
 puts "Finished creating #{CareerPosition.all.count} Career Positions"
 puts ''
+
 puts "Creating NO Meetings -- SEED UPDATED NEEDED FOR THIS!"
 puts ''
 
@@ -540,40 +553,40 @@ puts ''
 puts "Creating some Skills!"
 
 leadership = Skill.create(
-  user: marco,
+  user_id: marco.id,
   name: 'Leadership')
 
 uxdesign = Skill.create(
-  user: marco,
+  user_id: marco.id,
   name: 'UX Design')
 
 business = Skill.create(
-  user: marco,
+  user_id: marco.id,
   name: 'Business Analysis')
 
 ai = Skill.create(
-  user: filippo,
+  user_id: filippo.id,
   name: 'Artificial Intelligence')
 
 skill0 = Skill.create(
   name: 'Leadership',
-  user: dale
+  user_id: dale.id
   )
 skill1 = Skill.create(
   name: 'Time Management',
-  user: damon
+  user_id: damon.id
   )
 skill2 = Skill.create(
   name: 'Adaptability',
-  user: ben
+  user_id: ben.id
   )
 
 analysis = Skill.create(
-  user: filippo,
+  user_id: filippo.id,
   name: 'Analysis')
 
 algebra = Skill.create(
-  user: filippo,
+  user_id: filippo.id,
   name: 'Algebra')
 
 puts "Finished creating #{Skill.all.count} skills"
@@ -581,32 +594,32 @@ puts "Finished creating #{Skill.all.count} skills"
 puts 'Creating some professional interests'
 
 uxdesign = ProfessionalInterest.create(
-  user: marco,
+  user_id: jonas.id,
   name: 'uxdesign')
 
 professional_interest0 = ProfessionalInterest.create(
   name: 'RoR',
-  user: dale
+  user_id: dale.id
   )
 professional_interest1 = ProfessionalInterest.create(
   name: 'Ruby',
-  user: damon
+  user_id: damon.id
   )
 professional_interest2 = ProfessionalInterest.create(
   name: 'CSS',
-  user: ben
+  user_id: ben.id
   )
 
 dogs = ProfessionalInterest.create(
-  user: marco,
+  user_id: marco.id,
   name: 'dogs')
 
 finance = ProfessionalInterest.create(
-  user: filippo,
+  user_id: filippo.id,
   name: 'finance')
 
 marketing = ProfessionalInterest.create(
-  user: filippo,
+  user_id: filippo.id,
   name: 'marketing')
 
 puts "Finished creating #{ProfessionalInterest.all.count} professional interests"

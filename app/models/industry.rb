@@ -1,4 +1,4 @@
 class Industry < ApplicationRecord
-  belongs_to :career_position
+  has_many :career_positions
   has_many :users, through: :career_position
 end
