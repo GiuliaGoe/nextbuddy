@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* Logo */
@@ -33,6 +34,23 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  display: flex;
+
+  .navbar-logo {
+    position: absolute;
+    left: 15px;
+    top: 8px;
+  }
+  .navbar-dropdown {
+    position: absolute;
+    left: 68px;
+    top: 20px;
+  }
+  .navbar-search {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
 }
 
 /* Navbar link */
