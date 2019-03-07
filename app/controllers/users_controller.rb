@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   def index
-    @users = User.all
+    @users = User.where.not(latitude: nil, longitude: nil)
+
+    @markers = @users.map do |user|
+      {
+        lng: user.longitude,
+        lat: user.latitude
+      }
+    end
+    # raise
   end
 
   def show

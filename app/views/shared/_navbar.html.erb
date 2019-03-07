@@ -58,18 +58,6 @@
         <li><a href="#">Logout</a></li>
       </ul>
     </div>
-    <div class="navbar-search">
-      <form>
-        <%= form_tag user_path(current_user), method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for e.g. location...",
-            width: 50
-          %>
-        <% end %>
-      </form>
-    </div>
   </div>
 </div>
 
