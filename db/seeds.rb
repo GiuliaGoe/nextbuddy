@@ -449,13 +449,22 @@ career_position2 = CareerPosition.create(
   job_title: title2
   )
 
-hannah_career = CareerPosition.create!(
+hannah_career1 = CareerPosition.create!(
   user_id: hannah.id,
   job_title: ux_designer,
   job_function: design,
   company: merck,
   industry: healthcare
 )
+
+hannah_career2 = CareerPosition.create!(
+  user_id: hannah.id,
+  job_title: ux_designer,
+  job_function: job_function1,
+  company: company1,
+  industry: industry1
+)
+
 
 marcos_career_position = CareerPosition.create(
   user_id: marco.id,

@@ -23,3 +23,17 @@
   color: #FFFFFF;
   background-color: #106097;
 }
+
+
+.btn-book-meeting {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-book-meeting:hover {
+  background: #1BCB7F;
+  color: white;
+}

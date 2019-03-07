@@ -1,24 +1,23 @@
 <div class="card-user-show">
   <div class="card-user-name-photo">
     <div class="card-user-name">
-      First name: <%= @user.first_name %>
-      Last name: <%= @user.last_name %>
+      Name: <%= @user.first_name %> <%= @user.last_name %>
     </div>
     <div class="card-user-photo avatar-bordered"">
       <%= @user.photo %>
     </div>
   </div>
   <div class="card-user-career-position">
+      Current career positions:
+      <br>
+
       <% @user.career_positions.each do |career| %>
-      <%= career.job_title.name %>
-      <%= career.company.name %>
-      <%= career.industry.name %>
-      <%= career.job_function.name %>
+      <%= career.job_title.name %> @<%= career.company.name %> (<%= career.job_function.name %>, <%= career.industry.name %>)
       <% end %>
   </div>
   <div class="card-user-interests">
     <p>
-      <% @professional_interests.each do |interest| %>
+      Professional interests: <% @user.professional_interests.each do |interest| %>
         <%= interest.name %>
       <% end %>
     </p>
@@ -26,32 +25,31 @@
   <div class="card-user-skills">
     <p>
       <% @user.skills.each do |skill| %>
-      <%= skill.name %>
+      Skills: <%= skill.name %>
       <% end %>
     </p>
   </div>
   <div class="card-user-bio">
     <p>
-      <%= @user.bio %>
+      Bio: <%= @user.bio %>
     </p>
   </div>
   <div class="card-user-professional-goal">
     <p>
-      <%= @user.professional_goal %>
-    </p>
-  </div>
-  <div class="card-user-availability">
-    <p>
-      <% @user.availabilities.each do |availability| %>
-        <%= availability.day_of_week %>
-        <%= availability.period_of_day %>
-      <% end %>
+      Professional goal: <%= @user.professional_goal %>
     </p>
   </div>
   <div class="card-user-activity">
     <p>
       <% @user.activities.each do |activity| %>
-      <%= activity.description %>
+      Activities: <%= activity.description %>
+      <% end %>
+    </p>
+  </div>
+  <div class="card-user-availability">
+    <p>
+      <% @user.availabilities.each do |availability| %>
+        Availabilities: <%= availability.day_of_week %> <%= availability.period_of_day %>s <%= link_to "Book a meeting now", new_user_meeting_path(@user, availability), class: "btn btn-book-meeting" %>
       <% end %>
     </p>
   </div>
