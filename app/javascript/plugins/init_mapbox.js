@@ -1,5 +1,18 @@
 import mapboxgl from 'mapbox-gl';
 
+const mapMarkers = {};
+
+const selectUser = (userId) => {
+  // Zoom the map
+  // Change appeareance of marker
+  console.log(mapMarkers[userId]);
+  const marker = mapMarkers[userId];
+  const markerElement = marker.getElement();
+  markerElement.style.backgroundColor = 'red';
+  // Change the appeareance of the item in the list
+}
+
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -18,12 +31,23 @@ const initMapbox = () => {
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      const el = document.createElement('div');
+      el.style.width = 40 + 'px';
+      el.style.height = 40 + 'px';
+      el.style.backgroundColor = 'black';
+      el.addEventListener('click', function() {
+        selectUser(marker.user_id)
+      } )
+      mapMarkers[marker.user_id] = new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
+    // selectUser(5);
   }
 };
+
+// const cards = getElementsByClassName("card-user")
+
 
 export { initMapbox };

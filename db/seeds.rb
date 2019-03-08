@@ -120,27 +120,27 @@ puts "Created #{User.all.length} users"
 puts "Creating some Activities!"
 
 lunch = Activity.create!(
-  description: 'lunch',
+  description: 'Lunch',
   user_id: jonas.id
 )
 
 running = Activity.create!(
-  description: 'running',
+  description: 'Running',
   user_id: juan.id
 )
 
 lunch = Activity.create!(
-  description: 'lunch',
+  description: 'Lunch',
   user_id: juan.id
 )
 
 swimming = Activity.create!(
-  description: 'swimming',
+  description: 'Swimming',
   user_id: hannah.id
 )
 
 swimming = Activity.create!(
-  description: 'swimming',
+  description: 'Swimming',
   user_id: jonas.id
 )
 
@@ -158,11 +158,11 @@ coffee = Activity.create(
 
 running = Activity.create(
   user_id: filippo.id,
-  description: 'Go running')
+  description: 'Running')
 
 tea = Activity.create(
   user_id: filippo.id,
-  description: 'Drink tea')
+  description: 'Drink a tea')
 
 activity0 = Activity.create(
   description: 'Blow bubbles',

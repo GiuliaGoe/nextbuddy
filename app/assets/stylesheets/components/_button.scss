@@ -23,3 +23,20 @@
   color: #FFFFFF;
   background-color: #106097;
 }
+
+.centeredbutton {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-orange {
+  background-color: $orange;
+  color: white;
+  border: none
+}
+
+.btn-orange:hover {
+  // background-color: $orangehover;
+  color: white;
+  border: none
+}
