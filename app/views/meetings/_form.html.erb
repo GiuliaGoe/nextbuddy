@@ -1,16 +1,19 @@
 <div class="request-meeting">
-  <%= form_tag(user_meetings_path, method: "post") do %>
-    <div class="request-meeting-time">When would you like to meet @user.name?
-      <%= date_field_tag(:datetime_ida, Date.today)%>
-      <%= time_field_tag(:time_ida, Time.now) %>
+  <%= simple_form_for([@user, @meeting]) do |f|%>
+      <div class="request-meeting-time">When would you like to meet @user.name?
+        <%= date_field_tag(:datetime_ida, Date.today)%>
+        <%= time_field_tag(:time_ida, Time.now) %>
+      </div>
+      <div class="request-activity">What activity would you like to be doing?
+        <%= text_field_tag :activity, params[:activity], placeholder: "Have a coffee, go running..." %>
+      </div>
+      <div class="request-topic">What do you want to talk about?
+        <%= text_field_tag :topic, params[:topic], placeholder: "Select conversation topic." %>
+      </div>
+    <div id="preview">
+
     </div>
-    <div class="request-activity">What activity would you like to be doing?
-      <%= text_field_tag :activity, params[:activity], placeholder: "Select activity." %>
-    </div>
-    <div class="request-topic">What do you want to talk about?
-      <%= text_field_tag :topic, params[:topic], placeholder: "Select conversation topic." %>
-    </div>
-    <%= button_tag "send request" %>
+    <%= f.submit %>
   <% end %>
 </div>
 

@@ -1,0 +1,29 @@
+function updateDOM() {
+  const activity = document.getElementById('activity').value;
+  const topic = document.getElementById('topic').value;
+  const date_time = document.getElementById('datetime_ida').value;
+  console.log(activity, topic, date_time);
+
+  const preview = document.getElementById('preview');
+  console.log(preview);
+  // preview.innerHTML = '<%= j render "meetings/preview", user: @user %>'
+  preview.innerHTML = `
+    <div class="card-user-infos">
+      <h4>
+        Message from: <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
+      </h4>
+      <p>
+       Hi <%= @user.first_name %>,
+       I saw you are working at <%= @user.current_company.name %> as a <%= @user.current_title.name %>
+      </p>
+    </div>
+      Would you like to ${activity} with me on ${date_time}.
+      Maybe we can chat about ${topic}.
+    <div class="card-user-user">
+      <img src='https://kitt.lewagon.com/placeholder/users/giuliagoe' class="card-user-user avatar-bordered"/>
+    </div>
+  `
+  // here we will target the div with id preview and update its inner HTML with the actual preview
+}
+
+updateDOM();
