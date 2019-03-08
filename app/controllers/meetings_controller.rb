@@ -7,6 +7,13 @@ class MeetingsController < ApplicationController
 
   def new
     @meeting = Meeting.new
+    @user = User.find(params[:user_id])
+  end
+
+  def preview
+    @user = User.find(params[:user_id])
+    @current_user = current_user
+    # Here we will send some data to a js view to render the preview
   end
 
   def create

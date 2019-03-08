@@ -21,6 +21,14 @@ class User < ApplicationRecord
   has_many :professional_interests
   has_many :skills
 
+  def current_title
+    self.career_positions.last.job_title
+  end
+
+  def current_company
+    self.career_positions.last.company
+  end
+
   # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
 
