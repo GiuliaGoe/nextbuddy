@@ -2,18 +2,54 @@
 .card-signin {
   overflow: hidden;
   height: 100%;
-  background: white;
+  background: #FAFAFA;
   align-items: center;
   margin: 5px 0px;
-  position: relative;
   border-radius: 5px;
   width: auto;
-  margin-top: 40px;
-  padding: 40px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+  margin: 60px 0px 60px 0px;
+}
+.fa-linkedin-in:before {
+  padding-right: 10px;
+}
+.container-signin {
+  margin-top: 15px;
+  text-align: center;
+  .logo {
+    padding: 30px 20px;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 2px;
+  }
+  p {
+    font-size: 15px;
+    font-weight: lighter;
+  }
+  .btn-Sign-up {
+    position: absolute;
+    bottom: -47px;
+    left: 131px;
+  }
+  .btn-log-in {
+    position: absolute;
+    bottom: -47px;
+    left: 131px;
+  }
 }
 // This section is for the cards displaying a nextBuddy used in the views/users/index
+.card-user-show{
+  width: 800px;
+  margin-left: 300px;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  line-height:22px;
+  padding: 30px;
+
+}
+
 .card-user {
   overflow: hidden;
   background: white;
@@ -56,3 +92,11 @@
   bottom: 10px;
   right: 10px;
 }
+
+.card-user-name-photo{
+  display: flex;
+  justify-content: space-between;
+  margin-top:10px;
+  margin-right: 20px;
+}
+

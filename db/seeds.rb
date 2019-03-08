@@ -449,13 +449,22 @@ career_position2 = CareerPosition.create(
   job_title: title2
   )
 
-hannah_career = CareerPosition.create!(
+hannah_career1 = CareerPosition.create!(
   user_id: hannah.id,
   job_title: ux_designer,
   job_function: design,
   company: merck,
   industry: healthcare
 )
+
+hannah_career2 = CareerPosition.create!(
+  user_id: hannah.id,
+  job_title: ux_designer,
+  job_function: job_function1,
+  company: company1,
+  industry: industry1
+)
+
 
 marcos_career_position = CareerPosition.create(
   user_id: marco.id,
@@ -477,69 +486,68 @@ puts ''
 puts "Creating NO Meetings -- SEED UPDATED NEEDED FOR THIS!"
 puts ''
 
-# hannah_meeting = Meeting.create!(
-#   status: 'accepted',
-#   meeting_date_time: DateTime.new(2020,3,10,6,0,0),
-#   suggested_activity: lunch,
-#   meeting_location: 'at your place',
-#   sender_id: 1,
-#   recipient_id: 2
-# )
+hannah_meeting = Meeting.create!(
+  status: 'accepted',
+  meeting_date_time: DateTime.new(2020,3,10,6,0,0),
+  suggested_activity: lunch,
+  meeting_location: 'at your place',
+  sender_id: juan.id,
+  recipient_id: jonas.id
+)
 
-# juan_meeting = Meeting.create!(
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2021,3,14,8,0,0),
-#   suggested_activity: running,
-#   meeting_location: 'at my place',
-#   sender_id: 3,
-#   recipient_id: 4
-# )
+juan_meeting = Meeting.create!(
+  status: 'pending',
+  meeting_date_time: DateTime.new(2021,3,14,8,0,0),
+  suggested_activity: running,
+  meeting_location: 'at my place',
+  sender_id: filippo.id,
+  recipient_id: marco.id
+)
 
-# meeting0 = Meeting.create(
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
-#   suggested_activity: 'Walk',
-#   meeting_location: '20 Bourke St',
-#   sender_id: 4,
-#   recipient_id: 5
+meeting0 = Meeting.create(
+  status: 'pending',
+  meeting_date_time: DateTime.new(2019,3,10,6,0,0),
+  suggested_activity: 'Walk',
+  meeting_location: '20 Bourke St',
+  sender_id: marco.id,
+  recipient_id: juan.id
 
-#   )
-# meeting1 = Meeting.create(
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2019,7,9,8,0,0),
-#   suggested_activity: 'Walk',
-#   meeting_location: '20 Bourke St',
-#   sender_id: 6,
-#   recipient_id: 7
+  )
+meeting1 = Meeting.create(
+  status: 'pending',
+  meeting_date_time: DateTime.new(2019,7,9,8,0,0),
+  suggested_activity: 'Walk',
+  meeting_location: '20 Bourke St',
+  sender_id: jonas.id,
+  recipient_id: filippo.id
 
-#   )
-# meeting2 = Meeting.create(
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2019,1,11,6,0,0),
-#   suggested_activity: 'Walk',
-#   meeting_location: '20 Bourke St',
-#   sender_id: 5,
-#   recipient_id: 7
+  )
+meeting2 = Meeting.create(
+  status: 'pending',
+  meeting_date_time: DateTime.new(2019,1,11,6,0,0),
+  suggested_activity: 'Walk',
+  meeting_location: '20 Bourke St',
+  sender_id: jonas.id,
+  recipient_id: marco.id
+  )
 
-#   )
+run_meeting = Meeting.create(
+  sender_id: marco.id,
+  recipient_id: juan.id,
+  status: 'pending',
+  meeting_date_time: DateTime.new(2019,3,10,6,0,0),
+  suggested_activity: 'Jogging',
+  meeting_location: '70 Dorcas St')
 
-# run_meeting = Meeting.create(
-#   sender_id: 8,
-#   recipient_id: 5,
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
-#   suggested_activity: 'Jogging',
-#   meeting_location: '70 Dorcas St')
+eating_meeting = Meeting.create(
+  sender_id: jonas.id,
+  recipient_id: filippo.id,
+  status: 'pending',
+  meeting_date_time: DateTime.new(2019,3,12,8,0,0),
+  suggested_activity: 'Eating good food',
+  meeting_location: 'McDonalds Swanston Street')
 
-# eating_meeting = Meeting.create(
-#   sender_id: 5,
-#   recipient_id: 8,
-#   status: 'pending',
-#   meeting_date_time: DateTime.new(2019,3,12,8,0,0),
-#   suggested_activity: 'Eating good food',
-#   meeting_location: 'McDonalds Swanston Street')
-
-# puts 'Finished creating #{Meeting.all.count} meetings'
+puts 'Finished creating #{Meeting.all.count} meetings'
 
 puts "Creating some Skills!"
 

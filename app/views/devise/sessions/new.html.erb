@@ -1,13 +1,22 @@
 <!-- link_to signin with linkedIn, user_linkedin_omniauth_authorize_path -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4">
-      <div class="card-signin">
-        <div class="logo"></div>
-        <div class="btns-infos">
-          <%= render "devise/shared/links" %>
+<div class="wrapper">
+  <div class="container-signin">
+    <div class="logo">
+      <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1551855617/NB100.png", height: 100, width: 100 %>
+    </div>
+    <h3 class="header">Next Buddy</h3>
+    <p class="sub-header">Log in into your account to find your buddies</p>
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4">
+        <div class="card-signin">
+          <div class="btns-infos">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="footer text-center">
+      Don't have an account?
     </div>
   </div>
 </div>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [ :show]
   def index
-    # raise
     @users = User.all
     # Search method (gets triggered when input is made in navbar-search)
     if params[:search].present?
