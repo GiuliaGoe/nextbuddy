@@ -22,17 +22,6 @@ User.destroy_all
 
 
 puts "Creating Users"
-jonas = User.create!(
-  first_name: 'Jonas',
-  last_name: 'Japing',
-  email: 'jonasjaping@gmail.com',
-  password: '123456',
-  photo: 'jonas',
-  address: 'Dorcas Street 70, Melbourne',
-  radius: 700,
-  professional_goal: 'my goal is to become riiiiiiich.',
-  bio: 'i am really cool'
-)
 
 juan = User.create!(
   first_name: 'Juan',
@@ -112,12 +101,79 @@ hannah = User.create!(
   radius: 900,
   professional_goal: 'i want to become a billionaire',
   bio: 'i love meeting people'
+)
 
+robert = User.create!(
+  first_name: 'Robert',
+  last_name: 'Pfeiffer',
+  email: 'robert@Pfeiffer.com',
+  password: '123456',
+  photo: 'robert',
+  address: 'Hildesheim',
+  radius: 700,
+  professional_goal: 'I want to be a lawyer!',
+  bio: 'When I was younger - I found out that everyone should have equal opportunities!'
+)
+
+hans = User.create!(
+  first_name: 'Hans-Peter',
+  last_name: 'Von Der Heyde',
+  email: 'Hans@Heyde.com',
+  password: '123456',
+  photo: 'hans',
+  address: 'Hildesheim',
+  radius: 700,
+  professional_goal: 'My dream is to become a politician in Hildesheim',
+  bio: 'The current mayor is a criminal!!! Vote 4 Me to make Hildesheim great again :-)'
+)
+
+felix = User.create!(
+  first_name: 'Felix',
+  last_name: 'Herrmann',
+  email: 'Felix@Herrmann.com',
+  password: '123456',
+  photo: 'felix',
+  address: 'Hildesheim',
+  radius: 700,
+  professional_goal: 'I will be the laziest teacher the world has ever seen',
+  bio: 'Law was not my thing - so I got myself a girlfriend that does law. I need 5 coffees a day so might as well have one with you'
+)
+
+jonas = User.create!(
+  first_name: 'Jonas',
+  last_name: 'Japing',
+  email: 'jonasjaping@gmail.com',
+  password: '123456',
+  photo: 'jonas',
+  address: 'Dorcas Street 70, Melbourne',
+  radius: 700,
+  professional_goal: 'Live in the same city as Giulia',
+  bio: 'i am really cool'
 )
 
 puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
+
+coffee = Activity.create(
+  user_id: felix.id,
+  description: 'Have a coffee')
+
+lazy = Activity.create(
+  user_id: felix.id,
+  description: 'FIFA 14')
+
+lotr = Activity.create(
+  user_id: felix.id,
+  description: 'Lord of the rings')
+
+coffee = Activity.create(
+  user_id: robert.id,
+  description: 'Have a coffee')
+
+coffee = Activity.create(
+  user_id: hans.id,
+  description: 'Have a coffee')
 
 lunch = Activity.create!(
   description: 'Lunch',
@@ -184,6 +240,36 @@ walkthedog = Activity.create(
 puts "Finished creating #{Activity.all.count} activities"
 
 puts "Creating some Availabilities!"
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: robert.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'afternoon',
+  user_id: robert.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'afternoon',
+  user_id: hans.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: hans.id
+)
+
+morning = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'morning',
+  user_id: felix.id
+)
 
 afternoon = Availability.create!(
   day_of_week: 'Tuesday',
@@ -264,6 +350,18 @@ puts "Created #{Availability.all.count} availabilities"
 
 puts "Creating some Job Titles!"
 
+lawyer = JobTitle.create(
+  name: 'Boss'
+)
+
+intern = JobTitle.create(
+  name: 'Intern'
+)
+
+teacher = JobTitle.create(
+  name: 'Teacher'
+)
+
 agile_coach = JobTitle.create!(
   name: 'Agile Coach'
 )
@@ -297,8 +395,16 @@ puts "Finished creating #{JobTitle.all.count} Job Titles"
 
 puts "Creating some Companies!"
 
-mckinsey = Company.create!(
-  name: 'McKinsey',
+law_firm = Company.create!(
+  name: 'Roberts own f****** empire',
+)
+
+andreanum = Company.create(
+  name: 'Andreanum'
+)
+
+talent = Company.create!(
+  name: 'TalentAdvisory',
 )
 
 company0 = Company.create(
@@ -331,9 +437,18 @@ stern = Company.create(
 hyve = Company.create(
   name: 'Hyve')
 
+education = JobFunction.create(
+  name: 'Education'
+  )
+
+
 puts "Finished creating #{Company.all.count} Companies"
 
 puts "Creating some Job Functions!"
+
+law = JobFunction.create!(
+  name: 'Law',
+)
 
 marketing = JobFunction.create!(
   name: 'Marketing',
@@ -373,6 +488,12 @@ puts "Finished creating #{JobFunction.all.count} Functions"
 
 puts "Creating some Industries!"
 
+law_industry = Industry.create(
+  name: 'Big Ass Law')
+
+education_industry = Industry.create(
+  name: 'Lighting')
+
 healthcare = Industry.create!(
   name: 'Healthcare',
 )
@@ -411,6 +532,30 @@ puts "Finished creating #{Industry.all.count} industries"
 
 puts "Creating some Career Positions!"
 
+felix_career = CareerPosition.create(
+  user_id: felix.id,
+  job_title: teacher,
+  job_function: education,
+  company: andreanum,
+  industry: education_industry
+)
+
+robert_career = CareerPosition.create(
+  user_id: robert.id,
+  job_title: lawyer,
+  job_function: law,
+  company: law_firm,
+  industry: law_industry
+)
+
+hans_career = CareerPosition.create(
+  user_id: hans.id,
+  job_title: intern,
+  job_function: law,
+  company: law_firm,
+  industry: law_industry
+)
+
 juan_career = CareerPosition.create(
   user_id: juan.id,
   job_title: junior_developer,
@@ -423,7 +568,7 @@ jonas_career = CareerPosition.create(
   user_id: jonas.id,
   job_title: agile_coach,
   job_function: strategy,
-  company: mckinsey,
+  company: talent,
   industry: construction
 )
 
