@@ -1,7 +1,7 @@
 <div class="my-meetings">
+  My received meeting requests are:
   <% @received_meetings.each do |recmeeting| %>
-<!--     <div class="my-meetings-">
- -->    <textarea id="text">
+    <div class="my-meetings-">
           <div class="card-user-infos">
             <div>
               <h4>
@@ -24,43 +24,12 @@
           <div class="card-user-meeting-request-topic">
             <em>I would like to talk about <%= recmeeting.meeting_location %> with you."</em>
           </div>
-          <%= link_to "Accept", my_meetings_path, class: "btn btn-book-meeting" %>
-          <%= link_to "Decline", my_meetings_path, class: "btn btn-book-meeting" %>
-        </textarea>
-    <!-- </div> -->
-        <div id="preview">
-          <%= button_tag "See preview" %>
-        </div>
+          <%= link_to "Accept", my_meetings_path, class: "btn btn-book-meeting", data: { confirm: "Get the fuck out of this app. We have not finished the user stories yet." } %>
+          <%= link_to "Decline", my_meetings_path, class: "btn btn-book-meeting", data: { confirm: "Get the fuck out of this app. We have not finished the user stories yet." } %>
+    </div>
+
   <% end %>
+
 </div>
 
 
-
-
-
-Here are my received meeting requests:
-
-<br>
-Here are my sent meeting requests:
-<% @sent_meetings.each do |senmeeting| %>
-  <%= senmeeting.suggested_activity %>,
-<% end %>
-
-
-<div class="meeting_request">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="meeting_request-name">
-    <h3>Gab Dehan</h3>
-    <p>10/07/17</p>
-  </div>
-  <div class="meeting_request-body">
-    <p><strong>I am not sure yet!</strong></p>
-    <p>
-      I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
-    </p>
-  </div>
-  <div class="meeting_request-status">
-    <p class="status pending">Pending</p>
-    <p class="price">€345</p>
-  </div>
-</div>
