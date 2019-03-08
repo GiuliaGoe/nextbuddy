@@ -39,41 +39,50 @@
 }
 // This section is for the cards displaying a nextBuddy used in the views/users/index
 .card-user-show{
-  width: 800px;
-  margin-left: 300px;
+  width: 700px;
   border-radius: 5px;
   margin-top: 40px;
-  margin-bottom: 40px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   line-height:22px;
   padding: 30px;
-
+  position: relative;
 }
-
 .card-user {
+  position: absolute;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 280.5px;
   height: 220px;
   margin: 20px 5px;
-  display: flex;
-  position: relative;
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 0;
+  }
+  p {
+    font-size: 13px;
+    opacity: .7;
+    margin: 0;
+  }
 }
-.card-user h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.user-name-photo{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  margin-top:10px;
+  margin-right: 20px;
 }
-.card-user h3 {
-  font-size: 15px;
-  margin: 0;
+.user-name {
+  // position: absolute;
 }
-.card-user p {
-  font-size: 13px;
-  opacity: .7;
-  margin: 0;
-}
+
+
+
 .card-user .card-user-infos {
   padding: 16px;
   display: flex;
@@ -93,10 +102,4 @@
   right: 10px;
 }
 
-.card-user-name-photo{
-  display: flex;
-  justify-content: space-between;
-  margin-top:10px;
-  margin-right: 20px;
-}
 
