@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [ :show]
   def index
     if params[:search]
       @users = User.global_search_user_and_user_characteristics(params[:search])
-      @users = @users.where.not(latitude: nil, longitude: nil)
+      # @users = @users.where.not(latitude: nil, longitude: nil)
       @markers = @users.map do |user|
         {
           lng: user.longitude,
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       end
     else
       @users = User.all
-      @users = @users.where.not(latitude: nil, longitude: nil)
+      # @users = @users.where.not(latitude: nil, longitude: nil)
       @markers = @users.map do |user|
         {
           lng: user.longitude,

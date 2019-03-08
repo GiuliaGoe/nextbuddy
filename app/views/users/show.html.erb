@@ -49,8 +49,9 @@
   <div class="card-user-availability">
     <p>
       <% @user.availabilities.each do |availability| %>
-        Availabilities: <%= availability.day_of_week %> <%= availability.period_of_day %>s <%= link_to "Book a meeting now", new_user_meeting_path(@user, availability), class: "btn btn-book-meeting" %>
+        Availabilities: <%= availability.day_of_week %> <%= availability.period_of_day %>s
       <% end %>
+      <%= link_to "Book a meeting now", new_user_meeting_path(@user, @availability), class: "btn btn-book-meeting" %>
     </p>
   </div>
 </div>
