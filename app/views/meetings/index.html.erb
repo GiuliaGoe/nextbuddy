@@ -1,12 +1,11 @@
 <div class="my-meetings">
-  My received meeting requests are:
+  <h1> My received meeting requests are: </h1>
   <% @received_meetings.each do |recmeeting| %>
     <div class="my-meetings-">
           <div class="card-user-infos">
             <div>
               <h4>
-                <%= User.find(recmeeting.sender_id).first_name %>
-                <%= User.find(recmeeting.sender_id).last_name[0,1] %>.
+                <%= User.find(recmeeting.sender_id).first_name %> <%= User.find(recmeeting.sender_id).last_name[0,1] %>.
               </h4>
               <p>
                 <% User.find(recmeeting.sender_id).career_positions.each do |career| %>
@@ -15,21 +14,52 @@
               </p>
             </div>
           </div>
-          <div class="card-user-user">
+<!--           <div class="card-user-user">
             <img src='https://kitt.lewagon.com/placeholder/users/giuliagoe' class="card-user-user avatar-bordered"/>
-          </div>
+          </div> -->
           <div class="card-user-meeting-request-activity">
-            <em>"Would you like to <%= recmeeting.suggested_activity %> with me?</em>
+            <p><em>"Would you like to <%= recmeeting.suggested_activity %> with me?</em></p>
           </div>
           <div class="card-user-meeting-request-topic">
-            <em>I would like to talk about <%= recmeeting.meeting_location %> with you."</em>
+            <p><em>I would like to talk about <%= recmeeting.meeting_location %> with you."</em></p>
           </div>
           <%= link_to "Accept", my_meetings_path, class: "btn btn-book-meeting", data: { confirm: "Get the fuck out of this app. We have not finished the user stories yet." } %>
           <%= link_to "Decline", my_meetings_path, class: "btn btn-book-meeting", data: { confirm: "Get the fuck out of this app. We have not finished the user stories yet." } %>
     </div>
 
   <% end %>
+  <br>
+   <h1> My sent meeting requests are: </h1>
+    <% @sent_meetings.each do |senmeeting| %>
+      <div class="my-meetings-">
+            <div class="card-user-infos">
+              <div>
+                <h4>
+                  <%= User.find(senmeeting.recipient_id).first_name %>
+                  <%= User.find(senmeeting.recipient_id).last_name[0,1] %>. received a meeting request from you.
+                </h4>
+                <p>
+                  <% User.find(senmeeting.recipient_id).career_positions.each do |career| %>
+                    <%= career.job_title.name %> @<%= career.company.name %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+            <!-- <div class="card-user-user">
+              <img src='https://kitt.lewagon.com/placeholder/users/giuliagoe' class="card-user-user avatar-bordered"/>
+            </div> -->
+            <div class="card-user-meeting-request-activity">
+              <em>"You would like to <%= senmeeting.suggested_activity %> with her/him.</em>
+            </div>
+            <div class="card-user-meeting-request-topic">
+              <em>You would like to talk about <%= senmeeting.meeting_location %> with her/him."</em>
+            </div>
+            <%= link_to "Cancel", my_meetings_path, class: "btn btn-book-meeting", data: { confirm: "Get the fuck out of this app. We have not finished the user stories yet.", mini: 'true', role: 'button'} %>
 
+            <br>
+       </div>
+
+    <% end %>
 </div>
 
 
