@@ -4,6 +4,7 @@ class UserCharacteristicsController < ApplicationController
   before_action :set_meeting_availability, only: [:edit_meeting_availability, :update_meeting_availability]
 
   def edit_personal
+    set_personal
   end
 
   def update_personal
@@ -15,6 +16,7 @@ class UserCharacteristicsController < ApplicationController
   end
 
   def edit_professional
+    set_professional
   end
 
   def update_professional
@@ -28,6 +30,7 @@ class UserCharacteristicsController < ApplicationController
   end
 
   def edit_meeting_availability
+    set_meeting_availability
   end
 
   def update_meeting_availability
