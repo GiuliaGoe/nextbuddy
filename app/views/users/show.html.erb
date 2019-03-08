@@ -57,18 +57,18 @@
   </div>
 
   <div class="card-user-availability">
-    <p><strong>Availabilities: </strong></p>
-    <ul>
-      <li style = "list-style: none">
-        <% @user.availabilities.each do |availability| %>
-        <%= availability.day_of_week %> <%= availability.period_of_day %>
-        <%= link_to "Request a meeting", new_user_meeting_path(@user, availability), class: "btn btn-book-meeting button-space" %>
-        <br>
-      <% end %>
-      </li>
-    </ul>
-  </div>
 
+    <p><strong>Availabilities: </strong></p>
+      <ul>
+      <li style = "list-style: none">
+      <% @user.availabilities.each do |availability| %>
+        <%= availability.day_of_week %> <%= availability.period_of_day %>s
+      <% end %>
+      <%= link_to "Request a meeting now", new_user_meeting_path(@user, @availability), class: "btn btn-book-meeting" %>
+      <br>
+    </p>
+    </li>
+   </ul>
 </div>
 
 

@@ -1,2 +1,9 @@
-hello meetings index
-here i also receive the meeting requests i can accept or cancel
+Here are my received meeting requests:
+<% @received_meetings.each do |recmeeting| %>
+  <%= recmeeting.suggested_activity %>
+<% end %>
+<br>
+Here are my sent meeting requests:
+<% @sent_meetings.each do |senmeeting| %>
+  <%= senmeeting.suggested_activity %>,
+<% end %>
