@@ -1,7 +1,7 @@
 <div class="card-user-show">
   <div class="card-user-name-photo">
     <div class="card-user-name">
-      <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <h2><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
     </div>
     <div class="card-user-photo avatar-bordered"">
       <%= @user.photo %>
@@ -31,8 +31,9 @@
 
   <div class="card-user-skills">
     <p>
+      <strong>Skills: </strong>
       <% @user.skills.each do |skill| %>
-      <strong>Skills: </strong><%= skill.name.capitalize %>
+      <%= skill.name.capitalize %>
       <% end %>
     </p>
   </div>
@@ -63,6 +64,8 @@
       <% @user.availabilities.each do |availability| %>
         <%= availability.day_of_week %> <%= availability.period_of_day %>s
       <% end %>
+      <br>
+      <br>
       <%= link_to "Request a meeting now", new_user_meeting_path(@user, @availability), class: "btn btn-book-meeting" %>
       <br>
     </p>
