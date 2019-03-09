@@ -17,14 +17,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Select your filters here</h4>
+        <h4 class="modal-title">Filter nextBuddys by</h4>
       </div>
       <div class="modal-body">
         <!-- Here goes the friggin fooooooorm -->
-        <p>Filter nextBuddys by</p>
+        <p> Near me: </p>
         <%= form_tag users_path, method: :get do %>
-          <p> Interest: <%= text_field_tag :interest, params[:interest], placeholder: "interest" %></p>
-          <p> Address: <%= text_field_tag :address, params[:address], placeholder: "address" %></p>
+          <div class="range-slider">
+            <%= range_field_tag :radius, params[:radius], in: 0..10, step: 1, class: 'range-slider__range'%>
+            <span class="range-slider__value">0</span>
+          </div>
+          <p> Interest: <%= text_field_tag :interest, params[:interest], placeholder: "uxdesign" %></p>
+
           <p> Activity: <%= select_tag :activity, "
             <option></option>
             <option>Lunch</option>
@@ -37,7 +41,7 @@
             <option>Drink a Beer</option>
             <option>Walk the dog</option>
             ".html_safe, placeholder: "Activity" %></p>
-          <p> Skill: <%= text_field_tag :skill, params[:skill], placeholder: "skill" %></p>
+          <p> Skill: <%= text_field_tag :skill, params[:skill], placeholder: "finance" %></p>
           <p> Availability: <%= select_tag :availability, "
             <option></option>
             <option>Monday</option>
@@ -48,7 +52,7 @@
             <option>Saturday</option>
             <option>Sunday</option>
           ".html_safe, placeholder: "availability" %></p>
-          <p><%= submit_tag ("Filter") %></p>
+          <p><%= submit_tag ("Filter"), class: "btn-orange" %></p>
         <% end  %>
       </div>
     </div>
@@ -65,9 +69,15 @@
               <%= user.first_name %>
               <%= user.last_name[0] %>.
             </h2>
+
+
+
+            <%= link_to "See my profile :-)", user_path(user) %>
+
             <p> <strong><%= user.career_positions.first.job_title.name %> </strong>@<%= user.career_positions.first.company.name %>
             </p>
             <p><i class="fas fa-map-marker-alt"></i>    <%= user.address %></p>
+
           </div>
         </div>
         <div class="user-professional-interests">

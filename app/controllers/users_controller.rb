@@ -8,8 +8,10 @@ class UsersController < ApplicationController
     end
 
     # Filtering Methods (get triggered by applying filters, defined in private section for readability)
+
+    filter_for_radius
     filter_for_interest
-    filter_for_address
+    # filter_for_address <- was disabled because it creates dependancy when used with radius filter + is only meant for pro users
     filter_for_activity
     filter_for_skill
     filter_for_availability
@@ -37,6 +39,13 @@ class UsersController < ApplicationController
   private
 
   # Filtering Methods for readability
+
+  def filter_for_radius
+    if params[:radius].present?
+      # @users = @users.within(params[:radius].to_i, :units => :kms, origin: [52.154778, 9.9579652])
+      @users = @users.near([current_user.latitude, current_user.longitude], params[:radius].to_i, units: :km)
+    end
+  end
 
   def filter_for_interest
     if params[:interest].present?
