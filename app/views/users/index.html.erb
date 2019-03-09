@@ -65,24 +65,21 @@
               <%= user.first_name %>
               <%= user.last_name[0] %>.
             </h2>
-            <p>@ <%= user.career_positions.first.company.name %> </p>
-            <br>
-            <h3> <%= user.career_positions.first.job_title.name %> </h3>
-            <br>
-            <% user.professional_interests.each do |interest| %>
-              <p> <%= interest.name %> </p>
-            <% end %>
-            <br>
-
-
-            <%= link_to "See my profile :-)", user_path(user) %>
+            <p> <strong><%= user.career_positions.first.job_title.name %> </strong>@<%= user.career_positions.first.company.name %>
+            </p>
+            <p><i class="fas fa-map-marker-alt"></i>    <%= user.address %></p>
           </div>
         </div>
-        <div class="card-user-user">
-          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-user-user avatar-bordered"/>
+        <div class="user-professional-interests">
+          <% user.professional_interests.each do |interest| %>
+            <p>#<%= interest.name %></p>
+          <% end %>
         </div>
         <div class="card-user-distance">
-            <p><%= user.address %></p>
+        </div>
+        <%= link_to "See my profile :-)", user_path(user), :class => "card-user-link btn-orange" %>
+        <div class="card-user-user">
+          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-user-user avatar-bordered"/>
         </div>
       </div>
   <% end %>
