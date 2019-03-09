@@ -22,11 +22,11 @@ class User < ApplicationRecord
   has_many :skills
 
   def current_title
-    self.career_positions.last.job_title
+    self.career_positions.first.job_title
   end
 
   def current_company
-    self.career_positions.last.company
+    self.career_positions.first.company
   end
 
   # multisearchable against: [ :address, :radius ]
@@ -51,7 +51,7 @@ def self.from_omniauth(auth)
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.first_name = auth.info.first_name
-    user.last_name = auth.info.last_name   # assuming the user model has a name
+      user.last_name = auth.info.last_name   # assuming the user model has a name
       user.photo = auth.info.picture_url # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
