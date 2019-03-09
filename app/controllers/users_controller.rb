@@ -40,25 +40,25 @@ class UsersController < ApplicationController
 
   def filter_for_interest
     if params[:interest].present?
-      @users = @users.joins(:professional_interests).where("professional_interests.name = ?", params[:interest])
+      @users = @users.joins(:professional_interests).where("professional_interests.name ILIKE ?", "%#{params[:interest]}%")
     end
   end
 
   def filter_for_address
     if params[:address].present?
-      @users = @users.where(address: params[:address])
+      @users = @users.where("address ILIKE ?", "%#{params[:address]}")
     end
   end
 
   def filter_for_activity
     if params[:activity].present?
-      @users = @users.joins(:activities).where("activities.description = ?", params[:activity])
+      @users = @users.joins(:activities).where("activities.description ILIKE ?", "%#{params[:activity]}")
     end
   end
 
   def filter_for_skill
     if params[:skill].present?
-      @users = @users.joins(:skills).where("skills.name = ?", params[:skill])
+      @users = @users.joins(:skills).where("skills.name ILIKE ?", "%#{params[:skill]}")
     end
   end
 
