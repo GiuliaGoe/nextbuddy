@@ -1,18 +1,18 @@
 function updateStatus() {
   const accept = document.getElementById("accept");
-  accept.addEventListener("click", (meeting.status = "accepted") => {
+  accept.addEventListener("click", (meeting.status === "accepted") => {
     console.log(accept);
     console.log(accept.currentTarget);
   });
 
   const decline = document.getElementById("decline");
-  decline.addEventListener("click", (meeting.status = "declined") => {
+  decline.addEventListener("click", (meeting.status === "declined") => {
     console.log(decline);
     console.log(decline.currentTarget);
   });
 
   const cancel = document.getElementById("cancel");
-  cancel.addEventListener("click", (meeting.status = "cancelled") => {
+  cancel.addEventListener("click", (meeting.status === "cancelled") => {
     console.log(cancel);
     console.log(cancel.currentTarget);
   });

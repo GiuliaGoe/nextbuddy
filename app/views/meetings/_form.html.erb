@@ -1,14 +1,44 @@
 <div class="request-meeting">
   <%= simple_form_for([@user, @meeting]) do |f|%>
-      <div class="request-meeting-time">When would you like to meet @user.name?
-        <%= date_field_tag(:datetime_ida, Date.today)%>
-        <%= time_field_tag(:time_ida, Time.now) %>
+      <div class="request-meeting-time">When would you like to meet?
+        <br>
+        <%= @user.first_name %> <%= @user.first_name[0,1] %>.'s availabilities are:
+        <br>
+        <em>Please set the meeting time accordingly</em>
+
+        <% @user.availabilities.each do |availability| %>
+          <li>
+            <%= h availability.day_of_week -%>
+            <%= h availability.period_of_day -%>
+            <%= check_box_tag 'availability_ids[]', availability.id -%>
+            <%= time_select 'meeting', 'meeting_date_time', {minute_step: 15} %>
+          </li>
+        <% end %>
       </div>
-      <div class="request-activity">What activity would you like to be doing?
-        <%= text_field_tag :activity, params[:activity], placeholder: "Have a coffee, go running..." %>
+      <div class="request-meeting-location">Where would you like to meet?
+        <%= select_tag :meeting_location, "
+            <option><em>Select one meeting point</em></option>
+            <option>#{ @user.address} (#{ @user.first_name}'s address)</option>
+            <option>#{current_user.address} (#{ current_user.first_name}'s address)</option>
+            <option>Halfway location between us</option>
+            ".html_safe, placeholder: "Select where to meet" %>
       </div>
-      <div class="request-topic">What do you want to talk about?
-        <%= text_field_tag :topic, params[:topic], placeholder: "Select conversation topic." %>
+      <div class="request-meeting-activity">What activity would you like to be doing?
+        <%= select_tag :activity, "
+            <option><em>Select one activity</em></option>
+            <option>Lunch</option>
+            <option>Swimming</option>
+            <option>Running</option>
+            <option>Jogging</option>
+            <option>Have a coffee</option>
+            <option>Drink a tea</option>
+            <option>Blow bubbles</option>
+            <option>Drink a Beer</option>
+            <option>Walk the dog</option>
+            ".html_safe, placeholder: "Select one activity" %>
+      </div>
+      <div class="request-meeting-topic">What do you want to talk about?
+        <%= text_field_tag :topic, params[:topic], placeholder: "Define one topic" %>
       </div>
     <div id="preview">
 
