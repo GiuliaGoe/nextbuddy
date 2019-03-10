@@ -10,14 +10,14 @@
         <% User.find(meeting.sender_id).career_positions.each do |career| %>
           <%= JobTitle.find(career.job_title_id).name %>
           <br>
-          @<%= JobTitle.find(career.company_id).name %>
+          @<%= Company.find(career.company_id).name %>
         <% end %>
       </div>
       <div class="avatar-bordered-meeting">
         <img src="<%= User.find(meeting.sender_id).photo %>"/>
       </div>
       <div class="request-message">
-        <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+        <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
       </div>
       <div class="request-buttons">
         <%= link_to "Accept", my_meetings_path, id: "accept", class: "btn btn-book-meeting", remote: true, data: { confirm: "That's awesome. You are one step closer having a great networking experience." } %>
@@ -48,13 +48,13 @@
           <% User.find(meeting.sender_id).career_positions.each do |career| %>
             <%= JobTitle.find(career.job_title_id).name %>
             <br>
-            @<%= JobTitle.find(career.company_id).name %>
+            @<%= Company.find(career.company_id).name %>
           <% end %>
         </div>
 
         <!-- Message -->
         <div class="meeting-message">
-          <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+          <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
         </div>
 
         <!-- Status -->
@@ -88,13 +88,13 @@
           <% User.find(meeting.recipient_id).career_positions.each do |career| %>
             <%= JobTitle.find(career.job_title_id).name %>
             <br>
-            @<%= JobTitle.find(career.company_id).name %>
+            @<%= Company.find(career.company_id).name %>
           <% end %>
         </div>
 
         <!-- Message -->
         <div class="meeting-message">
-          <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+          <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
         </div>
 
         <!-- Status -->
