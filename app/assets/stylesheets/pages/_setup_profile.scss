@@ -1,0 +1,29 @@
+//Style for the activities list
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.clickable {
+  padding: 4px;
+  width: 40px;
+  color: #a0a0a0;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .active {
+    color: inherit;
+    border-color: inherit;
+    i {
+      color: #D26D2D;
+    }
+  }
+  i {
+    font-size: 24px;
+  }
+}
+.clickable:hover i {
+  color: #D26D2D;
+}
