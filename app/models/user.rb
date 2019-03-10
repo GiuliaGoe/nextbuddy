@@ -20,10 +20,10 @@ class User < ApplicationRecord
   has_many :availabilities
   has_many :professional_interests
   has_many :skills
+  # accepts_nested_attributes_for :career_positions, :professional_interests, :availabilities, :activities, :skills
 
   # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
-
   against: [:address, :radius],
   associated_against: {
     activities: [:description],
@@ -38,12 +38,12 @@ class User < ApplicationRecord
     tsearch: { prefix: true }
   }
 
-def self.from_omniauth(auth)
+  def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.first_name = auth.info.first_name
-    user.last_name = auth.info.last_name   # assuming the user model has a name
+      user.last_name = auth.info.last_name # assuming the user model has a name
       user.photo = auth.info.picture_url # assuming the user model has an image
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.

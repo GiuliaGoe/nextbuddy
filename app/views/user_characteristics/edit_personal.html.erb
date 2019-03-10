@@ -1,89 +1,85 @@
-<form action="/usercharacteristics" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <h5 class="fs-title">Meeting preferences</h5>
-  <input type="text" name="user[activity]" placeholder="Activities to do ..."/>
-  <input type="text" name="u-availabilities" placeholder="Availability"/>
-  <input type="text" name="u-radius" placeholder="600 meters"/>
-  <input type="text" name="u-address" placeholder="address"/>
-
-  <h5 class="fs-title">Personal information</h5>
-  <input type="text" name="u-first_name" id="first_name" placeholder="<%= @user.first_name %>"/>
-  <input type="text" name="u-last_name" id="last_name" placeholder="<%= @user.last_name %>"/>
-  <img class="avatar-bordered" src="<%= @user.photo %>" alt="<%= @user.first_name %> photo">
-  <input type="text" name="user[bio]" id="bio" placeholder="<%= @user.bio %>"/>
-
-  <h5 class="fs-title">Professional information</h5>
-  <% career_position = CareerPosition.find(@user.id) %>
-  <% professional_interest = ProfessionalInterest.find(@user.id) %>
-  <% skill = Skill.find(@user.id) %>
-  <input type="text" name="cp-title" placeholder="<%= JobTitle.find(career_position.id).name %>"/>
-  <input type="text" name="cp-company" placeholder="<%= Company.find(career_position.id).name %>"/>
-  <input type="text" name="cp-industry" placeholder="<%= Industry.find(career_position.id).name %>"/>
-  <input type="text" name="cp-functions" placeholder="<%= JobFunction.find(career_position.id).name %>"/>
-  <input type="text" name="pi-name" placeholder="<%= (professional_interest).name %>"/>
-  <input type="text" name="u-professional_goal" placeholder="<%= @user.professional_goal %>"/>
-  <input type="text" name="skills" placeholder="<%= (skill).name %>"/>
-
-  <input type="submit">
-</form>
-
-
-
-
-
 <!-- MultiStep Form -->
-<!-- <div class="row"> -->
-    <!-- <div class="col-md-6 col-md-offset-3"> -->
-        <!-- <form action="/UserCharacteristics" method="post" id="msform"> -->
-          <!-- <%= hidden_field_tag :authenticity_token, form_authenticity_token %> -->
-            <!-- progressbar -->
-            <!-- <ul id="progressbar"> -->
-                <!-- <li class="active">Meeting preferences</li> -->
-                <!-- <li>Personal information</li> -->
-                <!-- <li>Professional information</li> -->
-            <!-- </ul> -->
-            <!-- fieldsets -->
-            <!-- <fieldset> -->
-                <!-- <h2 class="fs-title">Meeting preferences</h2>
-                <h3 class="fs-subtitle">Tell us how would you like to meet with your buddy</h3>
-                <input type="text" name="activities" placeholder="Activities to do ..."/>
-                <input type="text" name="availabilities" placeholder="Availability"/>
-                <input type="text" name="u-radius" placeholder="600 meters"/>
-                <input type="text" name="u-address" placeholder="address"/>
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= form_for @user, html: {id: "msform" }  do |f| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Personal information</h2>
-                <h3 class="fs-subtitle">Tell us more about you</h3>
-                <input type="text" name="u-fname" placeholder="first name"/>
-                <input type="text" name="u-lname" placeholder="last name"/>
-                <input type="text" name="u-photo" placeholder="Add photo?"/>
-                <input type="text" name="u-bio" placeholder="Bio:"/>
+        <ul id="progressbar">
+            <li class="active">Meeting preferences</li>
+            <li>Personal information</li>
+            <li>Professional information</li>
+        </ul>
 
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="button" name="next" class="next action-button" value="Next"/>
-            </fieldset>
-            <fieldset>
-                <h2 class="fs-title">Professional information</h2>
-                <h3 class="fs-subtitle">Tell us what you have</h3>
-                <input type="text" name="cp-title" placeholder="Current position"/>
-                <input type="text" name="cp-company" placeholder="Current company"/>
-                <input type="text" name="cp-industry" placeholder="Industry of your current company"/>
-                <input type="text" name="cp-functions" placeholder="Type your functions"/>
-                <input type="text" name="pi-name" placeholder="Professional interests"/>
-                <input type="text" name="u-progoal" placeholder="Professional goal"/>
-                <input type="text" name="skills" placeholder="Type your skills"/>
+        <fieldset>
+          <h2 class="fs-title">Meeting preferences</h2>
+          <h3 class="fs-subtitle">Tell us how would you like to meet with your buddy</h3>
+          <%= f.label :activities %>
+          <div class="flex-wrap-center">
+            <div class="clickable"> <i class="fas fa-coffee"></i> </div>
+            <div class="clickable"> <i class="fas fa-swimmer"></i> </div>
+            <div class="clickable"> <i class="fas fa-utensils"></i> </div>
+            <div class="clickable"> <i class="fas fa-running"></i> </div>
+            <div class="clickable"> <i class="fas fa-dog"></i> </div>
+            <div class="clickable"> <i class="fas fa-walking"></i> </div>
+            <div class="clickable"> <i class="fas fa-beer"></i> </div>
+            <div class="clickable"> <i class="fas fa-bicycle"></i> </div>
+            <div class="clickable"> <i class="fas fa-comments"></i> </div>
+          </div>
+          <%= f.label :availabilities %>
+          <%= f.text_field :availabilities %>
+          <%= f.label :distance %>
+          <%= f.text_field :radius, placeholder: "600mts" %>
+          <%= f.label :address %>
+          <%= f.text_field :address, placeholder: "172 Rupert St" %>
 
-                <input type="button" name="previous" class="previous action-button-previous" value="Previous"/> -->
-                <!-- <input type="submit" name="submit" class="submit action-button" value="Submit"/> -->
-            <!-- </fieldset> -->
-        <!-- </form> -->
-        <!-- link to designify.me code snippets -->
-        <!-- <div class="dme_link"> -->
-            <!-- <p><a href="http://designify.me/code-snippets-js/" target="_blank">More Code Snippets</a></p> -->
-        <!-- </div> -->
-        <!-- /.link to designify.me code snippets -->
-    <!-- </div> -->
-<!-- </div> -->
-<!-- /.MultiStep Form -->
+          <input type="button" name="next" class="next action-button" value="Next"/>
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Personal information</h2>
+          <h3 class="fs-subtitle">Tell us more about you</h3>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, readonly: true %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, readonly: true %>
+          <%= f.label :photo %>
+          <%= image_tag(@user.photo, :alt => "@user.first_name", :class => "avatar-bordered") %>
+          <%= f.label :bio %>
+          <%= f.text_field :bio %>
+
+          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+          <input type="button" name="next" class="next action-button" value="Next"/>
+        </fieldset>
+        <fieldset>
+          <h2 class="fs-title">Professional information</h2>
+          <h3 class="fs-subtitle">Tell us what you have</h3>
+          <% career_position = CareerPosition.find(@user.id) %>
+          <% professional_interest = ProfessionalInterest.find(@user.id) %>
+          <% job_title = JobTitle.find(career_position.id).name %>
+          <% company = Company.find(career_position.id).name %>
+          <% industry = Industry.find(career_position.id).name %>
+          <% job_function = JobFunction.find(career_position.id).name %>
+          <% skill = Skill.find(@user.id) %>
+
+          <%= f.label :job_title %>
+          <input type="text" name="cp-functions" placeholder="<%= job_title %>">
+          <%= f.label :company %>
+          <input type="text" name="cp-functions" placeholder="<%= company %>">
+          <%= f.label :industry %>
+          <input type="text" name="cp-functions" placeholder="<%= industry %>">
+          <%= f.label :job_functions %>
+          <input type="text" name="cp-functions" placeholder="<%= job_function %>">
+          <%= f.label :professional_interests %>
+          <input type="text" name="pi-name" placeholder="<%= (professional_interest).name %>">
+          <%= f.label :professional_goals %>
+          <%= f.text_field :professional_goal, placeholder: :professional_goal %>
+          <%= f.label :skills %>
+          <input type="text" name="skills" placeholder="<%= skill.name %>">
+
+          <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+          <%= f.submit 'submit', :class => 'submit action-button' %>
+        </fieldset>
+      <% end %>
+    </div>
+</div>
+
+
