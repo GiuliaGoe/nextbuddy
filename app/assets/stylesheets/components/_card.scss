@@ -39,15 +39,16 @@
 }
 // This section is for the cards displaying a nextBuddy used in the views/users/index
 .card-user-show{
-  width: 355px;
-  margin-left: 10px;
+  width: 430px;
   border-radius: 5px;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   line-height:22px;
-  padding: 10px;
-  text-align: center;
+  padding: 15px;
+  background-color: $white;
+  // color: $darkblue;
+  // text-align: justify;
 }
 
 .card-user {

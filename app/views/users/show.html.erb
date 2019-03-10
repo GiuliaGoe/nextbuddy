@@ -1,7 +1,7 @@
 <div class="card-user-show">
   <div class="card-user-name-photo">
     <div class="card-user-name">
-      <h2><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
+      <h2 style= "color: #FD5F00"><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
     </div>
     <div class="card-user-photo avatar-bordered"">
       <%= @user.photo %>
@@ -10,7 +10,7 @@
   <br>
 
   <div class="card-user-career-position">
-      <strong>Current career positions: </strong>
+      <p style= "color:  #00204A"><strong>Current career positions: </strong></p>
       <ul>
         <% @user.career_positions.each do |career| %>
         <li>
@@ -23,7 +23,7 @@
 
   <div class="card-user-interests">
     <p>
-      <strong>Professional interests: </strong><% @user.professional_interests.each do |interest| %>
+      <strong style= "color:  #00204A">Professional interests: </strong><% @user.professional_interests.each do |interest| %>
         <%= interest.name %>
       <% end %>
     </p>
@@ -31,7 +31,7 @@
 
   <div class="card-user-skills">
     <p>
-      <strong>Skills: </strong>
+      <strong style= "color:  #00204A">Skills: </strong>
       <% @user.skills.each do |skill| %>
       <%= skill.name.capitalize %>
       <% end %>
@@ -40,16 +40,16 @@
 
   <div class="card-user-bio">
     <p>
-      <strong>Bio: </strong><%= @user.bio.capitalize %>
+      <strong style= "color:  #00204A">Bio: </strong><%= @user.bio.capitalize %>
     </p>
   </div>
 
   <div class="card-user-professional-goal">
-    <p><strong>Professional goal: </strong><%= @user.professional_goal.capitalize %></p>
+    <p><strong style= "color:  #00204A">Professional goal: </strong><%= @user.professional_goal.capitalize %></p>
   </div>
 
   <div class="card-user-activity">
-    <p><strong>Activities: </strong>
+    <p><strong style= "color:  #00204A">Activities: </strong>
       <% @user.activities.each do |activity| %>
       <%= activity.description.capitalize %>
       <% end %>
@@ -58,10 +58,10 @@
 
   <div class="card-user-availability">
 
-    <p><strong>Availabilities: </strong></p>
+    <p><strong style= "color:  #00204A">Availabilities: </strong></p>
       <ul>
-      <li style = "list-style: none">
       <% @user.availabilities.each do |availability| %>
+      <li style = "list-style: none">
         <%= availability.day_of_week %> <%= availability.period_of_day %>s
       <% end %>
       <br>
