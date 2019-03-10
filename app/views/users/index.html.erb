@@ -24,7 +24,7 @@
       </div>
       <div class="modal-body">
         <!-- Here goes the friggin fooooooorm -->
-        <p> Near me: </p>
+        <p> Radius near me (km): </p>
         <%= form_tag users_path, method: :get do %>
           <div class="range-slider">
             <%= range_field_tag :radius, params[:radius], in: 0..10, step: 1, class: 'range-slider__range'%>
@@ -73,12 +73,9 @@
               <%= user.last_name[0] %>.
             </h2>
 
-
-
-            <%= link_to "See my profile :-)", user_path(user) %>
-
-            <p> <strong><%= user.career_positions.first.job_title.name %> </strong>@<%= user.career_positions.first.company.name %>
-            </p>
+            <% user.career_positions.each do |career| %>
+              <p><strong> <%= career.job_title.name %> @<%= career.company.name %> </strong></p>
+            <% end  %>
             <p><i class="fas fa-map-marker-alt"></i>    <%= user.address %></p>
 
           </div>
