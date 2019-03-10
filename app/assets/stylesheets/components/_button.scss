@@ -65,6 +65,9 @@
   border-radius: 4px;
   background: $orange;
   transition: background 0.3s ease;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 35px;
 }
 .btn-book-meeting:hover {
   background: $orangehover;
