@@ -2,23 +2,24 @@ function updateDOM() {
   const activity = document.getElementById('activity').value;
   const topic = document.getElementById('topic').value;
   const date_time = document.getElementById('datetime_ida').value;
-  console.log(activity, topic, date_time);
+  const meeting_location = document.getElementById('meeting_location').value;
+  console.log(activity, topic, date_time, meeting_location);
 
   const preview = document.getElementById('preview');
   console.log(preview);
   // preview.innerHTML = '<%= j render "meetings/preview", user: @user %>'
   preview.innerHTML = `
-    <div class="card-user-infos">
-      <h4>
-        Message from: <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
-      </h4>
-      <p>
-       Hi <%= @user.first_name %>,
-       I saw you are working at <%= @user.current_company.name %> as a <%= @user.current_title.name %>
-      </p>
+    <div class="card-user-preview-infos">
+      <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
+      <% current_user.career_positions.each do |career| %>
+        <%= JobTitle.find(career.job_title_id).name %>
+        <br>
+        @<%= JobTitle.find(career.company_id).name %>
+      <%= current_user.photo %>
+      Would you like to ${activity} with me at ${meeting_location} on ${date_time}? I would like to talk about ${topic} with you.
+      <%= link_to "Accept", class: "btn btn-book-meeting" %>
+      <%= link_to "Decline", class: "btn btn-book-meeting" %>
     </div>
-      Would you like to ${activity} with me on ${date_time}.
-      Maybe we can chat about ${topic}.
   `
   // here we will target the div with id preview and update its inner HTML with the actual preview
     //<div class="card-user-user">
