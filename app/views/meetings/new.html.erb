@@ -1,1 +1,5 @@
 <%= render 'form', meeting: @meeting %>
+
+<%= link_to 'Preview Your Message', preview_meeting_path(@user), remote: true  %>
+
+<div id='preview'></div>

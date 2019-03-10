@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :meetings, only: [:index, :new, :create, :edit, :update]
   end
+  get 'users/:user_id/meetings/preview', to: 'meetings#preview', as: :preview_meeting
 
   get '/mymeetings', to: 'meetings#index', as: :my_meetings
   get '/profile/personal', to: 'user_characteristics#edit_personal'

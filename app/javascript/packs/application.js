@@ -5,6 +5,16 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { setupprofile } from '../plugins/setupprofile';
 import { activitiesList } from '../plugins/setupprofile';
 
+// import { button } from '../plugins/preview';
+import { rangeSlider } from '../plugins/slider';
+
+import { loadDynamicBannerText } from '../components/firstscroll';
+
+// import { accept_button } from '../plugins/request-buttons';;
+// import { decline_button } from '../plugins/request-buttons';
+
 initMapbox();
 setupprofile();
 activitiesList();
+rangeSlider();
+loadDynamicBannerText();

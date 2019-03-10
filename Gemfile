@@ -21,6 +21,7 @@ gem 'webpacker', '~> 3.5.5'
 gem 'pg_search'
 gem 'cloudinary', '~> 1.9.1'
 gem 'geocoder'
+gem 'simple_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

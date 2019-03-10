@@ -22,6 +22,14 @@ class User < ApplicationRecord
   has_many :skills
   # accepts_nested_attributes_for :career_positions, :professional_interests, :availabilities, :activities, :skills
 
+  def current_title
+    self.career_positions.first.job_title
+  end
+
+  def current_company
+    self.career_positions.first.company
+  end
+
   # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
   against: [:address, :radius],
