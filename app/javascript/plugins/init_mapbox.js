@@ -1,15 +1,34 @@
 import mapboxgl from 'mapbox-gl';
 
 const mapMarkers = {};
+let map = null
 
 const selectUser = (userId) => {
-  // Zoom the map
-  // Change appeareance of marker
   console.log(mapMarkers[userId]);
   const marker = mapMarkers[userId];
+  // Zoom the map
+  const lngLat = marker.getLngLat();
+  console.log(lngLat);
+  // map.setCenter();
+  map.flyTo({center: [lngLat.lng, lngLat.lat], zoom: 12, speed: 2.5});
+
+  // Change appeareance of marker
   const markerElement = marker.getElement();
-  markerElement.style.backgroundColor = 'red';
+  const oldMarkers = document.getElementsByClassName('map-marker-active');
+  if (oldMarkers[0]) {
+    oldMarkers[0].classList.remove('map-marker-active');
+  }
+  markerElement.classList.add('map-marker-active');
   // Change the appeareance of the item in the list
+  const card = document.querySelector(`[data-user-id='${userId}']`);
+  const oldCards = document.getElementsByClassName('card-user-active');
+  if (oldCards[0]) {
+    oldCards[0].classList.remove('card-user-active');
+  }
+  card.classList.add('card-user-active');
+  console.log(card);
+  // Now here scroll to card
+  card.scrollIntoView();
 }
 
 
@@ -25,29 +44,36 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    const map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+    const cards = document.getElementsByClassName('js-card-user');
+    console.log(cards);
+
     markers.forEach((marker) => {
       const el = document.createElement('div');
-      el.style.width = 40 + 'px';
-      el.style.height = 40 + 'px';
-      el.style.backgroundColor = 'black';
+      el.classList.add('map-marker');
       el.addEventListener('click', function() {
-        selectUser(marker.user_id)
+        selectUser(marker.user_id);
+
       } )
       mapMarkers[marker.user_id] = new mapboxgl.Marker(el)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     });
+
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      card.addEventListener('click', function() {
+        selectUser(card.dataset.userId);
+      } )
+    }
+
     fitMapToMarkers(map, markers);
     // selectUser(5);
   }
 };
-
-// const cards = getElementsByClassName("card-user")
-
 
 export { initMapbox };

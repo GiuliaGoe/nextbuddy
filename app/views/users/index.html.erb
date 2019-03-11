@@ -65,7 +65,7 @@
 
 <div class="scrolling-wrapper">
   <% @users.each do |user| %>
-      <div class="card-user">
+      <div class="card-user js-card-user" data-user-id="<%= user.id %>">
         <div class="card-user-infos">
           <div>
             <h2>
