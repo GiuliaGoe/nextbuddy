@@ -13,6 +13,59 @@ class MeetingsController < ApplicationController
   def new
     @meeting = Meeting.new
     @user = User.find(params[:user_id])
+    # 1 get todays date
+    today
+    # 2 get next 14 days with corresponding weekdays for example Monday 20th
+    next14days
+    # 3 select the days from 2 that correspond with user availabilities weekdays
+    relevant_dates
+    # 4 store these in a list that is displayed in the form in the view
+    raise
+  end
+
+  def today
+    today = Date.today
+  end
+
+  def next14days
+    array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+    next14days = []
+    array.each do |day|
+      next14days << today + day
+    end
+    next14days
+  end
+
+  def relevant_dates
+    relevant_dates = []
+    available_weekdays = []
+    @user.availabilities.each do |avail|
+      available_weekdays << avail.day_of_week
+    end
+    next14days.each do |date|
+      if available_weekdays.include?(number_to_weekday(date.wday))
+        relevant_dates << date
+      end
+    end
+    @relevant_dates = relevant_dates
+  end
+
+  def number_to_weekday(number)
+    if number == 0
+      return "Sunday"
+    elsif number == 1
+      return "Monday"
+    elsif number == 2
+      return "Tuesday"
+    elsif number == 3
+      return "Wednesday"
+    elsif number == 4
+      return "Thursday"
+    elsif number == 5
+      return "Friday"
+    elsif number == 6
+      return "Saturday"
+    end
   end
 
   def preview

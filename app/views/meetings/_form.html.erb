@@ -3,19 +3,23 @@
     <h4>Send request to <%= @user.first_name %> <%= @user.first_name[0,1] %>.</h4>
   </div>
   <div class="request-form">
-    <%= simple_form_for([@user, @meeting]) do |f|%>
+
+
+
+    <%= simple_form_for ([@user, @meeting]) do |f|%>
       <div class="request-margin request-meeting-time">
         <strong>When would you like to meet?</strong>
         <br>
+        Select a day
+
+        Pick a time
         <% @user.availabilities.each do |availability| %>
           <li>
-            <%= availability.day_of_week %>
             <%= availability.period_of_day %>
             <%= check_box_tag 'availability_ids[]', availability.id %>
-            <%= time_select 'meeting', 'meeting_date_time', {minute_step: 15} %>
+
           </li>
         <% end %>
-        <em>Please choose a day and set meeting time based on <%= @user.first_name %> <%= @user.first_name[0,1] %>.'s availabilities</em>
       </div>
       <div class="request-margin request-meeting-location"><strong>Where would you like to meet?</strong>
         <br>
