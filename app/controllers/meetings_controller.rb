@@ -18,9 +18,9 @@ class MeetingsController < ApplicationController
     # 2 get next 14 days with corresponding weekdays for example Monday 20th
     next14days
     # 3 select the days from 2 that correspond with user availabilities weekdays
-    relevant_dates
     # 4 store these in a list that is displayed in the form in the view
-    raise
+    relevant_dates
+    relevant_times
   end
 
   def today
@@ -36,19 +36,63 @@ class MeetingsController < ApplicationController
     next14days
   end
 
-  def relevant_dates
-    relevant_dates = []
+   def relevant_times
+      @relevant_times = []
+      available_periods = []
+      @user.availabilities.each do |avail|
+         available_periods << avail.period_of_day
+      end
+      if available_periods.include?("morning")
+        @relevant_times << '7:00'
+        @relevant_times << '7:30'
+        @relevant_times << '8:00'
+        @relevant_times << '8:30'
+        @relevant_times << '9:00'
+        @relevant_times << '9:30'
+     end
+
+      if available_periods.include?("noon")
+        @relevant_times << '11:00'
+        @relevant_times << '11:30'
+        @relevant_times << '12:00'
+        @relevant_times << '12:30'
+        @relevant_times << '13:00'
+        @relevant_times << '13:30'
+     end
+
+      if available_periods.include?("afternoon")
+        @relevant_times << '14:00'
+        @relevant_times << '14:30'
+        @relevant_times << '15:00'
+        @relevant_times << '15:30'
+        @relevant_times << '16:00'
+        @relevant_times << '16:30'
+     end
+      if available_periods.include?("evening")
+        @relevant_times << '17:00'
+        @relevant_times << '17:30'
+        @relevant_times << '18:00'
+        @relevant_times << '18:30'
+        @relevant_times << '19:00'
+        @relevant_times << '19:30'
+      end
+      @relevant_times
+   end
+
+   def relevant_dates
+    @relevant_dates = []
     available_weekdays = []
     @user.availabilities.each do |avail|
       available_weekdays << avail.day_of_week
     end
     next14days.each do |date|
       if available_weekdays.include?(number_to_weekday(date.wday))
-        relevant_dates << date
+        @relevant_dates << date
       end
     end
-    @relevant_dates = relevant_dates
-  end
+    @relevant_dates
+   end
+
 
   def number_to_weekday(number)
     if number == 0
@@ -102,11 +146,13 @@ class MeetingsController < ApplicationController
     @recipient = User.find(params[:user_id])
     @currentuser = User.find(current_user.id)
 
+
     @meeting = Meeting.new
-    @meeting.status = "pending",
-    @meeting.meeting_date_time = params[:datetime],
-    @meeting.suggested_activity = params[:activity],
-    @meeting.meeting_location = params[:meeting_location],
+    @meeting.status = "pending"
+    string_to_date_time
+    @meeting.meeting_date_time = @new_date
+    @meeting.suggested_activity = params[:activity]
+    @meeting.meeting_location = params[:meeting_location]
     @meeting.topic = params[:topic]
     @meeting.sender_id = @currentuser.id
     @meeting.recipient_id = @recipient.id
@@ -116,6 +162,11 @@ class MeetingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def string_to_date_time
+    new_string = params[:radrelevant_dates] + " " + params[:radrelevant_times]
+    @new_date = new_string.to_datetime
   end
 
   def edit
