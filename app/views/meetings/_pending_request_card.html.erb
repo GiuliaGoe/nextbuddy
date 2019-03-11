@@ -18,33 +18,33 @@
   <div class="request-message">
     <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
   </div>
+  <% if current_user == receiver %>
+      <div class="meeting-status">
+        Pending
+      </div>
+
+    <!-- Sent or Received -->
+      <div class="meeting-responsibility">
+        Received
+      </div>
+    <% else current_user == sender %>
+      <div class="meeting-status">
+        Pending
+      </div>
+
+    <!-- Sent or Received -->
+      <div class="meeting-responsibility">
+        Sent
+      </div>
+    <% end %>
   <div class="request-buttons">
-    <% if current_user == receiver %>
-        <div class="meeting-status">
-          Pending
-        </div>
-
-      <!-- Sent or Received -->
-        <div class="meeting-responsibility">
-          Received
-        </div>
-      <% else current_user == sender %>%>
-        <div class="meeting-status">
-          Pending
-        </div>
-
-      <!-- Sent or Received -->
-        <div class="meeting-responsibility">
-          Sent
-        </div>
-      <% end %>
 
 
     <% if current_user == sender %>
-      <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", class: "btn btn-book-meeting", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
+      <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", class: "btn btn-book-meeting received", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
     <% else current_user == receiver %>
-      <%= link_to "Accept", accept_meeting_path(meeting), id: "accept", class: "btn btn-book-meeting", data: { confirm: "That's awesome. You are one step closer having a great networking experience." } %>
-      <%= link_to "Decline", decline_meeting_path(meeting), id: "decline", class: "btn btn-book-meeting", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
+      <%= link_to "Accept", accept_meeting_path(meeting), id: "accept", class: "btn btn-book-meeting received", data: { confirm: "That's awesome. You are one step closer having a great networking experience." } %>
+      <%= link_to "Decline", decline_meeting_path(meeting), id: "decline", class: "btn btn-book-meeting received", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
     <% end %>
   </div>
 </div>
