@@ -26,9 +26,14 @@ const selectUser = (userId) => {
     oldCards[0].classList.remove('card-user-active');
   }
   card.classList.add('card-user-active');
-  console.log(card);
-  // Now here scroll to card
-  card.scrollIntoView();
+
+  const cardWidth = 280;
+  const screenWidth = window.outerWidth;
+  const spaceOnEitherSideOfCard = (screenWidth - cardWidth) / 2;
+  const scrollTo = card.offsetLeft - spaceOnEitherSideOfCard;;
+
+  const cardScroller = document.getElementById('card-scroller');
+  cardScroller.scrollLeft = scrollTo;
 }
 
 

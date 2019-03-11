@@ -8,12 +8,14 @@
 // This scrolling wrapper makes the cards inside there scrollable to the right.
 
 .scrolling-wrapper {
+  padding-top: 20px;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   padding-right: 20px;
   padding-left: 20px;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 
   .card-user {
     display: inline-block;
@@ -23,5 +25,4 @@
 .map-flexbox {
   display: flex;
   position: relative;
-  height: 350px;
 }

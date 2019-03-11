@@ -45,6 +45,12 @@
         <%= image_tag "https://res.cloudinary.com/giugoe/image/upload/v1552181634/image.png", height: 50 %>
       <% end %>
     </div>
+     <div class="navbar-search">
+      <%= form_tag(users_path, method: "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "E.g. company name..." %>
+      <% end %>
+      <span class="fa fa-search navbar-search-icon"></span>
+    </div>
     <div class="navbar-dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-nextbuddy-dropdown-menu", height: 80 >
@@ -60,11 +66,7 @@
         </li>
       </ul>
     </div>
-    <div class="navbar-search">
-      <%= form_tag(users_path, method: "get") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "E.g. company name..." %>
-      <% end %>
-    </div>
+
   </div>
 </div>
 
