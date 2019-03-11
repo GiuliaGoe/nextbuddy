@@ -1,0 +1,14 @@
+.map-marker {
+  width: 20px;
+  height: 20px;
+  background-image: url('https://res.cloudinary.com/giugoe/image/upload/v1552260904/NB_logo_grey.png');
+  background-size: contain;
+  // border-radius: 50%;
+  transition: height 0.5s, width 0.5s;
+}
+
+.map-marker-active {
+  height: 23px;
+  width: 23px;
+  background-image: url('https://res.cloudinary.com/giugoe/image/upload/v1552261209/NB_logo.png');
+}
