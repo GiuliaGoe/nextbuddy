@@ -49,9 +49,9 @@
   </div>
 
   <div class="card-user-activity">
-    <p><strong style= "color:  #00204A">Activities: </strong>
+    <p><strong style= "color:  #00204A">Activities: I love to ...</strong>
       <% @user.activities.each do |activity| %>
-      <%= activity.description.capitalize %>
+       <%= activity.description%> /
       <% end %>
     </p>
   </div>
