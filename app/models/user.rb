@@ -30,6 +30,10 @@ class User < ApplicationRecord
     self.career_positions.first.company
   end
 
+  def current_position
+    self.career_positions.first
+  end
+
   # multisearchable against: [ :address, :radius ]
   pg_search_scope :global_search_user_and_user_characteristics,
   against: [:address, :radius],
