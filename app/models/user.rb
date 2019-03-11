@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :sent_meetings, class_name: "Meeting", foreign_key: :sender_id
   has_many :received_meetings, class_name: "Meeting", foreign_key: :recipient_id
+  has_many :meetings
   has_many :career_positions
   has_many :job_functions, through: :career_positions
   has_many :job_titles, through: :career_positions

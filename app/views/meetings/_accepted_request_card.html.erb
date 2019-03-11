@@ -1,0 +1,51 @@
+<% sender = User.find(meeting.sender_id) %>
+<div class ="accepted-meeting">
+  <div >
+    <img src="<%= sender.photo %>" class="avatar-bordered-meeting-preview" />
+  </div>
+
+  <!-- Name -->
+  <div class="meeting-name">
+    <%= sender.first_name.partition(" ").first %> <%= sender.last_name[0,1] %>.
+  </div>
+
+  <!-- Date -->
+  <div class="meeting-date">
+    <%= meeting.meeting_date_time %>
+  </div>
+
+  <!-- Career Position -->
+  <div class="meeting-career">
+    <% if current_user.career_positions.any? %>
+      <%= current_user.current_title.name %>
+      <br>
+      @ <%= current_user.current_company.name %>
+    <% end %>
+  </div>
+
+  <!-- Message -->
+  <div class="meeting-message">
+    <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+  </div>
+
+  <!-- Status -->
+  <% if current_user.id == meeting.recipient_id %>
+    <div class="meeting-status">
+      Accepted
+    </div>
+
+  <!-- Sent or Received -->
+    <div class="meeting-responsibility">
+      Received
+    </div>
+  <% else %>
+    <div class="meeting-status">
+      Accepted
+    </div>
+
+  <!-- Sent or Received -->
+    <div class="meeting-responsibility">
+      Sent
+    </div>
+  <% end %>
+</div>

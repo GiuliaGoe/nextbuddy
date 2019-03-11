@@ -1,24 +1,38 @@
 function updateDOM() {
+  console.log("helo");
   const activity = document.getElementById('activity').value;
   const topic = document.getElementById('topic').value;
-  const date_time = document.getElementById('datetime_ida').value;
+  const date_time = document.getElementById('availability_ids_').value;
   const meeting_location = document.getElementById('meeting_location').value;
   console.log(activity, topic, date_time, meeting_location);
 
   const preview = document.getElementById('preview');
-  console.log(preview);
-  // preview.innerHTML = '<%= j render "meetings/preview", user: @user %>'
   preview.innerHTML = `
     <div class="card-user-preview-infos">
-      <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
-      <% current_user.career_positions.each do |career| %>
-        <%= JobTitle.find(career.job_title_id).name %>
-        <br>
-        @<%= JobTitle.find(career.company_id).name %>
-      <%= current_user.photo %>
-      Would you like to ${activity} with me at ${meeting_location} on ${date_time}? I would like to talk about ${topic} with you.
-      <%= link_to "Accept", class: "btn btn-book-meeting" %>
-      <%= link_to "Decline", class: "btn btn-book-meeting" %>
+      <div class="card-user-preview-infos-name">
+        <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
+      </div>
+
+      <div class="card-user-preview-infos-career">
+        <% if current_user.career_positions.any? %>
+          <%= current_user.current_title.name %> @ <%= current_user.current_company.name %>
+        <% end %>
+      </div>
+
+      <br>
+      <%= image_tag current_user.photo, class: "avatar-bordered-meeting-preview" %>
+
+      <div class="card-user-preview-infos-message">
+        Would you like to ${activity} with me at ${meeting_location} on ${date_time}? I would like to talk about ${topic} with you.
+      </div>
+
+      <div class="card-user-preview-infos-accept">
+        <%= link_to "Accept", '#', class: "btn btn-book-meeting" %>
+      </div>
+
+      <div class="card-user-preview-infos-decline">
+        <%= link_to "Decline", '#', class: "btn btn-book-meeting" %>
+      </div>
     </div>
   `
   // here we will target the div with id preview and update its inner HTML with the actual preview
