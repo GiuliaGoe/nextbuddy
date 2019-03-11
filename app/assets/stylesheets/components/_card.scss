@@ -54,21 +54,21 @@
 .card-user {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 280.5px;
   height: 220px;
   margin: 7px 5px;
   display: flex;
   position: relative;
+  border: 1px solid #ddd;
+  border-top-width: 5px;
 }
 
 .card-user-active {
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  border: solid 1px;
+  border-top-color: $orange;
 }
 
 .card-user h2 {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   margin: 0;
 }
@@ -83,21 +83,45 @@
 }
 .card-user .card-user-infos {
   padding: 16px;
-  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 55px;
   justify-content: space-between;
   align-items: flex-end;
   position: absolute;
+  left: 54px;
+  top: -5px;
+}
+
+.card-user .card-user-career {
+  position: absolute;
+  top: 70px;
+  left: 9px;
+}
+
+.card-user .card-user-career p {
+  font-size: 15px;
 }
 .card-user .card-user-user {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  left: 5px;
+  top: 6px;
 }
 
-.card-user .card-user-distance {
+.card-user .card-user-name {
   position: absolute;
-  bottom: 10px;
-  left: 16px
+  left: 73px;
+  top: 14px;
+}
+
+.card-user .card-user-location {
+  position: absolute;
+  left: 73px;
+  top: 44px;
+
+  p {
+    font-size: 15px;
+  }
 }
 
 .card-user-name-photo{
@@ -111,13 +135,23 @@
 .card-user-link {
   position: absolute;
   bottom: 10px;
-  right: 10px
+  right: 10px;
+
+  background-color: #ccc;
+
+  .card-user-active & {
+    background-color: $orange;
+  }
 }
 
 .user-professional-interests {
   position: absolute;
-  left: 16px;
-  top: 90px
+  left: 9px;
+  top: 100px;
+
+  p {
+    font-size: 16px;
+  }
 }
 
 .card-user-career-position ul {

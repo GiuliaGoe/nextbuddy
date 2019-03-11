@@ -4,7 +4,6 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,23 +32,30 @@
 /* Basic navbar item */
 .navbar-nextbuddy-item {
   cursor: pointer;
-  padding: 0 20px;
   display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
 
   .navbar-logo {
-    position: absolute;
-    left: 13px;
-    top: 10px;
+    padding-left: 10px;
   }
   .navbar-dropdown {
-    position: absolute;
-    right: 16px;
-    top: 20px;
+    padding-right: 20px;
   }
   .navbar-search {
+    flex-grow: 1;
+    margin: 5px 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+  }
+  .navbar-search-icon {
     position: absolute;
-    left: 80px;
-    top: 15px;
+    top: 10px;
+    left: 0;
+    color: #ccc;
   }
 }
 
