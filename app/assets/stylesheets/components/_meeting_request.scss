@@ -148,25 +148,52 @@
   margin-right: 5px;
 }
 
+
+// CSS for meetings/new view!
 .request-meeting {
+  // display: flex;
+  // position: relative;
+  list-style: none;
+}
+
+.request-margin {
+  margin: 20px 0px;
+}
+
+
+// preview cards on make a request view!
+.card-user-preview-infos {
   display: flex;
   position: relative;
-  font-size: 14px;
-  list-style: display;
 }
 
-.request-meeting-time {
-
+.card-user-preview-infos-name {
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
-.request-meeting-location {
-
+.card-user-preview-infos-career {
+  position: absolute;
+  top: 25px;
+  left: 5px;
 }
 
-.request-meeting-activity {
-
+.card-user-preview-infos-message {
+  position: absolute;
+  top: 5px;
+  left: 40px;
 }
 
-.request-meeting-topic {
+.card-user-preview-infos-accept {
+  position: absolute;
+  top: 45px;
+  left: 40px;
+}
 
+.card-user-preview-infos-decline {
+  position: absolute;
+  top: 45px;
+  left: 80px;
+  background-color: $grey;
 }

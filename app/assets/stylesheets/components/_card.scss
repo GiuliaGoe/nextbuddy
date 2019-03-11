@@ -125,39 +125,3 @@
 }
 
 
-// preview cards on make a request view!
-.card-user-preview-infos {
-  display: flex;
-  position: relative;
-}
-
-.card-user-preview-infos-name {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-}
-
-.card-user-preview-infos-career {
-  position: absolute;
-  top: 25px;
-  left: 5px;
-}
-
-.card-user-preview-infos-message {
-  position: absolute;
-  top: 5px;
-  left: 40px;
-}
-
-.card-user-preview-infos-accept {
-  position: absolute;
-  top: 45px;
-  left: 40px;
-}
-
-.card-user-preview-infos-decline {
-  position: absolute;
-  top: 45px;
-  left: 80px;
-  background-color: $grey;
-}
