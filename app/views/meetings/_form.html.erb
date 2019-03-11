@@ -10,15 +10,20 @@
       <div class="request-margin request-meeting-time">
         <strong>When would you like to meet?</strong>
         <br>
-        Select a day
-
-        Pick a time
-        <% @user.availabilities.each do |availability| %>
+        <em>Select one day</em>
+        <% @relevant_dates.each do |r| %>
           <li>
-            <%= availability.period_of_day %>
-            <%= check_box_tag 'availability_ids[]', availability.id %>
+            <%= r.strftime("%a, %d %B '%y") %>
+            <input type="radio" value=<%= r %> name="radrelevant_dates" id="relevant_dates" />
+        </li>
+        <% end %>
 
-          </li>
+        <br>
+        <em>Pick a time</em>
+        <br>
+        <% @relevant_times.each do |t| %>
+          <%= t %>
+          <input name="radrelevant_times" value=<%= t %> id="relevant_times" type="radio">
         <% end %>
       </div>
       <div class="request-margin request-meeting-location"><strong>Where would you like to meet?</strong>
