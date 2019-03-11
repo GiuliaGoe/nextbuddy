@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :meetings, only: [:index, :new, :create, :edit, :update]
   end
-  get 'users/:user_id/meetings/preview', to: 'meetings#preview', as: :preview_meeting
+  get '/users/:user_id/meetings/preview', to: 'meetings#preview', as: :preview_meeting
+
+  get '/meetings/:id/accept', to: 'meetings#accept', as: :accept_meeting
+  get '/meetings/:id/decline', to: 'meetings#decline', as: :decline_meeting
+  get '/meetings/:id/cancel', to: 'meetings#cancel', as: :cancel_meeting
+  get '/meetings/:id/pending', to: 'meetings#pending', as: :pending_meeting
 
   get '/mymeetings', to: 'meetings#index', as: :my_meetings
   get '/profile/personal', to: 'user_characteristics#edit_personal'

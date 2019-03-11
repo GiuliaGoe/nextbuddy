@@ -18,3 +18,15 @@
   box-shadow: 0 0.5px 1px rgba(0,0,0,0.2);
   border: white 0.5px solid;
 }
+
+.avatar-bordered-meeting-preview {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.2);
+  border: white 0.5px solid; position: absolute;
+  left: 25px;
+  top: 5px;
+}
