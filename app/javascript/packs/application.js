@@ -14,7 +14,6 @@ import { loadDynamicBannerText } from '../components/firstscroll';
 // import { decline_button } from '../plugins/request-buttons';
 
 initMapbox();
-setupprofile();
-activitiesList();
+// activitiesList();
 rangeSlider();
 loadDynamicBannerText();

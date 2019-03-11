@@ -3,43 +3,60 @@ class UserCharacteristicsController < ApplicationController
   before_action :set_professional, only: [:edit_professional, :update_professional]
   before_action :set_meeting_availability, only: [:edit_meeting_availability, :update_meeting_availability]
 
-  def edit_personal
-    set_personal
-  end
+  # def edit_personal
+  # end
+
+  # def edit_professional
+  # end
+
 
   def update_personal
-    if current_user == @user
-      @user.update(personal_params)
-    else
-      redirect_to users_path, notice: "You are not allowed to edit this profile."
-    end
-  end
-
-  def edit_professional
-    set_professional
+    # add in availabilities and activities
+    current_user.radius = params[:user][:radius].to_i
+    current_user.address = params[:user][:address]
+    current_user.bio = params[:user][:bio]
+    current_user.save
+    update_professional
   end
 
   def update_professional
-    if current_user == @user
-      @skill.update(professional_params)
-      @professional_interest.update(professional_params)
-      @user.update(personal_params)
-    else
-      redirect_to users_path, notice: "You are not allowed to edit this profile."
-    end
-  end
+    if !current_user.career_positions.any?
+      job_title = JobTitle.create(name: params["cp-job-title"])
+      company = Company.create(name: params["cp-company"])
+      industry = Industry.create(name: params["cp-industry"])
+      job_function = JobFunction.create(name: params["cp-functions"])
 
-  def edit_meeting_availability
-    set_meeting_availability
-  end
+      career_position = CareerPosition.create(user: current_user)
 
-  def update_meeting_availability
-    if current_user == @user
-      @availability.update(meeting_availability_params)
-      @activity.update(meeting_availability_params)
+      career_position.company = company
+      career_position.job_title = job_title
+      career_position.industry = industry
+      career_position.job_function = job_function
     else
-      redirect_to users_path, notice: "You are not allowed to edit this profile."
+      career_position = current_user.current_position
+
+      job_title = JobTitle.find_by(career_position: career_position)
+      job_title.name = params["cp-job-title"]
+
+      company = Company.find_by(career_position: career_position)
+      company.name = params["cp-company"]
+
+      industry = Industry.find(career_position: career_position)
+      industry.name = params["cp-industry"]
+
+      job_function = JobFunction.find(career_position: career_position)
+      job_function.name = params["cp-functions"]
+
     end
+
+    career_position.save!
+
+    raise
+
+    ProfessionalInterest.find(career_position.id).name = params["pi-name"]
+    current_user.professional_goal = params[:user][:professional_goal]
+    # Skill.find(current_user.id) = params["skills"]
+    # save
   end
 
   private
