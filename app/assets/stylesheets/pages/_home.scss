@@ -1,3 +1,5 @@
+
+
 .wrapper-home-first-scroll {
   background: $darkblue;
   height: 100vh;
@@ -6,8 +8,6 @@
   padding-top: 80px;
   padding-left: 10px;
   padding-right: 10px;
-  // display: flex;
-  // position: relative
 }
 
 .center-items {
@@ -32,13 +32,61 @@
 
 .description {
   margin-top: 50px;
+  margin-left: 25px;
+  max-width: 229px;
+
+  h5 {
+    font-size: 22px
+  }
 }
 
 .description p {
-  line-height: 70%;
+  line-height: 160%;
+  font-size: 18px
 }
 
 .click-down {
-  margin-top: 180px;
+  margin-top: 80px;
+}
+
+.wrapper-home-second-scroll {
+  height: 100vh;
+  background-color: $grey;
+  color: white;
+  padding-top: 45px;
+  padding-left: 35px;
+  padding-right: 10px;
+
+  .description {
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-top: 25px;
+    h5 {
+      font-size: 30px;
+    }
+  }
+
+  .tagline {
+    width: 230px;
+    p {
+      font-size: 20px;
+      font-weight: lighter;
+    }
+  }
+
+  .meet-nextbuddy {
+    margin-top: 180px;
+    h4 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    p {
+      font-weight: lighter;
+    }
+  }
+
+  .index-iphone {
+    margin-top: 50px;
+  }
 }
 // Specific CSS for your home-page
