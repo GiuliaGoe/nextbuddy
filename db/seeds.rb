@@ -25,118 +25,170 @@ puts "Creating Users"
 
 juan = User.create!(
   first_name: 'Juan',
-  last_name: 'Jing',
-  email: 'Juan@gmail.com',
+  last_name: 'Cardenas',
+  email: 'juan.cardenas@gmail.com',
   password: '123456',
-  photo: 'juan',
-  address: 'Via Bologna 70, Melbourne',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552290231/juan.png',
+  address: '99 Beacon Rd, Port Melbourne, VIC 3207',
   radius: 500,
-  professional_goal: 'my goal is huge',
-  bio: 'i want to get to know more and more people.'
+  professional_goal: '',
+  bio: 'Standing at the forefront of the fastest moving technology industry trend: cloud services. I have spent the past five years evangelizing an industry-wide shift to the cloud and has helped position Microsoft as a leader in the public cloud space.'
+)
 
+winson = User.create!(
+  first_name: 'Winson',
+  last_name: 'Tan',
+  email: 'winson.tan@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291668/winson.jpg',
+  address: '120 Princes St, Port Melbourne, VIC 3207',
+  radius: 230,
+  professional_goal: '',
+  bio: 'Data scientist and analyst with experience in various industries including consulting, banking and SaaS. Passionate about solving real problems and creating value by leveraging the latest technologies.'
+)
+
+
+paal = User.create!(
+  first_name: 'Paal',
+  last_name: 'Ringstad',
+  email: 'paal.ringstad@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552292076/paal.jpg',
+  address: '128 Farrell St, Port Melbourne, VIC 3207',
+  radius: 300,
+  professional_goal: '',
+  bio: 'Passionate about education and building projects, I launched Le Wagon Coding Bootcamp in Australia. Le Wagon believes that education has to be redefined, by providing a whole new type of education, based on collaboration and self-learning, in a startup-style environment.'
+)
+
+
+fritz = User.create!(
+  first_name: 'Fritz',
+  last_name: 'Shack',
+  email: 'fritz.shack@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291398/fritz.png',
+  address: '396 Clarendon St, South Melbourne, VIC 3205 ',
+  radius: 400,
+  professional_goal: '',
+  bio: 'Recently graduated from WHU in Germany with a Bachelor of Science in International Business. Gathered experience with internships in investment banking, private equity as well as marketing.'
 )
 
 dale = User.create!(
   first_name: 'Dale',
   last_name: 'Hindle',
-  email: 'dale.h@mail.com',
+  email: 'dale.hindle@gmail.com',
   password: '123456',
-  photo: 'photo',
-  address: '390 Russell St',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291395/dale.jpg',
+  address: '122 Albert St, Port Melbourne, VIC 3207',
   radius: 123.7,
-  professional_goal: 'Do amazing stuff - Dale',
+  professional_goal: '',
   bio: 'Chemical Engineer looking to compliment my skills by learning some web development.'
 )
+
 damon = User.create!(
   first_name: 'Damon',
   last_name: 'Ross',
-  email: 'damon.r@mail.com',
+  email: 'damon.ross@mail.com',
   password: '123456',
-  photo: 'photo',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552292621/damon.jpg',
   radius: 253.7,
-  professional_goal: 'Do amazing stuff - Damon',
-  bio: "Worked in product management, keen to learn more about technical development while I am at Le Wagon Melbourne. After I am finished I hope to build more cool products and travel around :)"
+  professional_goal: '',
+  bio: "Worked in product management and now looking to learn more about technical development and building  cool products while travelling around"
 )
+
 ben = User.create!(
   first_name: 'Ben',
   last_name: 'Linder',
-  email: 'ben.l@mail.com',
+  email: 'ben.linder@mail.com',
   password: '123456',
-  photo: 'photo',
-  address: '90 lonsdale St',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291400/ben.jpg',
+  address: '248 Esplanade East, Port Melbourne, VIC 3207',
   radius: 13.7,
-  professional_goal: 'Do amazing stuff - Ben',
-  bio: "Bachelor degree in management and marketing. Floated through life with zero idea what I wanted to be when I grew up."
+  professional_goal: '',
+  bio: "Bachelor degree in management and marketing. Floated through life with zero idea what I wanted to be when I grew up but have found myself in the web-development and teaching space."
 )
 
 marco = User.create(
   first_name: "Marco",
   last_name: "Materazzi",
-  photo: "This is a photo placeholder for Marco",
-  address: "Via San Bologna",
-  radius: 5.0,
-  email: 'Marco@Materazzi.com',
+  email: 'marco.materazzi@gmail.com',
   password: '123456',
-  professional_goal: 'Placeholder_goal Marco',
-  bio: 'This is Marcos Bio')
+  photo: "Thttps://res.cloudinary.com/giugoe/image/upload/v1552293209/marco.jpg",
+  address: "9/271 William St, Melbourne, VIC 3000",
+  radius: 5.0,
+  professional_goal: '',
+  bio: 'Accomplished designer at Stern, with 20 years’ experience in the automobile markets')
 
 filippo = User.create(
   first_name: "Filippo",
   last_name: "Faguzzi",
-  photo: "This is a photo placeholder for Filippo",
-  address: "Via Magana",
-  radius: 2.4,
-  email: 'Filippo@Faguzzi.com',
+  email: 'filippo.faguzzi@gmail.com',
   password: '123456',
-  professional_goal: 'Placeholder_goal Filippo',
-  bio: 'This is Filippos Bio')
+  photo: "https://res.cloudinary.com/giugoe/image/upload/v1552293529/filippo.jpg",
+  address: "177 Cecil St, South Melbourne, VIC 3205 ",
+  radius: 2.4,
+  professional_goal: '',
+  bio: 'An industry expert with more than 20 years of successful experience in full life cycle Procurement and Business Development.')
 
 hannah = User.create!(
   first_name: 'Hannah',
   last_name: "Fuzzi",
-  email: 'Hannah@gmail.com',
+  email: 'hannah.fuzzi@gmail.com',
   password: '123456',
-  photo: 'hannah',
-  address: 'Swanston street 80, Melbourne',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294147/hannah.jpg',
+  address: '16 Morris St, South Melbourne, VIC 3205',
   radius: 900,
-  professional_goal: 'i want to become a billionaire',
-  bio: 'i love meeting people'
+  professional_goal: '',
+  bio: 'I love meeting people and healthcare. I have spent an incredible part of my life in the service of others and the betterment of their health!'
 )
 
 robert = User.create!(
   first_name: 'Robert',
   last_name: 'Pfeiffer',
-  email: 'robert@Pfeiffer.com',
+  email: 'robert.pfeiffer@gmail.com',
   password: '123456',
-  photo: 'robert',
-  address: 'Hildesheim',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294124/robert.jpg',
+  address: '117 Farrell St, Port Melbourne, VIC 3207',
   radius: 700,
-  professional_goal: 'I want to be a lawyer!',
-  bio: 'When I was younger - I found out that everyone should have equal opportunities!'
+  professional_goal: '',
+  bio: 'When I was younger - I found out that everyone should have equal opportunities! This largely explains why I pursued law and I have found real fulfillment in this career path.'
 )
 
 hans = User.create!(
-  first_name: 'Hans-Peter',
+  first_name: 'Hans',
   last_name: 'Von Der Heyde',
-  email: 'Hans@Heyde.com',
+  email: 'hans.heyde@gmail.com',
   password: '123456',
-  photo: 'hans',
-  address: 'Hildesheim',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552293963/hans.jpg',
+  address: '90 Collins St, Melbourne, VIC 3000',
   radius: 700,
-  professional_goal: 'My dream is to become a politician in Hildesheim',
-  bio: 'The current mayor is a criminal!!! Vote 4 Me to make Hildesheim great again :-)'
+  professional_goal: '',
+  bio: 'User journey and experience mixed with my passion for law and justice - has lead to me finding myself at its intersection. I am involved in the product development and management of tools used for law firms and other related fields.'
 )
+
+valerie = User.create!(
+  first_name: 'Valerie',
+  last_name: 'Schraauwers',
+  email: 'valerie.schraauwers@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552295354/valerie.png',
+  address: '151 Beach St, Port Melbourne, VIC 3207',
+  radius: 800,
+  professional_goal:'',
+  bio: 'After 3.5 great years of working as a Country Manager for Green Claim, I felt it was time for a change. I flew across the ocean to do Le Wagon’s Full Stack Coding Bootcamp in Bali, which equipped me with a new set of skills. I am excited to further develop these skills and to combine them with my previous work experience.'
+)
+
 
 felix = User.create!(
   first_name: 'Felix',
   last_name: 'Herrmann',
-  email: 'Felix@Herrmann.com',
+  email: 'felix.herrmann@gmail.com',
   password: '123456',
-  photo: 'felix',
-  address: 'Hildesheim',
-  radius: 700,
-  professional_goal: 'I will be the laziest teacher the world has ever seen',
-  bio: 'Law was not my thing - so I got myself a girlfriend that does law. I need 5 coffees a day so might as well have one with you'
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304255/felix.jpg',
+  address: '72 Moubray St, South Melbourne, VIC 3205',
+  radius: 650,
+  professional_goal: '',
+  bio: 'Education is the area that I am greatly passionate about. Apart from being a high-school teacher, I would say that I am a coffee connoisseur - definitely need 5 coffees a day - so might as well have one with you!'
 )
 
 jonas = User.create!(
@@ -144,28 +196,199 @@ jonas = User.create!(
   last_name: 'Japing',
   email: 'jonasjaping@gmail.com',
   password: '123456',
-  photo: 'jonas',
-  address: 'Dorcas Street 70, Melbourne',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304606/jonas.jpg',
+  address: '7 Orion Mews, Port Melbourne, VIC 3207',
+  radius: 550,
+  professional_goal: '',
+  bio: 'I am a business graduate with a focus on International Management. Recently, I have been researching and trying to understand the functionality of Agile in the business environment and after great amounts of research, tests and trials - I am proud to say I have significant depth and knowledge on the subject matter!'
+)
+
+adora = User.create!(
+  first_name: 'Adora',
+  last_name: 'Gao',
+  email: 'adora.g@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291674/adora.jpg',
+  address: '14 The Bend, Port Melbourne, VIC 3207',
+  radius: 300,
+  professional_goal: '',
+  bio: 'I work in marketing for a software company and am now learning to code part-time in the hopes to expand my skillsets!'
+)
+
+alex = User.create!(
+  first_name: 'Alex',
+  last_name: 'Vassiliou',
+  email: 'alex.vassiliou@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304849/alex.jpg',
+  address: '225 Abbotsford St, North Melbourne, VIC 3051',
   radius: 700,
-  professional_goal: 'Live in the same city as Giulia',
-  bio: 'i am really cool'
+  professional_goal: '',
+  bio: 'Worked in business development for a solar company. After being part a healthy and truly functional team, I hope to ascend into managament and more leadership roles'
+)
+
+rutger = User.create!(
+  first_name: 'Rutger',
+  last_name: 'Swirski',
+  email: 'rutger.swirski@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304285/rutger.jpg',
+  address: '463 Victoria St, West Melbourne, VIC 3003',
+  radius: 750,
+  professional_goal: '',
+  bio: 'Started coding when I was 13, I have always wanted to become a web developer. This is the area I hope to expand into the future!'
+)
+
+chris = User.create!(
+  first_name: 'Chris',
+  last_name: 'Ward',
+  email: 'chris.ward@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304608/chris.jpg',
+  address: '149 Alfred St, North Melbourne, VIC 3051',
+  radius: 650,
+  professional_goal: '',
+  bio: 'I’m a skilled digital marketer with experience in social media (Facebook, Instagram, Twitter, Snapchat), EDM, SEO and web design. I have a bachelor of Commerce from the University of Melbourne, majoring in Marketing and Finance, which has allowed me to be data driven, customer-focused and motivated to create meaningful results. My campaigns have grown reach, followership, impressions and most importantly, sales!'
+)
+
+giulia = User.create!(
+  first_name: 'Giulia',
+  last_name: 'Goella',
+  email: 'giulia.goella@gmail.com',
+  password: '123456',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304288/giulia.jpg',
+  address: '12 Hotham St, South Melbourne, VIC 3205 ',
+  radius: 450,
+  professional_goal: '',
+  bio: 'I was in the sector of management consulting previously, however, now I recognise that my true calling is to build value-based businesses. Currently, I am looking for oppotunities to connect with people that are interested in entreprenuership and business development.'
 )
 
 puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
 
+running = Activity.create!(
+  description: 'go for runs',
+  user_id: juan.id
+)
+
+lunch = Activity.create!(
+  description: 'go for lunch',
+  user_id: juan.id
+)
+
 coffee = Activity.create(
-  user_id: felix.id,
-  description: 'Have a coffee')
+  user_id: winson.id,
+  description: 'have a coffee')
+
+jogging = Activity.create(
+  user_id: winson.id,
+  description: 'jog')
+
+lazy = Activity.create(
+  user_id: paal.id,
+  description: 'play PUBG')
+
+swimming = Activity.create!(
+  description: 'go for a swim',
+  user_id: paal.id
+)
+
+got = Activity.create(
+  user_id: fritz.id,
+  description: 'watch Game of Thrones')
+
+coffee = Activity.create(
+  user_id: fritz.id,
+  description: 'have a coffee')
+
+activity0 = Activity.create(
+  description: 'go for walks',
+  user_id: dale.id
+  )
+
+tea = Activity.create(
+  user_id: dale.id,
+  description: 'drink tea')
+
+activity1 = Activity.create(
+  description: 'drink beer',
+  user_id: damon.id
+  )
+
+lazy = Activity.create(
+  user_id: damon.id,
+  description: 'Play FIFA 14')
+
+activity2 = Activity.create(
+  description: 'go for lunch',
+  user_id: ben.id
+  )
+
+coffee = Activity.create(
+  user_id: ben.id,
+  description: 'have a coffee')
+
+
+jogging = Activity.create(
+  user_id: marco.id,
+  description: 'jog')
+
+walking = Activity.create(
+  user_id: marco.id,
+  description: 'go for walks')
+
+coffee = Activity.create(
+  user_id: marco.id,
+  description: 'have a coffee')
+
+
+running = Activity.create(
+  user_id: filippo.id,
+  description: 'go for runs')
+
+walkthedog = Activity.create(
+  user_id: filippo.id,
+  description: 'walk the dog')
+
+tea = Activity.create(
+  user_id: hannah.id,
+  description: 'drink tea')
+
+lazy = Activity.create(
+  user_id: hannah.id,
+  description: 'play FIFA 14')
+
+coffee = Activity.create(
+  user_id: robert.id,
+  description: 'have a coffee')
+
+lunch = Activity.create!(
+  description: 'go out for lunch',
+  user_id: robert.id
+)
+
+coffee = Activity.create(
+  user_id: hans.id,
+  description: 'have a coffee')
+
+swimming = Activity.create!(
+  description: 'go for a swim',
+  user_id: hans.id
+)
+
+coffee = Activity.create(
+  user_id: valerie.id,
+  description: 'have a coffee')
+
 
 lazy = Activity.create(
   user_id: felix.id,
-  description: 'FIFA 14')
+  description: 'Play FIFA 14')
 
 lotr = Activity.create(
   user_id: felix.id,
-  description: 'Lord of the rings')
+  description: 'Watch Lord of the Rings')
 
 coffee = Activity.create(
   user_id: robert.id,
@@ -176,66 +399,74 @@ coffee = Activity.create(
   description: 'Have a coffee')
 
 lunch = Activity.create!(
-  description: 'Lunch',
+  description: 'Go out for lunch',
   user_id: jonas.id
 )
 
-running = Activity.create!(
-  description: 'Running',
-  user_id: juan.id
-)
-
-lunch = Activity.create!(
-  description: 'Lunch',
-  user_id: juan.id
-)
+walkthedog = Activity.create(
+  user_id: valerie.id,
+  description: 'walk the dog')
 
 swimming = Activity.create!(
-  description: 'Swimming',
-  user_id: hannah.id
-)
-
-swimming = Activity.create!(
-  description: 'Swimming',
-  user_id: jonas.id
+  description: 'go for a swim',
+  user_id: felix.id
 )
 
 jogging = Activity.create(
-  user_id: marco.id,
-  description: 'Jogging')
+  user_id: felix.id,
+  description: 'jog')
 
-walking = Activity.create(
-  user_id: marco.id,
-  description: 'Walking')
+lazy = Activity.create(
+  user_id: jonas.id,
+  description: 'play FIFA 14')
 
 coffee = Activity.create(
-  user_id: marco.id,
-  description: 'Have a coffee')
+  user_id: jonas.id,
+  description: 'have a coffee')
 
 running = Activity.create(
-  user_id: filippo.id,
-  description: 'Running')
+  user_id: adora.id,
+  description: 'go for runs')
 
-tea = Activity.create(
-  user_id: filippo.id,
-  description: 'Drink a tea')
+activity1 = Activity.create(
+  description: 'drink beer',
+  user_id: adora.id
+  )
+
+coffee = Activity.create(
+  user_id: alex.id,
+  description: 'have a coffee')
 
 activity0 = Activity.create(
-  description: 'Blow bubbles',
-  user_id: dale.id
-  )
-activity1 = Activity.create(
-  description: 'Drink a Beer',
-  user_id: damon.id
-  )
-activity2 = Activity.create(
-  description: 'Lunch',
-  user_id: ben.id
+  description: 'go for walks',
+  user_id: alex.id
   )
 
+running = Activity.create!(
+  description: 'go for runs',
+  user_id: rutger.id
+)
+
+lunch = Activity.create!(
+  description: 'go for lunch',
+  user_id: rutger.id
+)
+
+coffee = Activity.create(
+  user_id: chris.id,
+  description: 'have a coffee')
+
+lazy = Activity.create(
+  user_id: chris.id,
+  description: 'play FIFA 14')
+
 walkthedog = Activity.create(
-  user_id: filippo.id,
-  description: 'Walk the dog')
+  user_id: giulia.id,
+  description: 'walk the dog')
+
+tea = Activity.create(
+  user_id: giulia.id,
+  description: 'drink tea')
 
 puts "Finished creating #{Activity.all.count} activities"
 
@@ -244,25 +475,147 @@ puts "Creating some Availabilities!"
 afternoon = Availability.create!(
   day_of_week: 'Monday',
   period_of_day: 'afternoon',
-  user_id: robert.id
+  user_id: juan.id
+)
+
+noon = Availability.create!(
+  day_of_week: 'Tuesday',
+  period_of_day: 'noon',
+  user_id: juan.id
+)
+
+morning = Availability.create!(
+  day_of_week: 'Wednesday',
+  period_of_day: 'morning',
+  user_id: juan.id
+)
+
+
+afternoon = Availability.create!(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: winson.id
+)
+
+marco_avail2 = Availability.create(
+  user_id: winson.id,
+  day_of_week: 'Friday',
+  period_of_day: 'evenings' )
+
+
+afternoon = Availability.create!(
+  day_of_week: 'Wednesday',
+  period_of_day: 'afternoon',
+  user_id: paal.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: fritz.id
 )
 
 afternoon = Availability.create!(
   day_of_week: 'Friday',
   period_of_day: 'afternoon',
+  user_id: fritz.id
+)
+
+availability0 = Availability.create(
+  day_of_week: 'Monday',
+  period_of_day: 'noon',
+  user_id: dale.id)
+
+availability1 = Availability.create(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: dale.id
+  )
+
+availability1 = Availability.create(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: damon.id
+  )
+availability2 = Availability.create(
+  day_of_week: 'Friday',
+  period_of_day: 'evening',
+  user_id: damon.id
+  )
+
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: ben.id
+)
+
+availability2 = Availability.create(
+  day_of_week: 'Friday',
+  period_of_day: 'evening',
+  user_id: ben.id
+  )
+
+marco_avail1 = Availability.create(
+  user_id: marco.id,
+  day_of_week: 'Tuesday',
+  period_of_day: 'morning' )
+
+marco_avail2 = Availability.create(
+  user_id: marco.id,
+  day_of_week: 'Friday',
+  period_of_day: 'evening' )
+
+filippo_avail1 = Availability.create(
+  user_id: filippo.id,
+  day_of_week: 'Monday',
+  period_of_day: 'noon' )
+
+filippo_avail2 = Availability.create(
+  user_id: filippo.id,
+  day_of_week: 'Thursday',
+  period_of_day: 'afternoon' )
+
+morning = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'morning',
+  user_id: hannah.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
   user_id: robert.id
 )
 
 afternoon = Availability.create!(
-  day_of_week: 'Friday',
+  day_of_week: 'Thursday',
   period_of_day: 'afternoon',
-  user_id: hans.id
+  user_id: robert.id
 )
 
 afternoon = Availability.create!(
   day_of_week: 'Monday',
   period_of_day: 'afternoon',
   user_id: hans.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'afternoon',
+  user_id: hans.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: valerie.id
+)
+
+morning = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'morning',
+  user_id: valerie.id
 )
 
 morning = Availability.create!(
@@ -283,66 +636,77 @@ morning = Availability.create!(
   user_id: jonas.id
 )
 
-afternoon = Availability.create!(
-  day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: juan.id
-)
-
 availability0 = Availability.create(
   day_of_week: 'Monday',
   period_of_day: 'noon',
-  user_id: dale.id
+  user_id: adora.id
   )
 availability1 = Availability.create(
   day_of_week: 'Tuesday',
   period_of_day: 'afternoon',
-  user_id: damon.id
+  user_id: adora.id
   )
+
+availability1 = Availability.create(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: alex.id
+  )
+
+afternoon = Availability.create!(
+  day_of_week: 'Wednesday',
+  period_of_day: 'afternoon',
+  user_id: alex.id
+)
+
 availability2 = Availability.create(
   day_of_week: 'Friday',
   period_of_day: 'evening',
-  user_id: ben.id
+  user_id: alex.id
   )
 
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: rutger.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Friday',
+  period_of_day: 'afternoon',
+  user_id: rutger.id
+)
+
+afternoon = Availability.create!(
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon',
+  user_id: chris.id
+)
 
 morning = Availability.create!(
   day_of_week: 'Friday',
   period_of_day: 'morning',
-  user_id: hannah.id
+  user_id: chris.id
 )
 
-noon = Availability.create!(
-  day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: jonas.id
-)
-
-noon = Availability.create!(
-  day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: juan.id
-)
-
-marco_avail1 = Availability.create(
-  user_id: marco.id,
-  day_of_week: 'Tuesday',
-  period_of_day: 'Morning' )
-
-marco_avail2 = Availability.create(
-  user_id: marco.id,
-  day_of_week: 'Friday',
-  period_of_day: 'Evening' )
-
-filippo_avail1 = Availability.create(
-  user_id: filippo.id,
+afternoon = Availability.create!(
   day_of_week: 'Monday',
-  period_of_day: 'Noon' )
+  period_of_day: 'afternoon',
+  user_id: giulia.id
+)
 
-filippo_avail2 = Availability.create(
-  user_id: filippo.id,
-  day_of_week: 'Thursday',
-  period_of_day: 'Afternoon' )
+afternoon = Availability.create!(
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon',
+  user_id: giulia.id
+)
+
+morning = Availability.create!(
+  day_of_week: 'Wednesday',
+  period_of_day: 'morning',
+  user_id: giulia.id
+)
 
 puts "Created #{Availability.all.count} availabilities"
 
@@ -351,13 +715,20 @@ puts "Created #{Availability.all.count} availabilities"
 puts "Creating some Job Titles!"
 
 lawyer = JobTitle.create(
-  name: 'Boss'
+  name: 'Lawyer'
+)
+
+data_scientist = JobTitle.create(
+  name: 'Data Scientist'
 )
 
 intern = JobTitle.create(
   name: 'Intern'
 )
 
+business_development = JobTitle.create(
+  name: 'Business Developer'
+)
 teacher = JobTitle.create(
   name: 'Teacher'
 )
@@ -372,6 +743,14 @@ junior_developer = JobTitle.create!(
 
 ux_designer = JobTitle.create!(
   name: 'UX Designer'
+)
+
+entrepreneur = JobTitle.create!(
+  name: 'Entrepreneur'
+)
+
+marketer = JobTitle.create!(
+  name: 'Marketer'
 )
 
 designer = JobTitle.create(
@@ -393,6 +772,8 @@ title2 = JobTitle.create(
 
 puts "Finished creating #{JobTitle.all.count} Job Titles"
 
+
+
 puts "Creating some Companies!"
 
 law_firm = Company.create!(
@@ -401,6 +782,10 @@ law_firm = Company.create!(
 
 andreanum = Company.create(
   name: 'Andreanum'
+)
+
+deloitte = Company.create(
+  name: 'Deloitte'
 )
 
 talent = Company.create!(
@@ -423,6 +808,10 @@ le_wagon = Company.create!(
   name: 'Le Wagon',
 )
 
+microsoft = Company.create(
+  name: "Microsoft"
+)
+
 apple = Company.create!(
   name: 'Apple',
 )
@@ -437,10 +826,11 @@ stern = Company.create(
 hyve = Company.create(
   name: 'Hyve')
 
-education = JobFunction.create(
-  name: 'Education'
-  )
+self_owned = Company.create(
+  name: 'Self owed company')
 
+solar_energy = Company.create(
+  name: 'Solar Energy')
 
 puts "Finished creating #{Company.all.count} Companies"
 
@@ -450,8 +840,16 @@ law = JobFunction.create!(
   name: 'Law',
 )
 
+education = JobFunction.create(
+  name: 'Education'
+  )
+
 marketing = JobFunction.create!(
   name: 'Marketing',
+)
+
+research = JobFunction.create!(
+  name: 'Research',
 )
 
 it = JobFunction.create!(
@@ -489,7 +887,7 @@ puts "Finished creating #{JobFunction.all.count} Functions"
 puts "Creating some Industries!"
 
 law_industry = Industry.create(
-  name: 'Big Ass Law')
+  name: 'Big Law Firm')
 
 education_industry = Industry.create(
   name: 'Lighting')
@@ -498,8 +896,20 @@ healthcare = Industry.create!(
   name: 'Healthcare',
 )
 
+health = Industry.create!(
+  name: 'Health',
+)
+
 construction = Industry.create!(
   name: 'Construction',
+)
+
+market_research = Industry.create!(
+  name: 'Market Research',
+)
+
+web_development = Industry.create!(
+  name: 'Web Development',
 )
 
 industry0 = Industry.create(
@@ -512,6 +922,9 @@ industry2 = Industry.create(
   name: 'Construction'
   )
 
+solar = Industry.create(
+  name: 'Solar'
+  )
 
 hospitality = Industry.create!(
   name: 'Hospitality',
@@ -532,53 +945,47 @@ puts "Finished creating #{Industry.all.count} industries"
 
 puts "Creating some Career Positions!"
 
-felix_career = CareerPosition.create(
-  user_id: felix.id,
-  job_title: teacher,
-  job_function: education,
-  company: andreanum,
-  industry: education_industry
-)
-
-robert_career = CareerPosition.create(
-  user_id: robert.id,
-  job_title: lawyer,
-  job_function: law,
-  company: law_firm,
-  industry: law_industry
-)
-
-hans_career = CareerPosition.create(
-  user_id: hans.id,
-  job_title: intern,
-  job_function: law,
-  company: law_firm,
-  industry: law_industry
-)
-
 juan_career = CareerPosition.create(
   user_id: juan.id,
   job_title: junior_developer,
   job_function: it,
-  company: apple,
+  company: microsoft,
   industry: consumer_electronics
 )
 
-jonas_career = CareerPosition.create(
-  user_id: jonas.id,
-  job_title: agile_coach,
-  job_function: strategy,
-  company: talent,
-  industry: construction
+winson_career = CareerPosition.create(
+  user_id: winson.id,
+  job_title: data_scientist,
+  job_function: research ,
+  company: deloitte ,
+  industry: market_research
 )
+
+paal_career = CareerPosition.create(
+  user_id: paal.id,
+  job_title: entrepreneur ,
+  job_function: education,
+  company: company0 ,
+  industry: web_development
+)
+
+fritz_career = CareerPosition.create(
+  user_id: fritz.id,
+  job_title: business_development,
+  job_function: strategy ,
+  company: merck ,
+  industry: healthcare
+)
+
 
 career_position0 = CareerPosition.create(
   user_id: dale.id,
   job_function: job_function0,
-  industry: industry0,
-  company: company0,
+  industry: industry1,
+  company: company1,
   job_title: title0
   )
+
 career_position1 = CareerPosition.create(
   user_id: damon.id,
   job_function: job_function1,
@@ -586,6 +993,7 @@ career_position1 = CareerPosition.create(
   company: company1,
   job_title: title1
   )
+
 career_position2 = CareerPosition.create(
   user_id: ben.id,
   job_function: job_function2,
@@ -593,23 +1001,6 @@ career_position2 = CareerPosition.create(
   company: company2,
   job_title: title2
   )
-
-hannah_career1 = CareerPosition.create!(
-  user_id: hannah.id,
-  job_title: ux_designer,
-  job_function: design,
-  company: merck,
-  industry: healthcare
-)
-
-hannah_career2 = CareerPosition.create!(
-  user_id: hannah.id,
-  job_title: ux_designer,
-  job_function: job_function1,
-  company: company1,
-  industry: industry1
-)
-
 
 marcos_career_position = CareerPosition.create(
   user_id: marco.id,
@@ -624,6 +1015,96 @@ filippos_career_position = CareerPosition.create(
   company: hyve,
   industry: lighting,
   job_function: procurement)
+
+hannah_career1 = CareerPosition.create!(
+  user_id: hannah.id,
+  job_title: ux_designer,
+  job_function: design,
+  company: merck,
+  industry: healthcare
+)
+
+robert_career = CareerPosition.create(
+  user_id: robert.id,
+  job_title: lawyer,
+  job_function: law,
+  company: law_firm,
+  industry: law_industry
+)
+
+hans_career = CareerPosition.create(
+  user_id: hans.id,
+  job_title: ux_designer,
+  job_function: law,
+  company: law_firm,
+  industry: law_industry
+)
+
+
+valerie_career = CareerPosition.create(
+  user_id: valerie.id,
+  job_title: teacher,
+  job_function: education,
+  company:company0,
+  industry: web_development
+)
+
+felix_career = CareerPosition.create(
+  user_id: felix.id,
+  job_title: teacher,
+  job_function: education,
+  company: andreanum,
+  industry: education_industry
+)
+
+jonas_career = CareerPosition.create(
+  user_id: jonas.id,
+  job_title: agile_coach,
+  job_function: strategy,
+  company: talent,
+  industry: construction
+)
+
+
+adora_career = CareerPosition.create(
+  user_id: adora.id,
+  job_title: marketer ,
+  job_function: marketing ,
+  company: company2 ,
+  industry: consumer_electronics
+)
+
+alex_career = CareerPosition.create(
+  user_id: alex.id,
+  job_title: business_development,
+  job_function: strategy ,
+  company: solar_energy ,
+  industry: solar
+)
+
+rutger_career = CareerPosition.create(
+  user_id:rutger.id,
+  job_title: entrepreneur,
+  job_function: job_function0 ,
+  company: self_owned ,
+  industry: web_development
+)
+
+chris_career = CareerPosition.create(
+  user_id: chris.id,
+  job_title: marketer,
+  job_function: marketing ,
+  company: merck ,
+  industry: healthcare
+)
+
+giulia_career = CareerPosition.create(
+  user_id: giulia.id,
+  job_title: entrepreneur,
+  job_function: job_function0,
+  company: self_owned ,
+  industry: health
+)
 
 puts "Finished creating #{CareerPosition.all.count} Career Positions"
 puts ''
@@ -737,9 +1218,48 @@ puts "Finished creating #{Skill.all.count} skills"
 
 puts 'Creating some professional interests'
 
-uxdesign = ProfessionalInterest.create(
-  user_id: jonas.id,
-  name: 'uxdesign')
+cloud = ProfessionalInterest.create(
+  user_id: juan.id,
+  name: "Cloud computing"
+)
+
+data_science = ProfessionalInterest.create(
+  user_id: winson.id,
+  name: "Data Science"
+)
+
+education = ProfessionalInterest.create(
+  user_id: paal.id,
+  name: "Education"
+)
+
+tech = ProfessionalInterest.create(
+  user_id: paal.id,
+  name: 'Tech')
+
+business = ProfessionalInterest.create(
+  user_id: fritz.id,
+  name: 'Business')
+
+tech = ProfessionalInterest.create(
+  user_id: fritz.id,
+  name: 'Tech')
+
+chemical_engineer = ProfessionalInterest.create(
+  user_id: dale.id,
+  name: 'Chemical Engineering')
+
+code = ProfessionalInterest.create(
+  user_id: dale.id,
+  name: 'Code')
+
+product_management = ProfessionalInterest.create(
+  user_id: damon.id,
+  name: 'Product Management')
+
+code = ProfessionalInterest.create(
+  user_id: damon.id,
+  name: 'Code')
 
 professional_interest0 = ProfessionalInterest.create(
   name: 'RoR',
@@ -754,17 +1274,97 @@ professional_interest2 = ProfessionalInterest.create(
   user_id: ben.id
   )
 
-dogs = ProfessionalInterest.create(
+design = ProfessionalInterest.create(
   user_id: marco.id,
-  name: 'dogs')
+  name: 'Design')
 
-finance = ProfessionalInterest.create(
+procurement = ProfessionalInterest.create(
   user_id: filippo.id,
-  name: 'finance')
+  name: 'Procurement')
 
 marketing = ProfessionalInterest.create(
   user_id: filippo.id,
-  name: 'marketing')
+  name: 'Marketing')
+
+health = ProfessionalInterest.create(
+  user_id: hannah.id,
+  name: 'Health')
+
+tech = ProfessionalInterest.create(
+  user_id: hannah.id,
+  name: 'Tech')
+
+law = ProfessionalInterest.create(
+  user_id: robert.id,
+  name: 'Law')
+
+law = ProfessionalInterest.create(
+  user_id: hans.id,
+  name: 'Law')
+
+tech = ProfessionalInterest.create(
+  user_id: hans.id,
+  name: 'Tech')
+
+education = ProfessionalInterest.create(
+  user_id: valerie.id,
+  name: "Education"
+)
+
+tech = ProfessionalInterest.create(
+  user_id: valerie.id,
+  name: 'Tech')
+
+
+education = ProfessionalInterest.create(
+  user_id: felix.id,
+  name: "Education"
+)
+
+management = ProfessionalInterest.create(
+  user_id: jonas.id,
+  name: "Management"
+)
+
+marketing = ProfessionalInterest.create(
+  user_id: adora.id,
+  name: "Marketing"
+)
+
+tech = ProfessionalInterest.create(
+  user_id: adora.id,
+  name: "Tech"
+)
+
+business_development = ProfessionalInterest.create(
+  user_id: alex.id,
+  name: "Business Development"
+)
+
+tech = ProfessionalInterest.create(
+  user_id: rutger.id,
+  name: "Tech"
+)
+
+code = ProfessionalInterest.create(
+  user_id: rutger.id,
+  name: 'Code')
+
+marketing = ProfessionalInterest.create(
+  user_id: chris.id,
+  name: "Marketing"
+)
+
+management = ProfessionalInterest.create(
+  user_id: giulia.id,
+  name: "Education"
+)
+
+business_development = ProfessionalInterest.create(
+  user_id: giulia.id,
+  name: "Business Development"
+)
+
 
 puts "Finished creating #{ProfessionalInterest.all.count} professional interests"
 
