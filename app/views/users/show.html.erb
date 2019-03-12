@@ -3,8 +3,8 @@
     <div class="card-user-name">
       <h2 style= "color: #FD5F00"><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
     </div>
-    <div class="card-user-photo avatar-bordered"">
-      <%= @user.photo %>
+    <div>
+      <%= image_tag @user.photo, class: "card-user-user avatar-bordered" %>
     </div>
   </div>
   <br>
