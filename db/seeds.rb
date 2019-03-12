@@ -8,6 +8,7 @@
 
 
 puts "Cleaning DB"
+CareerPosition.destroy_all
 JobTitle.destroy_all
 JobFunction.destroy_all
 Industry.destroy_all
@@ -17,7 +18,6 @@ Activity.destroy_all
 Availability.destroy_all
 ProfessionalInterest.destroy_all
 Skill.destroy_all
-CareerPosition.destroy_all
 User.destroy_all
 
 
@@ -267,206 +267,206 @@ puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
 
-running = Activity.create!(
-  description: 'go for runs',
+juan_running = Activity.create!(
+  description: 'go running',
   user_id: juan.id
 )
 
-lunch = Activity.create!(
-  description: 'go for lunch',
+juan_lunch = Activity.create!(
+  description: 'have lunch',
   user_id: juan.id
 )
 
-coffee = Activity.create(
+winson_coffee = Activity.create(
   user_id: winson.id,
   description: 'have a coffee')
 
-jogging = Activity.create(
+winson_jogging = Activity.create(
   user_id: winson.id,
-  description: 'jog')
+  description: 'go jogging')
 
-lazy = Activity.create(
+paal_bubbles = Activity.create(
   user_id: paal.id,
-  description: 'play PUBG')
+  description: 'blow bubbles')
 
-swimming = Activity.create!(
-  description: 'go for a swim',
+paal_swimming = Activity.create!(
+  description: 'go swimming',
   user_id: paal.id
 )
 
-got = Activity.create(
+fritz_beer = Activity.create(
   user_id: fritz.id,
-  description: 'watch Game of Thrones')
+  description: 'drink a beer')
 
-coffee = Activity.create(
+frity_coffee = Activity.create(
   user_id: fritz.id,
   description: 'have a coffee')
 
-activity0 = Activity.create(
-  description: 'go for walks',
+dale_dog = Activity.create(
+  description: 'walk the dog',
   user_id: dale.id
   )
 
-tea = Activity.create(
+dale_coffee = Activity.create(
   user_id: dale.id,
-  description: 'drink tea')
+  description: 'have a coffee')
 
-activity1 = Activity.create(
-  description: 'drink beer',
+damon_beer = Activity.create(
+  description: 'drink a beer',
   user_id: damon.id
   )
 
-lazy = Activity.create(
+damon_running = Activity.create(
   user_id: damon.id,
-  description: 'Play FIFA 14')
+  description: 'go running')
 
-activity2 = Activity.create(
-  description: 'go for lunch',
+ben_jogging = Activity.create(
+  description: 'go jogging',
   user_id: ben.id
   )
 
-coffee = Activity.create(
+ben_coffee = Activity.create(
   user_id: ben.id,
   description: 'have a coffee')
 
 
-jogging = Activity.create(
+marco_jogging = Activity.create(
   user_id: marco.id,
-  description: 'jog')
+  description: 'go jogging')
 
-walking = Activity.create(
+marco_dog = Activity.create(
   user_id: marco.id,
-  description: 'go for walks')
+  description: 'walk the dog')
 
-coffee = Activity.create(
+marco_coffee = Activity.create(
   user_id: marco.id,
   description: 'have a coffee')
 
 
-running = Activity.create(
+filippo_running = Activity.create(
   user_id: filippo.id,
-  description: 'go for runs')
+  description: 'go running')
 
-walkthedog = Activity.create(
+filippo_walkthedog = Activity.create(
   user_id: filippo.id,
   description: 'walk the dog')
 
-tea = Activity.create(
+hannah_coffee = Activity.create(
   user_id: hannah.id,
-  description: 'drink tea')
+  description: 'have a coffe')
 
-lazy = Activity.create(
+hannah_bubbles = Activity.create(
   user_id: hannah.id,
-  description: 'play FIFA 14')
+  description: 'blow bubbles')
 
-coffee = Activity.create(
+robert_coffee = Activity.create(
   user_id: robert.id,
   description: 'have a coffee')
 
-lunch = Activity.create!(
-  description: 'go out for lunch',
+rober_lunch = Activity.create!(
+  description: 'have lunch',
   user_id: robert.id
 )
 
-coffee = Activity.create(
+hans_coffee = Activity.create(
   user_id: hans.id,
   description: 'have a coffee')
 
-swimming = Activity.create!(
-  description: 'go for a swim',
+hans_swimming = Activity.create!(
+  description: 'go swimming',
   user_id: hans.id
 )
 
-coffee = Activity.create(
+valerie_coffee = Activity.create(
   user_id: valerie.id,
   description: 'have a coffee')
 
 
-lazy = Activity.create(
+felix_bubbles = Activity.create(
   user_id: felix.id,
-  description: 'Play FIFA 14')
+  description: 'blow bubbles')
 
-lotr = Activity.create(
+felix_lunch = Activity.create(
   user_id: felix.id,
-  description: 'Watch Lord of the Rings')
+  description: 'have lunch')
 
-coffee = Activity.create(
+robert_coffee = Activity.create(
   user_id: robert.id,
-  description: 'Have a coffee')
+  description: 'have a coffee')
 
-coffee = Activity.create(
+hans_coffee = Activity.create(
   user_id: hans.id,
-  description: 'Have a coffee')
+  description: 'have a coffee')
 
-lunch = Activity.create!(
-  description: 'Go out for lunch',
+jonas_lunch = Activity.create!(
+  description: 'have lunch',
   user_id: jonas.id
 )
 
-walkthedog = Activity.create(
+valerie_dog = Activity.create(
   user_id: valerie.id,
   description: 'walk the dog')
 
-swimming = Activity.create!(
-  description: 'go for a swim',
+felix_swimming = Activity.create!(
+  description: 'go swimming',
   user_id: felix.id
 )
 
-jogging = Activity.create(
+felix_jogging = Activity.create(
   user_id: felix.id,
-  description: 'jog')
+  description: 'go jogging')
 
-lazy = Activity.create(
+jonas_lazy = Activity.create(
   user_id: jonas.id,
-  description: 'play FIFA 14')
+  description: 'blow bubbles')
 
-coffee = Activity.create(
+jonas_coffee = Activity.create(
   user_id: jonas.id,
   description: 'have a coffee')
 
-running = Activity.create(
+adora_running = Activity.create(
   user_id: adora.id,
-  description: 'go for runs')
+  description: 'go running')
 
-activity1 = Activity.create(
-  description: 'drink beer',
+adora_beer = Activity.create(
+  description: 'drink a beer',
   user_id: adora.id
   )
 
-coffee = Activity.create(
+alex_coffee = Activity.create(
   user_id: alex.id,
   description: 'have a coffee')
 
-activity0 = Activity.create(
-  description: 'go for walks',
+alex_dog = Activity.create(
+  description: 'walk the dog',
   user_id: alex.id
   )
 
-running = Activity.create!(
-  description: 'go for runs',
+rutger_running = Activity.create!(
+  description: 'go running',
   user_id: rutger.id
 )
 
-lunch = Activity.create!(
-  description: 'go for lunch',
+rutger_lunch = Activity.create!(
+  description: 'have lunch',
   user_id: rutger.id
 )
 
-coffee = Activity.create(
+chris_coffee = Activity.create(
   user_id: chris.id,
   description: 'have a coffee')
 
-lazy = Activity.create(
+chris_bubbles = Activity.create(
   user_id: chris.id,
-  description: 'play FIFA 14')
+  description: 'blow bubbles')
 
-walkthedog = Activity.create(
+giulia_dog = Activity.create(
   user_id: giulia.id,
   description: 'walk the dog')
 
-tea = Activity.create(
+giulia_coffee = Activity.create(
   user_id: giulia.id,
-  description: 'drink tea')
+  description: 'have a coffee')
 
 puts "Finished creating #{Activity.all.count} activities"
 
@@ -827,7 +827,10 @@ hyve = Company.create(
   name: 'Hyve')
 
 self_owned = Company.create(
-  name: 'Self owed company')
+  name: "Rutger's Empire")
+
+health_coach = Company.create(
+  name: "Your Health Coach")
 
 solar_energy = Company.create(
   name: 'Solar Energy')
@@ -1102,117 +1105,252 @@ giulia_career = CareerPosition.create(
   user_id: giulia.id,
   job_title: entrepreneur,
   job_function: job_function0,
-  company: self_owned ,
+  company: health_coach ,
   industry: health
 )
 
 puts "Finished creating #{CareerPosition.all.count} Career Positions"
-puts ''
 
-puts "Creating NO Meetings -- SEED UPDATED NEEDED FOR THIS!"
-puts ''
 
-hannah_meeting = Meeting.create!(
+puts "Creating some Meetings!"
+
+
+juan_jonas_meeting = Meeting.create!(
   status: 'accepted',
   meeting_date_time: DateTime.new(2020,3,10,6,0,0),
-  suggested_activity: lunch,
+  suggested_activity: 'go running',
   meeting_location: 'at your place',
   sender_id: juan.id,
-  recipient_id: jonas.id
+  recipient_id: jonas.id,
+  topic: 'Business Development'
 )
 
-juan_meeting = Meeting.create!(
+filippo_marco_meeting = Meeting.create!(
   status: 'pending',
   meeting_date_time: DateTime.new(2021,3,14,8,0,0),
-  suggested_activity: running,
+  suggested_activity: 'blow bubbles',
   meeting_location: 'at my place',
   sender_id: filippo.id,
-  recipient_id: marco.id
+  recipient_id: marco.id,
+  topic: 'Recruiting'
 )
 
-meeting0 = Meeting.create(
+marco_juan_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
-  suggested_activity: 'Walk',
+  suggested_activity: 'go running',
   meeting_location: '20 Bourke St',
   sender_id: marco.id,
-  recipient_id: juan.id
+  recipient_id: juan.id,
+  topic: 'Business in Latin America'
+)
 
-  )
-meeting1 = Meeting.create(
+jonas_filippo_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,7,9,8,0,0),
-  suggested_activity: 'Walk',
+  suggested_activity: 'go swimming',
   meeting_location: '20 Bourke St',
   sender_id: jonas.id,
-  recipient_id: filippo.id
+  recipient_id: filippo.id,
+  topic: 'Tech in Italy'
+)
 
-  )
-meeting2 = Meeting.create(
+jonas_marco_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,1,11,6,0,0),
-  suggested_activity: 'Walk',
+  suggested_activity: 'go swimming',
   meeting_location: '20 Bourke St',
   sender_id: jonas.id,
-  recipient_id: marco.id
-  )
+  recipient_id: marco.id,
+  topic: 'Italian Startups'
+)
 
-run_meeting = Meeting.create(
+marco_juan_meeting = Meeting.create(
   sender_id: marco.id,
   recipient_id: juan.id,
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
-  suggested_activity: 'Jogging',
-  meeting_location: '70 Dorcas St')
+  suggested_activity: 'go swimming',
+  meeting_location: '70 Dorcas St',
+  topic: 'Professional Skiing'
+)
 
-eating_meeting = Meeting.create(
+
+jonas_robert_meeting = Meeting.create(
   sender_id: jonas.id,
-  recipient_id: filippo.id,
+  recipient_id: robert.id,
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,12,8,0,0),
-  suggested_activity: 'Eating good food',
-  meeting_location: 'McDonalds Swanston Street')
 
-puts 'Finished creating #{Meeting.all.count} meetings'
+  suggested_activity: 'go jogging',
+  meeting_location: 'McDonalds Swanston Street',
+  topic: 'Law in general'
+)
+
+
+puts "Finished creating #{Meeting.all.count} meetings"
 
 puts "Creating some Skills!"
 
-leadership = Skill.create(
-  user_id: marco.id,
-  name: 'Leadership')
+juan_skill_1 = Skill.create(
+  user_id: juan.id,
+  name: 'Ruby on Rails')
 
-uxdesign = Skill.create(
-  user_id: marco.id,
-  name: 'UX Design')
+juan_skill_2 = Skill.create(
+  user_id: juan.id,
+  name: 'CSS')
 
-business = Skill.create(
+winson_skill_1 = Skill.create(
+  user_id: winson.id,
+  name: 'Python')
+
+winson_skill_2 = Skill.create(
+  user_id: winson.id,
+  name: 'Data Science')
+
+paal_skill_1 = Skill.create(
+  user_id: paal.id,
+  name: 'Business Development')
+
+paal_skill_2 = Skill.create(
+  user_id: paal.id,
+  name: 'Networking')
+
+fritz_skill_1 = Skill.create(
+  user_id: fritz.id,
+  name: 'Investment Banking')
+
+fritz_skill_2 = Skill.create(
+  user_id: fritz.id,
+  name: 'Programming')
+
+dale_skill_1 = Skill.create(
+  user_id: dale.id,
+  name: 'Chemical Engineering')
+
+dale_skill_2 = Skill.create(
+  user_id: dale.id,
+  name: 'Completing Challenges')
+
+damon_skill_1 = Skill.create(
+  user_id: damon.id,
+  name: 'Building Products')
+
+damon_skill_2 = Skill.create(
+  user_id: damon.id,
+  name: 'Creative Thinking')
+
+ben_skill_1 = Skill.create(
+  user_id: ben.id,
+  name: 'Business')
+
+ben_skill_2 = Skill.create(
+  user_id: ben.id,
+  name: 'Public Speaking')
+
+marco_skill_1 = Skill.create(
   user_id: marco.id,
+  name: 'Italian Rethoric')
+
+marco_skill_2 = Skill.create(
+  user_id: marco.id,
+  name: 'Professional Cooking')
+
+filippo_skill_1 = Skill.create(
+  user_id: filippo.id,
+  name: 'Technical Repairs')
+
+filippo_skill_2 = Skill.create(
+  user_id: filippo.id,
+  name: 'Engineering')
+
+hannah_skill_1 = Skill.create(
+  user_id: hannah.id,
+  name: 'Javascript')
+
+hannah_skill_2 = Skill.create(
+  user_id: hannah.id,
+  name: 'PHP')
+
+robert_skill_1 = Skill.create(
+  user_id: robert.id,
+  name: 'Corporate Law')
+
+robert_skill_2 = Skill.create(
+  user_id: robert.id,
+  name: 'Economics')
+
+hans_skill_1 = Skill.create(
+  user_id: hans.id,
+  name: 'Civil Law')
+
+hans_skill_2 = Skill.create(
+  user_id: hans.id,
+  name: 'Local Politics')
+
+valerie_skill_1 = Skill.create(
+  user_id: valerie.id,
+  name: 'Ruby on Rails')
+
+valerie_skill_2 = Skill.create(
+  user_id: valerie.id,
+  name: 'StartUps')
+
+felix_skill_1 = Skill.create(
+  user_id: felix.id,
+  name: 'Teaching')
+
+felix_skill_2 = Skill.create(
+  user_id: felix.id,
+  name: 'Ancient History')
+
+jonas_skill_1 = Skill.create(
+  user_id: jonas.id,
   name: 'Business Analysis')
 
-ai = Skill.create(
-  user_id: filippo.id,
-  name: 'Artificial Intelligence')
+jonas_skill_2 = Skill.create(
+  user_id: jonas.id,
+  name: 'Coaching')
 
-skill0 = Skill.create(
-  name: 'Leadership',
-  user_id: dale.id
-  )
-skill1 = Skill.create(
-  name: 'Time Management',
-  user_id: damon.id
-  )
-skill2 = Skill.create(
-  name: 'Adaptability',
-  user_id: ben.id
-  )
+adora_skill_1 = Skill.create(
+  user_id: adora.id,
+  name: 'Marketing Planning')
 
-analysis = Skill.create(
-  user_id: filippo.id,
-  name: 'Analysis')
+adora_skill_2 = Skill.create(
+  user_id: adora.id,
+  name: 'Freelancing')
 
-algebra = Skill.create(
-  user_id: filippo.id,
-  name: 'Algebra')
+alex_skill_1 = Skill.create(
+  user_id: alex.id,
+  name: 'Sustainability')
+
+alex_skill_2 = Skill.create(
+  user_id: alex.id,
+  name: 'Ecology')
+
+rutger_skill_1 = Skill.create(
+  user_id: rutger.id,
+  name: 'HTML')
+
+rutger_skill_2 = Skill.create(
+  user_id: rutger.id,
+  name: 'CSS')
+
+chris_skill_1 = Skill.create(
+  user_id: chris.id,
+  name: 'Commerce')
+
+chris_skill_2 = Skill.create(
+  user_id: chris.id,
+  name: 'Venture Capital')
+
+giulia_skill_1 = Skill.create(
+  user_id: giulia.id,
+  name: 'Chemistry')
+
+giulia_skill_2 = Skill.create(
+  user_id: giulia.id,
+  name: 'Consulting')
 
 puts "Finished creating #{Skill.all.count} skills"
 
