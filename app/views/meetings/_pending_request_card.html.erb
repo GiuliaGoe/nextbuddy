@@ -1,7 +1,10 @@
+
 <% sender = User.find(meeting.sender_id) %>
 <% receiver = User.find(meeting.recipient_id) %>
-<div class="card-meetings">
-  <% if current_user == sender %>
+
+
+<% if current_user.id == meeting.sender_id %>
+  <div class="card-meetings">
     <div class="meeting-name">
       <%= receiver.first_name %> <%= receiver.last_name[0,1] %>.
     </div>
@@ -24,7 +27,10 @@
       Sent
     </div>
     <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", class: "btn btn-book-meeting", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
-  <% else current_user == receiver %>
+  </div>
+<% end %>
+<% if current_user.id == meeting.recipient_id %>
+  <div class="card-meetings">
     <div class="meeting-name">
       <%= sender.first_name %> <%= sender.last_name[0,1] %>.
     </div>
@@ -48,5 +54,5 @@
     </div>
     <%= link_to "Accept", accept_meeting_path(meeting), id: "accept", class: "btn btn-book-meeting", data: { confirm: "That's awesome. You are one step closer having a great networking experience." } %>
     <%= link_to "Decline", decline_meeting_path(meeting), id: "decline", class: "btn btn-book-meeting", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
-  <% end %>
-</div>
+  </div>
+<% end %>
