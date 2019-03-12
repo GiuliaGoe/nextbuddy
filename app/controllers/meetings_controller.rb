@@ -8,6 +8,7 @@ class MeetingsController < ApplicationController
     @cancelled_meetings = Meeting.all.where(status: "cancelled")
     @received_meetings = Meeting.where(recipient_id: current_user.id)
     @sent_meetings = Meeting.where(sender_id: current_user.id)
+
   end
 
   def new
@@ -150,7 +151,9 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new
     @meeting.status = "pending"
     string_to_date_time
-    @meeting.meeting_date_time = @new_date
+    date_time_to_string
+
+    @meeting.meeting_date_time = @new_string.to_s
     @meeting.suggested_activity = params[:activity]
     @meeting.meeting_location = params[:meeting_location]
     @meeting.topic = params[:topic]
@@ -169,6 +172,81 @@ class MeetingsController < ApplicationController
     @new_date = new_string.to_datetime
   end
 
+  def date_time_to_string
+    @new_string = @new_date.strftime("%A, %e %B at%l:%M %p")
+  end
+
+  # def relevant_activities
+  #   @relevant_activities = []
+  #   avaiable_activities = []
+  #   @user.activities.each do |avail|
+  #     avaiable_activities << avail.description
+  #   end
+  #   if avaiable_activities.include?("have lunch")
+  #   end
+
+  #   if avaiable_activities.include?("go swimming")
+  #   end
+
+  #       if avaiable_activities.include?("go running")
+  #   end
+  #       if avaiable_activities.include?("go jogging")
+  #   end
+  #       if avaiable_activities.include?("have a coffee")
+  #   end
+  #       if avaiable_activities.include?("blow bubbles")
+  #   end
+
+  #   if avaiable_activities.include?("drink a beer")
+  #   end
+
+  #   if avaiable_activities.include?("walk the dog")
+  #   end
+
+  # end
+
+def relevant_times
+      @relevant_times = []
+      available_periods = []
+      @user.availabilities.each do |avail|
+         available_periods << avail.period_of_day
+      end
+      if available_periods.include?("morning")
+        @relevant_times << '7:00'
+        @relevant_times << '7:30'
+        @relevant_times << '8:00'
+        @relevant_times << '8:30'
+        @relevant_times << '9:00'
+        @relevant_times << '9:30'
+     end
+
+      if available_periods.include?("noon")
+        @relevant_times << '11:00'
+        @relevant_times << '11:30'
+        @relevant_times << '12:00'
+        @relevant_times << '12:30'
+        @relevant_times << '13:00'
+        @relevant_times << '13:30'
+     end
+
+      if available_periods.include?("afternoon")
+        @relevant_times << '14:00'
+        @relevant_times << '14:30'
+        @relevant_times << '15:00'
+        @relevant_times << '15:30'
+        @relevant_times << '16:00'
+        @relevant_times << '16:30'
+     end
+      if available_periods.include?("evening")
+        @relevant_times << '17:00'
+        @relevant_times << '17:30'
+        @relevant_times << '18:00'
+        @relevant_times << '18:30'
+        @relevant_times << '19:00'
+        @relevant_times << '19:30'
+      end
+      @relevant_times
+   end
   def edit
   end
 
