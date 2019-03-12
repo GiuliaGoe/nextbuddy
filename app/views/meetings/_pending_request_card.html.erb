@@ -2,49 +2,60 @@
 <% receiver = User.find(meeting.recipient_id) %>
 
 <div class="request">
-  <div class="request-name">
-    <%= sender.first_name %> <%= sender.last_name[0,1] %>.
-  </div>
-  <div class="request-career">
-    <% if current_user.career_positions.any? %>
-      <%= current_user.current_title.name %>
-      <br>
-      @ <%= current_user.current_company.name %>
-    <% end %>
-  </div>
-  <div >
-    <img src="<%= sender.photo %>" class="avatar-bordered-meeting-preview" />
-  </div>
-  <div class="request-message">
-    <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>? I would like to talk about <%= meeting.topic %> with you."</em>
-  </div>
-  <% if current_user == receiver %>
-      <div class="meeting-status">
-        Pending
-      </div>
-
+  <% if current_user == sender %>
+    <div class="request-name">
+      <%= receiver.first_name %> <%= receiver.last_name[0,1] %>.
+    </div>
+    <div class="request-career">
+      <% if receiver.career_positions.any? %>
+        <%= receiver.current_title.name %>
+        <br>
+        @ <%= receiver.current_company.name %>
+      <% end %>
+    </div>
+    <div >
+      <img src="<%= receiver.photo %>" class="avatar-bordered-meeting-preview" />
+    </div>
+    <div class="request-message">
+      <em>"You would like to <%= meeting.suggested_activity %> with <%= receiver.first_name %> <%= receiver.last_name[0,1] %>. at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>. You would like to talk about <%= meeting.topic %>."</em>
+    </div>
+    <div class="meeting-status">
+      Pending
+    </div>
     <!-- Sent or Received -->
-      <div class="meeting-responsibility">
-        Received
-      </div>
-    <% else current_user == sender %>
-      <div class="meeting-status">
-        Pending
-      </div>
-
-    <!-- Sent or Received -->
-      <div class="meeting-responsibility">
-        Sent
-      </div>
-    <% end %>
-  <div class="request-buttons">
-
-
-    <% if current_user == sender %>
+    <div class="meeting-responsibility">
+      Sent
+    </div>
+    <div class="request-buttons">
       <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", class: "btn btn-book-meeting received", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
-    <% else current_user == receiver %>
+    </div>
+  <% else current_user == receiver %>
+    <div class="request-name">
+      <%= sender.first_name %> <%= sender.last_name[0,1] %>.
+    </div>
+    <div class="request-career">
+      <% if sender.career_positions.any? %>
+        <%= sender.current_title.name %>
+        <br>
+        @ <%= sender.current_company.name %>
+      <% end %>
+    </div>
+    <div >
+      <img src="<%= sender.photo %>" class="avatar-bordered-meeting-preview" />
+    </div>
+    <div class="request-message">
+      <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+    </div>
+    <div class="meeting-status">
+      Pending
+    </div>
+    <!-- Sent or Received -->
+    <div class="meeting-responsibility">
+      Received
+    </div>
+    <div class="request-buttons">
       <%= link_to "Accept", accept_meeting_path(meeting), id: "accept", class: "btn btn-book-meeting received", data: { confirm: "That's awesome. You are one step closer having a great networking experience." } %>
       <%= link_to "Decline", decline_meeting_path(meeting), id: "decline", class: "btn btn-book-meeting received", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
