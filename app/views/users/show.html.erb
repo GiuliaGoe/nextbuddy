@@ -34,11 +34,27 @@
 
   <div class="bio">
     <h6>Bio:</h6>
-      <p><%= @user.bio[0, 200] %>...</p>
+    <p><%= @user.bio[0, 100] %>...</p>
+    <p><a data-toggle="modal" href="#showBio">Read more</a></p>
+  </div>
+
+
+  <div id="showBio" class="modal fade">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5> <%= @user.first_name %>'s Bio: </h5>
+      </div>
+      <div class="modal-body">
+        <p> <%= @user.bio %> </p>
+      </div>
+    </div>
   </div>
 
   <div class="activity">
-    <h6>I love to ...</h6>
+    <h6>What I like to do:</h6>
     <% @user.activities.each do |activity| %>
       <p><%= activity.description%></p>
     <% end %>
