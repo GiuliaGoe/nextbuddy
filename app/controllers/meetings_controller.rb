@@ -22,6 +22,7 @@ class MeetingsController < ApplicationController
     # 4 store these in a list that is displayed in the form in the view
     relevant_dates
     relevant_times
+    relevant_activities
   end
 
   def today
@@ -152,7 +153,8 @@ class MeetingsController < ApplicationController
     @meeting.status = "pending"
     string_to_date_time
     date_time_to_string
-
+    selected_activity
+    @meeting.suggested_activity = @selected_activity
     @meeting.meeting_date_time = @new_string.to_s
     @meeting.suggested_activity = params[:activity]
     @meeting.meeting_location = params[:meeting_location]
@@ -176,77 +178,94 @@ class MeetingsController < ApplicationController
     @new_string = @new_date.strftime("%A, %e %B at%l:%M %p")
   end
 
-  # def relevant_activities
-  #   @relevant_activities = []
-  #   avaiable_activities = []
-  #   @user.activities.each do |avail|
-  #     avaiable_activities << avail.description
-  #   end
-  #   if avaiable_activities.include?("have lunch")
-  #   end
+  def selected_activity
+    @selected_activity = params[:relevant_activities]
+  end
 
-  #   if avaiable_activities.include?("go swimming")
-  #   end
+  def relevant_activities
+    @relevant_activities = []
+    available_activities = []
+    @user.activities.each do |avail|
+      available_activities << avail.description
+    end
 
-  #       if avaiable_activities.include?("go running")
-  #   end
-  #       if avaiable_activities.include?("go jogging")
-  #   end
-  #       if avaiable_activities.include?("have a coffee")
-  #   end
-  #       if avaiable_activities.include?("blow bubbles")
-  #   end
+    if available_activities.include?("have lunch")
+      @relevant_activities << 'have lunch'
+    end
 
-  #   if avaiable_activities.include?("drink a beer")
-  #   end
+    if available_activities.include?("go swimming")
+       @relevant_activities << 'go swimming'
+    end
 
-  #   if avaiable_activities.include?("walk the dog")
-  #   end
+    if available_activities.include?("go running")
+      @relevant_activities << 'go running'
+    end
 
-  # end
+    if available_activities.include?("go jogging")
+      @relevant_activities << 'go jogging'
+    end
+
+    if available_activities.include?("have a coffee")
+      @relevant_activities << 'have a coffee'
+    end
+
+    if available_activities.include?("blow bubbles")
+      @relevant_activities << 'blow bubbles'
+    end
+
+    if available_activities.include?("drink a beer")
+      @relevant_activities << 'drink a beer'
+    end
+
+    if available_activities.include?("walk the dog")
+      @relevant_activities << 'walk the dog'
+    end
+    @relevant_activities
+  end
 
 def relevant_times
-      @relevant_times = []
-      available_periods = []
-      @user.availabilities.each do |avail|
-         available_periods << avail.period_of_day
-      end
-      if available_periods.include?("morning")
-        @relevant_times << '7:00'
-        @relevant_times << '7:30'
-        @relevant_times << '8:00'
-        @relevant_times << '8:30'
-        @relevant_times << '9:00'
-        @relevant_times << '9:30'
-     end
+  @relevant_times = []
+  available_periods = []
+  @user.availabilities.each do |avail|
+    available_periods << avail.period_of_day
+  end
+  if available_periods.include?("morning")
+    @relevant_times << '7:00'
+    @relevant_times << '7:30'
+    @relevant_times << '8:00'
+    @relevant_times << '8:30'
+    @relevant_times << '9:00'
+    @relevant_times << '9:30'
+  end
 
-      if available_periods.include?("noon")
-        @relevant_times << '11:00'
-        @relevant_times << '11:30'
-        @relevant_times << '12:00'
-        @relevant_times << '12:30'
-        @relevant_times << '13:00'
-        @relevant_times << '13:30'
-     end
+  if available_periods.include?("noon")
+    @relevant_times << '11:00'
+    @relevant_times << '11:30'
+    @relevant_times << '12:00'
+    @relevant_times << '12:30'
+    @relevant_times << '13:00'
+    @relevant_times << '13:30'
+  end
 
-      if available_periods.include?("afternoon")
-        @relevant_times << '14:00'
-        @relevant_times << '14:30'
-        @relevant_times << '15:00'
-        @relevant_times << '15:30'
-        @relevant_times << '16:00'
-        @relevant_times << '16:30'
-     end
-      if available_periods.include?("evening")
-        @relevant_times << '17:00'
-        @relevant_times << '17:30'
-        @relevant_times << '18:00'
-        @relevant_times << '18:30'
-        @relevant_times << '19:00'
-        @relevant_times << '19:30'
-      end
-      @relevant_times
-   end
+  if available_periods.include?("afternoon")
+    @relevant_times << '14:00'
+    @relevant_times << '14:30'
+    @relevant_times << '15:00'
+    @relevant_times << '15:30'
+    @relevant_times << '16:00'
+    @relevant_times << '16:30'
+  end
+  if available_periods.include?("evening")
+    @relevant_times << '17:00'
+    @relevant_times << '17:30'
+    @relevant_times << '18:00'
+    @relevant_times << '18:30'
+    @relevant_times << '19:00'
+    @relevant_times << '19:30'
+  end
+  @relevant_times
+  end
+
   def edit
   end
 

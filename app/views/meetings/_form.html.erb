@@ -13,8 +13,9 @@
         <em>Select one day</em>
         <% @relevant_dates.each do |r| %>
           <li>
-            <%= r.strftime("%a, %d %B '%y") %>
             <input type="radio" value=<%= r %> name="radrelevant_dates" id="relevant_dates" />
+            <%= r.strftime("%a, %d %B '%y") %>
+            <br>
         </li>
         <% end %>
 
@@ -22,8 +23,9 @@
         <em>Pick a time</em>
         <br>
         <% @relevant_times.each do |t| %>
-          <%= t %>
           <input name="radrelevant_times" value=<%= t %> id="relevant_times" type="radio">
+          <%= t %>
+          <br>
         <% end %>
       </div>
       <div class="request-margin request-meeting-location"><strong>Where would you like to meet?</strong>
@@ -37,18 +39,11 @@
       </div>
       <div class="request-margin request-meeting-activity"><strong>What activity would you like to be doing?</strong>
         <br>
-        <%= select_tag :activity, "
-          <option><em>Select one activity</em></option>
-          <option>have lunch</option>
-          <option>go swimming</option>
-          <option>go running</option>
-          <option>go jogging</option>
-          <option>have a coffee</option>
-          <option>drink a tea</option>
-          <option>blow bubbles</option>
-          <option>drink a Beer</option>
-          <option>walk the dog</option>
-          ".html_safe, placeholder: "Select one activity" %>
+          <% @relevant_activities.each do |a| %>
+            <input name="radrelevant_activities" value=<%= a.capitalize %> id="relevant_activities" type="radio">
+            <%= a.capitalize %>
+            <br>
+          <% end %>
       </div>
       <div class="request-margin request-meeting-topic"><strong>What do you want to talk about?</strong>
         <br>
