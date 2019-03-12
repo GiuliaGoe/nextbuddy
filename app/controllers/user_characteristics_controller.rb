@@ -12,26 +12,55 @@ class UserCharacteristicsController < ApplicationController
 
   def update_personal
     # add in availabilities and activities
+    @selected_activities = []
+    @selected_activities << params[:select_coffee]
+    @selected_activities << params[:select_running]
+    @selected_activities << params[:select_jogging]
+    @selected_activities << params[:select_lunch]
+    @selected_activities << params[:select_swimming]
+    @selected_activities << params[:select_dog]
+    @selected_activities << params[:select_beer]
+    @selected_activities << params[:select_bubbles]
+    @selected_activities.compact!
+    current_user.activities = @selected_activities
+    @selected_periods = []
+    @selected_periods << params[:select_morning]
+    @selected_periods << params[:select_noon]
+    @selected_periods << params[:select_afternoon]
+    @selected_periods << params[:select_evening]
+    @selected_periods.compact!
+    current_user.availabilities.period_of_day = @selected_periods
+    @selected_days = []
+    @selected_days << params[:select_mondays]
+    @selected_days << params[:select_tuesdays]
+    @selected_days << params[:select_wednesdays]
+    @selected_days << params[:select_thursdays]
+    @selected_days << params[:select_fridays]
+    @selected_days.compact!
+    current_user.availabilities.day_of_week = @selected_days
+
+
     current_user.radius = params[:user][:radius].to_i
     current_user.address = params[:user][:address]
     current_user.bio = params[:user][:bio]
     current_user.save
     update_professional
+    raise
   end
 
   def update_professional
     if !current_user.career_positions.any?
       job_title = JobTitle.create(name: params["cp-job-title"])
       company = Company.create(name: params["cp-company"])
-      industry = Industry.create(name: params["cp-industry"])
-      job_function = JobFunction.create(name: params["cp-functions"])
+      # industry = Industry.create(name: params["cp-industry"])
+      # job_function = JobFunction.create(name: params["cp-functions"])
 
       career_position = CareerPosition.create(user: current_user)
 
       career_position.company = company
       career_position.job_title = job_title
-      career_position.industry = industry
-      career_position.job_function = job_function
+      # career_position.industry = industry
+      # career_position.job_function = job_function
     else
       career_position = current_user.current_position
 
@@ -41,11 +70,11 @@ class UserCharacteristicsController < ApplicationController
       company = Company.find_by(career_position: career_position)
       company.name = params["cp-company"]
 
-      industry = Industry.find(career_position: career_position)
-      industry.name = params["cp-industry"]
+      # industry = Industry.find(career_position: career_position)
+      # industry.name = params["cp-industry"]
 
-      job_function = JobFunction.find(career_position: career_position)
-      job_function.name = params["cp-functions"]
+      # job_function = JobFunction.find(career_position: career_position)
+      # job_function.name = params["cp-functions"]
 
     end
 

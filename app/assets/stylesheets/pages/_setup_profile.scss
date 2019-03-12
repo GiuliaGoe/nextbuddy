@@ -27,3 +27,54 @@
 .clickable:hover i {
   color: #D26D2D;
 }
+
+
+.clickable-day-of-week {
+  padding: 4px;
+  width: 79px;
+  color: #a0a0a0;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .active {
+    color: inherit;
+    border-color: inherit;
+    i {
+      color: #D26D2D;
+    }
+  }
+  i {
+    font-size: 14px;
+  }
+}
+.clickable-day-of-week:hover i {
+  color: #D26D2D;
+}
+
+
+.clickable-period-of-day {
+  padding: 4px;
+  width: 79px;
+  color: #a0a0a0;
+  margin-right: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  .active {
+    color: inherit;
+    border-color: inherit;
+    i {
+      color: #D26D2D;
+    }
+  }
+  i {
+    font-size: 14px;
+  }
+}
+.clickable-period-of-day:hover i {
+  color: #D26D2D;
+}
+
