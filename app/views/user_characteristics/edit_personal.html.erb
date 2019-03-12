@@ -16,18 +16,37 @@
           <!-- checkboxes do with -->
           <%= f.label :activities %>
           <div class="flex-wrap-center">
-            <div class="clickable"> <i class="fas fa-coffee"></i> </div>
-            <div class="clickable"> <i class="fas fa-swimmer"></i> </div>
-            <div class="clickable"> <i class="fas fa-utensils"></i> </div>
-            <div class="clickable"> <i class="fas fa-running"></i> </div>
-            <div class="clickable"> <i class="fas fa-dog"></i> </div>
-            <div class="clickable"> <i class="fas fa-walking"></i> </div>
-            <div class="clickable"> <i class="fas fa-beer"></i> </div>
-            <div class="clickable"> <i class="fas fa-bicycle"></i> </div>
-            <div class="clickable"> <i class="fas fa-comments"></i> </div>
+            <div class="clickable"> <i class="fas fa-coffee"></i> <input name="select_coffee" value="have a coffee" id="select_coffee" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-swimmer"></i> <input name="select_swimming" value="go swimming" id="select_swimming" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-utensils"></i> <input name="select_lunch" value="have lunch" id="select_lunch" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-running"></i> <input name="select_running" value="go running" id="select_running" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-dog"></i> <input name="select_dog" value="wlak the dog" id="select_dog" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-walking"></i> <input name="select_jogging" value="go jogging" id="select_jogging" type="radio"></div>
+            <div class="clickable"> <i class="fas fa-beer"></i> <input name="select_beer" value="have a beer" id="select_beer" type="radio"></div>
+<!--             <div class="clickable"> <i class="fas fa-bicycle"></i> <input name="select_bicycle" value="have a bicycle" id="select_bicycle" type="radio"></div> -->
+            <div class="clickable"> <i class="fas fa-comments"></i> <input name="select_bubbles" value="have a bubbles" id="select_bubbles" type="radio"></div>
           </div>
           <%= f.label :availabilities %>
-          <%= f.text_field :availabilities %>
+          <br>
+          <em>Select days</em>
+          <br>
+          <div class="flex-wrap-center">
+            <div class="clickable-day-of-week"> Monday <input name="select_mondays" value="Monday" id="select_mondays" type="radio"></div>
+            <div class="clickable-day-of-week"> Tuesday <input name="select_tuesdays" value="Tuesday" id="select_tuesdays" type="radio"></div>
+            <div class="clickable-day-of-week"> Wednesday <input name="select_wednesdays" value="Wednesday" id="select_wednesdays" type="radio"></div>
+            <div class="clickable-day-of-week"> Thursday <input name="select_thursdays" value="Thursday" id="select_thursdays" type="radio"></div>
+            <div class="clickable-day-of-week"> Friday <input name="select_fridays" value="Friday" id="select_fridays" type="radio"></div>
+          </div>
+          <%= f.label :availabilities %>
+          <br>
+          <em>Select times</em>
+          <br>
+          <div class="flex-wrap-center">
+            <div class="clickable-period-of-day"> morning <input name="select_morning" value="morning" id="select_morning" type="radio"></div>
+            <div class="clickable-period-of-day"> noon <input name="select_noon" value="noon" id="select_noon" type="radio"></div>
+            <div class="clickable-period-of-day"> afternoon <input name="select_afternoon" value="afternoon" id="select_afternoon" type="radio"></div>
+            <div class="clickable-period-of-day"> evening <input name="select_evening" value="evening" id="select_evening" type="radio"></div>
+          </div>
           <%= f.label :distance %>
           <%= f.text_field :radius %>
           <%= f.label :address %>
@@ -46,7 +65,8 @@
           <%= f.label :photo %>
           <%= image_tag(@user.photo, :alt => "@user.first_name", :class => "avatar-bordered") %><br>
           <%= f.label :bio %>
-          <%= f.text_field :bio %>
+          <input type="text" name="cp-bio" placeholder="Tell something personal about you.">
+
 
           <input type="button" name="previous" class="form-step-previous" value="Previous"/>
           <input type="button" name="next" class="form-step-next" value="Next"/>
@@ -59,21 +79,19 @@
 
 
           <%= f.label :job_title %>
-          <input type="text" name="cp-job-title">
+          <input type="text" name="cp-job-title" placeholder="What job title do you currently have?">
           <%= f.label :company %>
-          <input type="text"s name="cp-company">
-          <%= f.label :industry %>
-          <input type="text" name="cp-industry">
-          <%= f.label :job_functions %>
-          <input type="text" name="cp-functions">
+          <input type="text"s name="cp-company" placeholder="What company do you currently work at?">
           <%= f.label :professional_interests %>
-          <input type="text" name="pi-name">
-          <%= f.label :professional_goals %>
-          <%= f.text_field :professional_goal %>
-          <%= f.label :skills %>
-          <input type="text" name="skills">
+          <input type="text" name="pi-name" placeholder="Specifiy your professional interests like entrepreneurship">
+          <input type="text" name="pi-name" placeholder="Specifiy in case you have more professional interests">
+          <input type="text" name="pi-name" placeholder="Specifiy in case you have more professional interests">
 
-          <input type="button" name="previous" class="form-step-previous" value="Previous"/>
+          <%= f.label :skills %>
+          <input type="text" name="skills" placeholder="Specify your professional skills like 'coding'" >
+          <input type="text" name="skills" placeholder="Specifiy in case you have more professional skills">
+          <input type="text" name="skills" placeholder="Specifiy in case you have more professional skills">
+          <input type="button" name="previous" class="form-step-previous" value="Previous" />
           <%= f.submit 'submit', :class => 'form-step-submit' %>
         </fieldset>
       <% end %>
