@@ -6,7 +6,7 @@
 <% if current_user.id == meeting.sender_id %>
   <div class="card-meetings">
     <div class="meeting-name">
-      <%= receiver.first_name %> <%= receiver.last_name[0,1] %>.
+      <%= receiver.first_name.partition(" ").first %> <%= receiver.last_name[0,1] %>.
     </div>
     <!-- Career Position -->
     <% if receiver.career_positions.any? %>
@@ -32,7 +32,7 @@
 <% if current_user.id == meeting.recipient_id %>
   <div class="card-meetings">
     <div class="meeting-name">
-      <%= sender.first_name %> <%= sender.last_name[0,1] %>.
+      <%= sender.first_name.partition(" ").first %> <%= sender.last_name[0,1] %>.
     </div>
     <!-- Career Position -->
     <% if sender.career_positions.any? %>
