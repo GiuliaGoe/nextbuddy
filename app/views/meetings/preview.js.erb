@@ -1,6 +1,6 @@
 function updateDOM() {
   console.log("helo");
-  const activity = document.getElementById('activity').value;
+  const activity = document.getElementById('relevant_activities).value;
   const topic = document.getElementById('topic').value;
   const date_time = document.getElementById('relevant_times').value;
   const meeting_location = document.getElementById('meeting_location').value;
@@ -10,12 +10,13 @@ function updateDOM() {
   preview.innerHTML = `
     <div class="card-user-preview-infos">
       <div class="card-user-preview-infos-name">
-        <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
+        <%= current_user.first_name.partition(" ").first %> <%= current_user.last_name[0,1] %>.
       </div>
 
       <div class="card-user-preview-infos-career">
         <% if current_user.career_positions.any? %>
-          <%= current_user.current_title.name %> @ <%= current_user.current_company.name %>
+          <div class="meeting-title"> <%= current_user.current_title.name %> </div>
+          <div class="meeting-company"> @ <%= current_user.current_company.name %></div>
         <% end %>
       </div>
 
