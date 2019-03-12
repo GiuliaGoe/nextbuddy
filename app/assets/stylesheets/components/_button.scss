@@ -76,12 +76,26 @@
   display: flex;
   justify-content: space-around;
   margin-right: 35px;
+  position: absolute;
+  padding: 2px 6px;
+  margin-right: 5px;
 }
 .btn-book-meeting:hover {
   background: $orangehover;
   color: white;
 }
-
+#cancel {
+  right: 20px;
+  top: 110px;
+}
+#accept {
+  right: 90px;
+  top: 110px;
+}
+#decline {
+  right: 5px;
+  top: 110px;
+}
 .button-space{
    display: flex;
 }
