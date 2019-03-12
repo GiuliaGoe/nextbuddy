@@ -1,42 +1,57 @@
 <% sender = User.find(meeting.sender_id) %>
+<% receiver = User.find(meeting.recipient_id) %>
 
-<div class ="card-meetings">
-  <div >
-    <img src="<%= sender.photo %>" class="avatar-bordered-meeting-preview" />
-  </div>
-  <!-- Name -->
-  <div class="meeting-name">
-    <%= sender.first_name.partition(" ").first %> <%= sender.last_name[0,1] %>.
-  </div>
-  <!-- Career Position -->
-  <% if current_user.career_positions.any? %>
-    <div class="meeting-title"> <%= current_user.current_title.name %> </div>
-    <div class="meeting-company"> @<%= current_user.current_company.name %> </div>
-  <% end %>
-  <!-- Message -->
-  <div class="meeting-message">
-    <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>? I would like to talk about <%= meeting.topic %> with you."</em>
-  </div>
-  <!-- Date -->
-  <div class="meeting-date">
-    <%= meeting.meeting_date_time %>
-  </div>
-  <!-- Status -->
-  <% if current_user.id == meeting.recipient_id %>
+
+<% if current_user.id == meeting.sender_id %>
+  <div class="card-meetings">
+    <div class="meeting-name">
+      <%= receiver.first_name.partition(" ").first %> <%= receiver.last_name[0,1] %>.
+    </div>
+    <!-- Career Position -->
+    <% if receiver.career_positions.any? %>
+      <div class="meeting-title"> <%= receiver.current_title.name %> </div>
+      <div class="meeting-company"> @<%= receiver.current_company.name %> </div>
+    <% end %>
+    <div>
+      <img src="<%= receiver.photo %>" class="avatar-bordered-meeting-preview" />
+    </div>
+    <div class="meeting-message">
+      <em>"You would like to <%= meeting.suggested_activity %> with <%= receiver.first_name %> <%= receiver.last_name[0,1] %>. at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>. You would like to talk about <%= meeting.topic %>."</em>
+    </div>
+    <div class="meeting-date">
+      <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p") %>
+    </div>
     <div class="meeting-status">
       Accepted
     </div>
-  <!-- Sent or Received -->
-    <div class="meeting-responsibility">
-      Received
-    </div>
-  <% else %>
-    <div class="meeting-status">
-      Accepted
-    </div>
-  <!-- Sent or Received -->
+    <!-- Sent or Received -->
     <div class="meeting-responsibility">
       Sent
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
+<% if current_user.id == meeting.recipient_id %>
+  <div class="card-meetings">
+    <div class="meeting-name">
+      <%= sender.first_name %> <%= sender.last_name[0,1] %>.
+    </div>
+    <!-- Career Position -->
+    <% if sender.career_positions.any? %>
+      <div class="meeting-title"> <%= sender.current_title.name %> </div>
+      <div class="meeting-company"> @<%= sender.current_company.name %> </div>
+    <% end %>
+    <div>
+      <img src="<%= sender.photo %>" class="avatar-bordered-meeting-preview" />
+    </div>
+    <div class="meeting-message">
+      <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+    </div>
+    <div class="meeting-status">
+      Accepted
+    </div>
+    <!-- Sent or Received -->
+    <div class="meeting-responsibility">
+      Received
+    </div>
+  </div>
+<% end %>
