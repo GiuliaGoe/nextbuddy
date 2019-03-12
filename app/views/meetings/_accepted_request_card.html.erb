@@ -25,7 +25,7 @@
 
   <!-- Message -->
   <div class="meeting-message">
-    <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time  %>? I would like to talk about <%= meeting.topic %> with you."</em>
+    <em>"Would you like to <%= meeting.suggested_activity %> with me at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>? I would like to talk about <%= meeting.topic %> with you."</em>
   </div>
 
   <!-- Status -->
