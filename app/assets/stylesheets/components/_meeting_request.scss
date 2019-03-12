@@ -1,199 +1,128 @@
+/****** from index.html.erb *****/
 .mymeetings {
   margin-top: 10px;
 }
-
-.accepted-meeting {
-  /* Your turn to design a flexbox message */
-  border: 0.5px solid $grey;
-  box-shadow: 0.5px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 5px;
-  position: relative;
-  height: 100px;
-  font-size: 14px;
-}
-
-.request {
-  /* Your turn to design a flexbox message */
-  border: 0.5px solid $grey;
-  box-shadow: 0.5px 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 5px;
-  position: relative;
-  height: 170px;
-  font-size: 14px;
-}
-
-.avatar-bordered-meeting {
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  padding: 0px;
-}
-
-.meeting-name {
-  position: absolute;
-  left: 5px;
-  top: 35px;
-  font-weight: bold;
-  padding: 0px;
-  max-width: 80px;
-}
-
-.meeting-date {
-  position: absolute;
-  left: 100px;
-  top: 80px;
-  font-weight: lighter;
-  padding: 0px;
-}
-
-.meeting-career {
-  position: absolute;
-  left: 5px;
-  top: 60px;
-  font-weight: lighter;
-  padding: 0px;
-  max-width: 80px;
-}
-
-.meeting-message {
-  // position: absolute;
-  // left: 100px;
-  // top: 10px;
-  // width: 140px;
-  // font-weight: lighter;
-  // padding: 0px;
-
-  position: absolute;
-  left: 77px;
-  top: 10px;
-  width: 150px;
-  font-weight: lighter;
-  padding: 0px;
-}
-
-.meeting-status {
-  position: absolute;
-  left: 16px;
-  top: 124px;
-  font-weight: bold;
-  padding: 0px;
-}
-
-.meeting-responsibility {
-  position: absolute;
-  left: 16px;
-  top: 140px;
-  font-weight: lighter;
-  padding: 0px;
-}
-
-.request-name {
-  position: absolute;
-  left: 53px;
-  top: 12px;
-  font-weight: bold;
-  padding: 0px;
-  max-width: 80px;
-}
-
-.request-date {
-  position: absolute;
-  left: 15px;
-  top: 15px;
-  font-weight: lighter;
-  padding: 0px;
-}
-
-.request-career {
-    position: absolute;
-    right: 5px;
-    top: 12px;
-    font-weight: lighter;
-    padding: 0px;
-    max-width: 80px;
-}
-
-.request-message {
-  position: absolute;
-    left: 14px;
-    top: 40px;
-    width: 265px;
-    font-weight: lighter;
-    padding: 0px;
-    font-size: 13px;
-}
-
-
-.request-buttons {
-  position: absolute;
-  left: 126px;
-  top: 124px;
-  display: flex;
-}
-
-.received {
-  padding: 2px 6px;
-  margin-right: 5px;
-}
-
+/********************************/
 
 // CSS for meetings/new view!
 .request-meeting {
-  // display: flex;
-  // position: relative;
   list-style: none;
 }
-
 .request-margin {
   margin: 20px 0px;
 }
-
-
 // preview cards on make a request view!
 .card-user-preview-infos {
   display: flex;
   position: relative;
 }
-
 .card-user-preview-infos-name {
   position: absolute;
   top: 5px;
   left: 5px;
 }
-
 .card-user-preview-infos-career {
   position: absolute;
   top: 25px;
   left: 5px;
 }
-
 .card-user-preview-infos-message {
   position: absolute;
   top: 5px;
   left: 40px;
 }
-
 .card-user-preview-infos-accept {
   position: absolute;
   top: 45px;
   left: 40px;
 }
-
 .card-user-preview-infos-decline {
   position: absolute;
   top: 45px;
   left: 80px;
   background-color: $grey;
 }
+
+// Style for  _pending_request_card and _accepted_request_card views
+.card-meetings {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  height: 170px;
+  font-size: 14px;
+  position: relative;
+}
+.card-meetings:hover {
+  box-shadow: 0 0 10px;
+}
+.meeting-name {
+  position: absolute;
+  left: 25px;
+  top: 60px;
+  font-weight: bold;
+  padding-top: 3px;
+  max-width: 80px;
+}
+.meeting-message {
+  position: absolute;
+  left: 140px;
+  top: 10px;
+  width: auto;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+.meeting-date {
+  position: absolute;
+  left: 130px;
+  top: 120px;
+  font-weight: lighter;
+  padding: 0px;
+}
+.meeting-title {
+  position: absolute;
+  left: 25px;
+  top: 76px;
+  font-weight: lighter;
+  padding: 0px;
+  max-width: auto;
+}
+.meeting-company {
+  position: absolute;
+  left: 25px;
+  top: 90px;
+  font-weight: lighter;
+  padding: 0px;
+  max-width: auto;
+}
+.meeting-status {
+  position: absolute;
+  left: 25px;
+  top: 120px;
+  font-weight: bold;
+  padding: 0px;
+}
+.meeting-responsibility {
+  position: absolute;
+  left: 40px;
+  top: 135px;
+  font-weight: lighter;
+  padding: 0px;
+}
+
+
+// .request-date {
+//   position: absolute;
+//   left: 15px;
+//   top: 15px;
+//   font-weight: lighter;
+//   padding: 0px;
+// }
+// .request-career {
+//     position: absolute;
+//     right: 5px;
+//     top: 12px;
+//     font-weight: lighter;
+//     padding: 0px;
+//     max-width: 80px;
+// }
