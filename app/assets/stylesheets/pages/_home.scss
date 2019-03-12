@@ -1,57 +1,66 @@
-
-
 .wrapper-home-first-scroll {
   background: $darkblue;
   height: 100vh;
   width: 100%;
   color: white;
-  padding-top: 80px;
   padding-left: 10px;
   padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-login-btn {
+  font-size: 20px;
+  height: 48px;
+  padding-right: 16px;
+  margin-top: 20px;
 }
 
 .center-items {
   text-align: center;
 }
 
-.typed {
-  // position: absolute;
-  margin-top: 70px;
-  // margin-left: -30px;
+//provitional
+.home-logo {
+width: 80px;
+height: 80px;
+background: white;
+border-radius: 50%;
+display: inline-block;
+}
+//
+
+.home-intro-container {
+  text-align: center;
+  font-size: 37px;
+  padding: 10px;
+  line-height: 48px;
+  margin-top: 30px;
 }
 
-.typed h3 {
-  color: $orange;
-}
+.home-click-down {
+  margin-top: 80px;
+  border: 3px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.intro-container {
-  margin-top: 400px;
-  width: 100%;
-  padding: 0px 20px;
-}
-
-.description {
-  margin-top: 50px;
-  margin-left: 25px;
-  max-width: 229px;
-
-  h5 {
-    font-size: 22px
+  img {
+    width: 36%;
+    height: auto;
   }
 }
 
-.description p {
-  line-height: 160%;
-  font-size: 18px
-}
-
-.click-down {
-  margin-top: 80px;
-}
-
-.wrapper-home-second-scroll {
+.home-screen {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  background-color: $grey;
+  background-color: #dc9b48;
   color: white;
   padding-top: 45px;
   padding-left: 35px;
@@ -86,8 +95,30 @@
   }
 
   .index-iphone {
-    margin-top: 50px;
     margin-left: 25px;
   }
 }
+
+.home-screen-banner {
+  display: flex;
+  width: 100%;
+}
+.home-screen-banner-header {
+  margin: 0;
+}
+.home-screen-banner-description {
+
+}
+.home-screen-banner-top {
+  color: white;
+}
+
 // Specific CSS for your home-page
+// .typed {
+//   position: absolute;
+//   margin-top: 70px;
+//   margin-left: -30px;
+// }
+// .typed h3 {
+//   color: $orange;
+// }

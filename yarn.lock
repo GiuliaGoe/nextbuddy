@@ -5870,6 +5870,11 @@ schema-utils@^0.4.0, schema-utils@^0.4.5:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
+scroll-animate-to@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/scroll-animate-to/-/scroll-animate-to-1.0.3.tgz#26265dd92cdb38d131c3a2612269965ab1d0e65b"
+  integrity sha512-q23mPEbhw9QQGi2A8/bsqe1G8H9F20NO//fNglhpU2gwuOu+RERd0rW9zhbA37g0QhELxW0f2A2cGGAB6c99pg==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
