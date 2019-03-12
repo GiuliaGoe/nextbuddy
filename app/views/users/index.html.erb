@@ -92,7 +92,7 @@
 
         <%= link_to "See my profile :-)", user_path(user), :class => "card-user-link btn-orange" %>
         <div class="card-user-user">
-          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-user-user avatar-bordered"/>
+          <%= image_tag user.photo, class: "card-user-user avatar-bordered" %>
         </div>
       </div>
   <% end %>
