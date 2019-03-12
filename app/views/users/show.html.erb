@@ -1,76 +1,61 @@
 <div class="card-user-show">
-  <div class="card-user-name-photo">
-    <div class="card-user-name">
-      <h2 style= "color: #FD5F00"><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
-    </div>
-    <div>
-      <%= image_tag @user.photo, class: "card-user-user avatar-bordered" %>
-    </div>
-  </div>
-  <br>
 
-  <div class="card-user-career-position">
-      <p style= "color:  #00204A"><strong>Current career positions: </strong></p>
-      <ul>
+  <div class="name">
+    <h2><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
+  </div>
+
+  <div class="photo">
+    <%= image_tag @user.photo, class: "avatar" %>
+  </div>
+
+
+  <div class="career-position">
         <% @user.career_positions.each do |career| %>
-        <li>
-          <%= career.job_title.name %> @<%= career.company.name %> (<%= career.job_function.name %>, <%= career.industry.name %>)
-          <% end %>
-        </li>
-      </ul>
-
+          <h5><%= career.job_title.name %> @<%= career.company.name %> </h5>
+          <p><%= career.job_function.name %>, <%= career.industry.name %></p>
+        <% end %>
   </div>
 
-  <div class="card-user-interests">
-    <p>
-      <strong style= "color:  #00204A">Professional interests: </strong><% @user.professional_interests.each do |interest| %>
-        <%= interest.name %>
-      <% end %>
+  <div class="interests">
+    <h6>Professional Interests:</h6>
+    <% @user.professional_interests.each do |interest| %>
+      <p>#<%= interest.name %></p>
+    <% end %>
+  </div>
+
+  <div class="skills">
+    <h6>Skills:</h6>
+    <% @user.skills.each do |skill| %>
+      <p>
+        <%= skill.name.capitalize %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="bio">
+    <h6>Bio:</h6>
+      <p><%= @user.bio[0, 200] %>...</p>
+  </div>
+
+  <div class="activity">
+    <h6>I love to ...</h6>
+    <% @user.activities.each do |activity| %>
+      <p><%= activity.description%></p>
+    <% end %>
     </p>
   </div>
 
-  <div class="card-user-skills">
-    <p>
-      <strong style= "color:  #00204A">Skills: </strong>
-      <% @user.skills.each do |skill| %>
-      <%= skill.name.capitalize %>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="card-user-bio">
-    <p>
-      <strong style= "color:  #00204A">Bio: </strong><%= @user.bio.capitalize %>
-    </p>
-  </div>
-
-  <div class="card-user-professional-goal">
-    <p><strong style= "color:  #00204A">Professional goal: </strong><%= @user.professional_goal.capitalize %></p>
-  </div>
-
-  <div class="card-user-activity">
-    <p><strong style= "color:  #00204A">Activities: I love to ...</strong>
-      <% @user.activities.each do |activity| %>
-       <%= activity.description%> /
-      <% end %>
-    </p>
-  </div>
-
-  <div class="card-user-availability">
-
-    <p><strong style= "color:  #00204A">Availabilities: </strong></p>
-      <ul>
+  <div class="availability">
+    <h6>Availabilities</h6>
       <% @user.availabilities.each do |availability| %>
-      <li style = "list-style: none">
-        <%= availability.day_of_week %> <%= availability.period_of_day %>s
+        <p><%= availability.day_of_week %> <%= availability.period_of_day %>s<p>
       <% end %>
-      <br>
-      <br>
-      <%= link_to "Request a meeting now", new_user_meeting_path(@user, @availability), class: "btn btn-book-meeting" %>
-      <br>
-    </p>
-    </li>
-   </ul>
+  </div>
+
+  <div class="request-meeting-button">
+    <%= link_to "MEET ME", new_user_meeting_path(@user, @availability), class: "btn-orange show" %>
+  </div>
+
 </div>
 
 
