@@ -10,8 +10,8 @@
 puts "Cleaning DB"
 CareerPosition.destroy_all
 JobTitle.destroy_all
-JobFunction.destroy_all
-Industry.destroy_all
+# JobFunction.destroy_all
+# Industry.destroy_all
 Company.destroy_all
 Meeting.destroy_all
 Activity.destroy_all
@@ -904,170 +904,170 @@ solar_energy = Company.create(
 
 puts "Finished creating #{Company.all.count} Companies"
 
-puts "Creating some Job Functions!"
+# puts "Creating some Job Functions!"
 
-law = JobFunction.create!(
-  name: 'Law',
-)
+# law = JobFunction.create!(
+#   name: 'Law',
+# )
 
-education = JobFunction.create(
-  name: 'Education'
-  )
+# education = JobFunction.create(
+#   name: 'Education'
+#   )
 
-marketing = JobFunction.create!(
-  name: 'Marketing',
-)
+# marketing = JobFunction.create!(
+#   name: 'Marketing',
+# )
 
-research = JobFunction.create!(
-  name: 'Research',
-)
+# research = JobFunction.create!(
+#   name: 'Research',
+# )
 
-it = JobFunction.create!(
-  name: 'IT',
-)
+# it = JobFunction.create!(
+#   name: 'IT',
+# )
 
-sales = JobFunction.create!(
-  name: 'Sales',
-)
+# sales = JobFunction.create!(
+#   name: 'Sales',
+# )
 
-strategy = JobFunction.create!(
-  name: 'Strategy',
-)
+# strategy = JobFunction.create!(
+#   name: 'Strategy',
+# )
 
-design = JobFunction.create!(
-  name: 'Design',
-)
+# design = JobFunction.create!(
+#   name: 'Design',
+# )
 
-procurement = JobFunction.create(
-  name: 'Procurement')
+# procurement = JobFunction.create(
+#   name: 'Procurement')
 
-job_function0 = JobFunction.create(
-  name: 'Jr Developer functions'
-  )
-job_function1 = JobFunction.create(
-  name: 'IT Analyst functions'
-  )
-job_function2 = JobFunction.create(
-  name: 'Teacher Assistant functions'
-  )
-
-
-puts "Finished creating #{JobFunction.all.count} Functions"
-
-puts "Creating some Industries!"
-
-law_industry = Industry.create(
-  name: 'Big Law Firm')
-
-education_industry = Industry.create(
-  name: 'Lighting')
-
-healthcare = Industry.create!(
-  name: 'Healthcare',
-)
-
-health = Industry.create!(
-  name: 'Health',
-)
-
-construction = Industry.create!(
-  name: 'Construction',
-)
-
-market_research = Industry.create!(
-  name: 'Market Research',
-)
-
-web_development = Industry.create!(
-  name: 'Web Development',
-)
-
-industry0 = Industry.create(
-  name: 'Manufacturing'
-  )
-industry1 = Industry.create(
-  name: 'Mining'
-  )
-industry2 = Industry.create(
-  name: 'Construction'
-  )
-
-solar = Industry.create(
-  name: 'Solar'
-  )
-
-hospitality = Industry.create!(
-  name: 'Hospitality',
-)
-
-consumer_electronics = Industry.create!(
-  name: 'Consumer Electronics',
-)
-
-automotive = Industry.create(
-  name: 'Automotive')
-
-lighting = Industry.create(
-  name: 'Lighting')
+# job_function0 = JobFunction.create(
+#   name: 'Jr Developer functions'
+#   )
+# job_function1 = JobFunction.create(
+#   name: 'IT Analyst functions'
+#   )
+# job_function2 = JobFunction.create(
+#   name: 'Teacher Assistant functions'
+#   )
 
 
-puts "Finished creating #{Industry.all.count} industries"
+# puts "Finished creating #{JobFunction.all.count} Functions"
+
+# puts "Creating some Industries!"
+
+# law_industry = Industry.create(
+#   name: 'Big Law Firm')
+
+# education_industry = Industry.create(
+#   name: 'Lighting')
+
+# healthcare = Industry.create!(
+#   name: 'Healthcare',
+# )
+
+# health = Industry.create!(
+#   name: 'Health',
+# )
+
+# construction = Industry.create!(
+#   name: 'Construction',
+# )
+
+# market_research = Industry.create!(
+#   name: 'Market Research',
+# )
+
+# web_development = Industry.create!(
+#   name: 'Web Development',
+# )
+
+# industry0 = Industry.create(
+#   name: 'Manufacturing'
+#   )
+# industry1 = Industry.create(
+#   name: 'Mining'
+#   )
+# industry2 = Industry.create(
+#   name: 'Construction'
+#   )
+
+# solar = Industry.create(
+#   name: 'Solar'
+#   )
+
+# hospitality = Industry.create!(
+#   name: 'Hospitality',
+# )
+
+# consumer_electronics = Industry.create!(
+#   name: 'Consumer Electronics',
+# )
+
+# automotive = Industry.create(
+#   name: 'Automotive')
+
+# lighting = Industry.create(
+#   name: 'Lighting')
+
+
+# puts "Finished creating #{Industry.all.count} industries"
 
 puts "Creating some Career Positions!"
 
 juan_career = CareerPosition.create(
   user_id: juan.id,
   job_title: junior_developer,
-  job_function: it,
+  # job_function: it,
   company: microsoft,
-  industry: consumer_electronics
+  # industry: consumer_electronics
 )
 
 winson_career = CareerPosition.create(
   user_id: winson.id,
   job_title: data_scientist,
-  job_function: research ,
+  # job_function: research ,
   company: deloitte ,
-  industry: market_research
+  # industry: market_research
 )
 
 paal_career = CareerPosition.create(
   user_id: paal.id,
   job_title: entrepreneur ,
-  job_function: education,
+  # job_function: education,
   company: company0 ,
-  industry: web_development
+  # industry: web_development
 )
 
 fritz_career = CareerPosition.create(
   user_id: fritz.id,
   job_title: business_development,
-  job_function: strategy ,
+  # job_function: strategy ,
   company: merck ,
-  industry: healthcare
+  # industry: healthcare
 )
 
 
 career_position0 = CareerPosition.create(
   user_id: dale.id,
-  job_function: job_function0,
-  industry: industry1,
+  # job_function: job_function0,
+  # industry: industry1,
   company: company1,
   job_title: title0
   )
 
 career_position1 = CareerPosition.create(
   user_id: damon.id,
-  job_function: job_function1,
-  industry: industry1,
+  # job_function: job_function1,
+  # industry: industry1,
   company: company1,
   job_title: title1
   )
 
 career_position2 = CareerPosition.create(
   user_id: ben.id,
-  job_function: job_function2,
-  industry: industry2,
+  # job_function: job_function2,
+  # industry: industry2,
   company: company2,
   job_title: title2
   )
@@ -1076,104 +1076,104 @@ marcos_career_position = CareerPosition.create(
   user_id: marco.id,
   job_title: designer,
   company: stern,
-  industry: automotive,
-  job_function: it)
+  # industry: automotive,
+  # job_function: it)
 
 filippos_career_position = CareerPosition.create(
   user_id: filippo.id,
   job_title: analyst,
   company: hyve,
-  industry: lighting,
-  job_function: procurement)
+  # industry: lighting,
+  # job_function: procurement)
 
 hannah_career1 = CareerPosition.create!(
   user_id: hannah.id,
   job_title: ux_designer,
-  job_function: design,
+  # job_function: design,
   company: merck,
-  industry: healthcare
+  # industry: healthcare
 )
 
 robert_career = CareerPosition.create(
   user_id: robert.id,
   job_title: lawyer,
-  job_function: law,
+  # job_function: law,
   company: law_firm,
-  industry: law_industry
+  # industry: law_industry
 )
 
 hans_career = CareerPosition.create(
   user_id: hans.id,
   job_title: ux_designer,
-  job_function: law,
+  # job_function: law,
   company: law_firm,
-  industry: law_industry
+  # industry: law_industry
 )
 
 
 valerie_career = CareerPosition.create(
   user_id: valerie.id,
   job_title: teacher,
-  job_function: education,
+  # job_function: education,
   company:company0,
-  industry: web_development
+  # industry: web_development
 )
 
 felix_career = CareerPosition.create(
   user_id: felix.id,
   job_title: teacher,
-  job_function: education,
+  # job_function: education,
   company: andreanum,
-  industry: education_industry
+  # industry: education_industry
 )
 
 jonas_career = CareerPosition.create(
   user_id: jonas.id,
   job_title: agile_coach,
-  job_function: strategy,
+  # job_function: strategy,
   company: talent,
-  industry: construction
+  # industry: construction
 )
 
 
 adora_career = CareerPosition.create(
   user_id: adora.id,
   job_title: marketer ,
-  job_function: marketing ,
+  # job_function: marketing ,
   company: company2 ,
-  industry: consumer_electronics
+  # industry: consumer_electronics
 )
 
 alex_career = CareerPosition.create(
   user_id: alex.id,
   job_title: business_development,
-  job_function: strategy ,
+  # job_function: strategy ,
   company: solar_energy ,
-  industry: solar
+  # industry: solar
 )
 
 rutger_career = CareerPosition.create(
   user_id:rutger.id,
   job_title: entrepreneur,
-  job_function: job_function0 ,
+  # job_function: job_function0 ,
   company: self_owned ,
-  industry: web_development
+  # industry: web_development
 )
 
 chris_career = CareerPosition.create(
   user_id: chris.id,
   job_title: marketer,
-  job_function: marketing ,
+  # job_function: marketing ,
   company: merck ,
-  industry: healthcare
+  # industry: healthcare
 )
 
 giulia_career = CareerPosition.create(
   user_id: giulia.id,
   job_title: entrepreneur,
-  job_function: job_function0,
+  # job_function: job_function0,
   company: health_coach ,
-  industry: health
+  # industry: health
 )
 
 puts "Finished creating #{CareerPosition.all.count} Career Positions"
