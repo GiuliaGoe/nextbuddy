@@ -22,7 +22,6 @@ class MeetingsController < ApplicationController
     # 4 store these in a list that is displayed in the form in the view
     relevant_dates
     relevant_times
-    relevant_activities
   end
 
   def today
@@ -179,47 +178,6 @@ class MeetingsController < ApplicationController
 
   def selected_activity
     @selected_activity = params[:radrelevant_activities]
-  end
-
-  def relevant_activities
-    @relevant_activities = []
-    available_activities = []
-    @user.activities.each do |avail|
-      available_activities << avail.description
-    end
-
-    if available_activities.include?("have lunch")
-      @relevant_activities << 'have lunch'
-    end
-
-    if available_activities.include?("go swimming")
-       @relevant_activities << 'go swimming'
-    end
-
-    if available_activities.include?("go running")
-      @relevant_activities << 'go running'
-    end
-
-    if available_activities.include?("go jogging")
-      @relevant_activities << 'go jogging'
-    end
-
-    if available_activities.include?("have a coffee")
-      @relevant_activities << 'have a coffee'
-    end
-
-    if available_activities.include?("blow bubbles")
-      @relevant_activities << 'blow bubbles'
-    end
-
-    if available_activities.include?("drink a beer")
-      @relevant_activities << 'drink a beer'
-    end
-
-    if available_activities.include?("walk the dog")
-      @relevant_activities << 'walk the dog'
-    end
-    @relevant_activities
   end
 
 def relevant_times
