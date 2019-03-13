@@ -29,13 +29,10 @@ function updateDOM() {
          <% end %>
         </h3>
         <p>
-          Would you like to ${activity} with me at ${meeting_location} on ${dateObject.toDateString()} @ ${time}? I would like to talk about ${topic} with you.
+          Would you like to ${activity} with me ${meeting_location} on ${dateObject.toDateString()} @ ${time}? I would like to talk about ${topic} with you.
         </p>
       </div>
-      <div class="preview-status">
-        <p class="status pending">Pending</p>
-      </div>
-    </div>
+     </div>
   `;
   // here we will target the div with id preview and update its inner HTML with the actual preview
     //<div class="card-user-user">

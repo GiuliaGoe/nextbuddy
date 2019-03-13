@@ -148,8 +148,19 @@ border-bottom: 1px solid #eee;
       width: 130px;
     }
   }
+    &--location {
+    label {
+      width: 155px;
+    }
+  }
+  &--topic {
+    width: 100%;
+  }
 }
 
+.request-welcome {
+  color: $orange;
+}
 
 // .request-date {
 //   position: absolute;
@@ -174,4 +185,6 @@ border-bottom: 1px solid #eee;
 .request-preview-button {
   background: none;
   margin-left: 0px;
+  font-size: 14px;
 }
+
