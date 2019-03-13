@@ -13,11 +13,13 @@
        Login with Linkedin
     </a> -->
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>
+      <ul class="btn-home-list">
+        <li> <%= link_to "DISCOVER", users_path, :class => 'btn-home-page'  %> </li>
+      </ul>
     <% else %>
-    <ul class="btn-home-list">
-      <li> <%= link_to "Login", new_user_session_path, :class => 'btn-home-page'  %> </li>
-    </ul>
+      <ul class="btn-home-list">
+        <li> <%= link_to "LOGIN", new_user_session_path, :class => 'btn-home-page'  %> </li>
+      </ul>
     <% end %>
 
   <div class="center-items">
