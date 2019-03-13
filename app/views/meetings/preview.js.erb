@@ -1,40 +1,42 @@
 function updateDOM() {
-  console.log("helo");
-  const activity = document.getElementById('activity').value;
+  const activity = document.getElementById('relevant_activities').value;
   const topic = document.getElementById('topic').value;
-  const date_time = document.getElementById('relevant_times').value;
+
+  const time = document.querySelector('input[name="radrelevant_times"]:checked').value;
+  const date = document.querySelector('input[name="radrelevant_dates"]:checked').value;
+
+  const dateObject = new Date(date + ' ' + time);
+
   const meeting_location = document.getElementById('meeting_location').value;
-  console.log(activity, topic, date_time, meeting_location);
+  console.log(activity, topic, date, time, meeting_location);
 
   const preview = document.getElementById('preview');
   preview.innerHTML = `
-    <div class="card-user-preview-infos">
-      <div class="card-user-preview-infos-name">
-        <%= current_user.first_name %> <%= current_user.last_name[0,1] %>.
-      </div>
-
-      <div class="card-user-preview-infos-career">
+    <div class="preview">
+      <div class="preview-sender">
+        <%= image_tag current_user.photo, class: "avatar-preview" %>
+        <h3><%= current_user.first_name.partition(" ").first %> <%= current_user.last_name[0,1] %>.</h3>
         <% if current_user.career_positions.any? %>
-          <%= current_user.current_title.name %> @ <%= current_user.current_company.name %>
+            <div class="meeting-title"> <%= current_user.current_title.name %> </div>
+            <div class="meeting-company"> @ <%= current_user.current_company.name %></div>
         <% end %>
       </div>
-
-      <br>
-      <%= image_tag current_user.photo, class: "avatar-bordered-meeting-preview" %>
-
-      <div class="card-user-preview-infos-message">
-        Would you like to ${activity} with me at ${meeting_location} on ${date_time}? I would like to talk about ${topic} with you.
+      <div class="preview-body">
+        <h3 class='strong'>
+          <% if current_user.career_positions.any? %>
+            <div class="meeting-title"> <%= current_user.current_title.name %> </div>
+            <div class="meeting-company"> @ <%= current_user.current_company.name %></div>
+         <% end %>
+        </h3>
+        <p>
+          Would you like to ${activity} with me at ${meeting_location} on ${dateObject.toDateString()} @ ${time}? I would like to talk about ${topic} with you.
+        </p>
       </div>
-
-      <div class="card-user-preview-infos-accept">
-        <%= link_to "Accept", '#', class: "btn btn-book-meeting" %>
-      </div>
-
-      <div class="card-user-preview-infos-decline">
-        <%= link_to "Decline", '#', class: "btn btn-book-meeting" %>
+      <div class="preview-status">
+        <p class="status pending">Pending</p>
       </div>
     </div>
-  `
+  `;
   // here we will target the div with id preview and update its inner HTML with the actual preview
     //<div class="card-user-user">
       //<img src='https://kitt.lewagon.com/placeholder/users/giuliagoe' class="card-user-user avatar-bordered"/>

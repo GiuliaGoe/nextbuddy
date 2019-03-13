@@ -145,22 +145,21 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    @recipient = User.find(params[:user_id])
-    @currentuser = User.find(current_user.id)
-
-
     @meeting = Meeting.new
-    @meeting.status = "pending"
-    string_to_date_time
-    date_time_to_string
-    selected_activity
-    @meeting.suggested_activity = @selected_activity
-    @meeting.meeting_date_time = @new_string.to_s
-    @meeting.suggested_activity = params[:activity]
     @meeting.meeting_location = params[:meeting_location]
     @meeting.topic = params[:topic]
+    @meeting.status = "pending"
+    @recipient = User.find(params[:user_id])
+    @currentuser = User.find(current_user.id)
     @meeting.sender_id = @currentuser.id
     @meeting.recipient_id = @recipient.id
+    string_to_date_time
+    date_time_to_string
+    @meeting.meeting_date_time = @new_string.to_s
+    selected_activity
+    @meeting.suggested_activity = @selected_activity
+    # @meeting.save
+    # raise
 
     if @meeting.save
       redirect_to pending_meeting_path(@meeting), notice: "Congrats. You have sent a meeting request."
@@ -179,7 +178,7 @@ class MeetingsController < ApplicationController
   end
 
   def selected_activity
-    @selected_activity = params[:relevant_activities]
+    @selected_activity = params[:radrelevant_activities]
   end
 
   def relevant_activities

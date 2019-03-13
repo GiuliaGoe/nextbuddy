@@ -29,7 +29,7 @@ juan = User.create!(
   email: 'juan.cardenas@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552290231/juan.png',
-  address: '99 Beacon Rd, Port Melbourne, VIC 3207',
+  address: '99 Beacon Rd, Port Melbourne',
   radius: 500,
   professional_goal: '',
   bio: 'Standing at the forefront of the fastest moving technology industry trend: cloud services. I have spent the past five years evangelizing an industry-wide shift to the cloud and has helped position Microsoft as a leader in the public cloud space.'
@@ -41,7 +41,7 @@ winson = User.create!(
   email: 'winson.tan@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291668/winson.jpg',
-  address: '120 Princes St, Port Melbourne, VIC 3207',
+  address: '120 Princes St, Port Melbourne',
   radius: 230,
   professional_goal: '',
   bio: 'Data scientist and analyst with experience in various industries including consulting, banking and SaaS. Passionate about solving real problems and creating value by leveraging the latest technologies.'
@@ -54,7 +54,7 @@ paal = User.create!(
   email: 'paal.ringstad@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552292076/paal.jpg',
-  address: '128 Farrell St, Port Melbourne, VIC 3207',
+  address: '128 Farrell St, Port Melbourne',
   radius: 300,
   professional_goal: '',
   bio: 'Passionate about education and building projects, I launched Le Wagon Coding Bootcamp in Australia. Le Wagon believes that education has to be redefined, by providing a whole new type of education, based on collaboration and self-learning, in a startup-style environment.'
@@ -67,7 +67,7 @@ fritz = User.create!(
   email: 'fritz.shack@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291398/fritz.png',
-  address: '396 Clarendon St, South Melbourne, VIC 3205 ',
+  address: '396 Clarendon St, South Melbourne',
   radius: 400,
   professional_goal: '',
   bio: 'Recently graduated from WHU in Germany with a Bachelor of Science in International Business. Gathered experience with internships in investment banking, private equity as well as marketing.'
@@ -79,7 +79,7 @@ dale = User.create!(
   email: 'dale.hindle@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291395/dale.jpg',
-  address: '122 Albert St, Port Melbourne, VIC 3207',
+  address: '122 Albert St, Port Melbourne',
   radius: 123.7,
   professional_goal: '',
   bio: 'Chemical Engineer looking to compliment my skills by learning some web development.'
@@ -91,6 +91,7 @@ damon = User.create!(
   email: 'damon.ross@mail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552292621/damon.jpg',
+  address: '39 Swanston St, Melbourne',
   radius: 253.7,
   professional_goal: '',
   bio: "Worked in product management and now looking to learn more about technical development and building  cool products while travelling around"
@@ -102,7 +103,7 @@ ben = User.create!(
   email: 'ben.linder@mail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291400/ben.jpg',
-  address: '248 Esplanade East, Port Melbourne, VIC 3207',
+  address: '248 Esplanade East, Port Melbourne',
   radius: 13.7,
   professional_goal: '',
   bio: "Bachelor degree in management and marketing. Floated through life with zero idea what I wanted to be when I grew up but have found myself in the web-development and teaching space."
@@ -114,7 +115,7 @@ marco = User.create(
   email: 'marco.materazzi@gmail.com',
   password: '123456',
   photo: "Thttps://res.cloudinary.com/giugoe/image/upload/v1552293209/marco.jpg",
-  address: "9/271 William St, Melbourne, VIC 3000",
+  address: "9/271 William St, Melbourne",
   radius: 5.0,
   professional_goal: '',
   bio: 'Accomplished designer at Stern, with 20 years’ experience in the automobile markets')
@@ -125,7 +126,7 @@ filippo = User.create(
   email: 'filippo.faguzzi@gmail.com',
   password: '123456',
   photo: "https://res.cloudinary.com/giugoe/image/upload/v1552293529/filippo.jpg",
-  address: "177 Cecil St, South Melbourne, VIC 3205 ",
+  address: "177 Cecil St, South Melbourne'",
   radius: 2.4,
   professional_goal: '',
   bio: 'An industry expert with more than 20 years of successful experience in full life cycle Procurement and Business Development.')
@@ -136,7 +137,7 @@ hannah = User.create!(
   email: 'hannah.fuzzi@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294147/hannah.jpg',
-  address: '16 Morris St, South Melbourne, VIC 3205',
+  address: '16 Morris St, South Melbourne',
   radius: 900,
   professional_goal: '',
   bio: 'I love meeting people and healthcare. I have spent an incredible part of my life in the service of others and the betterment of their health!'
@@ -148,7 +149,7 @@ robert = User.create!(
   email: 'robert.pfeiffer@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294124/robert.jpg',
-  address: '117 Farrell St, Port Melbourne, VIC 3207',
+  address: '117 Farrell St, Port Melbourne',
   radius: 700,
   professional_goal: '',
   bio: 'When I was younger - I found out that everyone should have equal opportunities! This largely explains why I pursued law and I have found real fulfillment in this career path.'
@@ -160,7 +161,7 @@ hans = User.create!(
   email: 'hans.heyde@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552293963/hans.jpg',
-  address: '90 Collins St, Melbourne, VIC 3000',
+  address: '90 Collins St, Melbourne',
   radius: 700,
   professional_goal: '',
   bio: 'User journey and experience mixed with my passion for law and justice - has lead to me finding myself at its intersection. I am involved in the product development and management of tools used for law firms and other related fields.'
@@ -172,7 +173,7 @@ valerie = User.create!(
   email: 'valerie.schraauwers@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552295354/valerie.png',
-  address: '151 Beach St, Port Melbourne, VIC 3207',
+  address: '151 Beach St, Port Melbourne',
   radius: 800,
   professional_goal:'',
   bio: 'After 3.5 great years of working as a Country Manager for Green Claim, I felt it was time for a change. I flew across the ocean to do Le Wagon’s Full Stack Coding Bootcamp in Bali, which equipped me with a new set of skills. I am excited to further develop these skills and to combine them with my previous work experience.'
@@ -185,7 +186,7 @@ felix = User.create!(
   email: 'felix.herrmann@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304255/felix.jpg',
-  address: '72 Moubray St, South Melbourne, VIC 3205',
+  address: '72 Moubray St, South Melbourne',
   radius: 650,
   professional_goal: '',
   bio: 'Education is the area that I am greatly passionate about. Apart from being a high-school teacher, I would say that I am a coffee connoisseur - definitely need 5 coffees a day - so might as well have one with you!'
@@ -197,7 +198,7 @@ jonas = User.create!(
   email: 'jonasjaping@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304606/jonas.jpg',
-  address: '7 Orion Mews, Port Melbourne, VIC 3207',
+  address: '7 Orion Mews, Port Melbourne',
   radius: 550,
   professional_goal: '',
   bio: 'I am a business graduate with a focus on International Management. Recently, I have been researching and trying to understand the functionality of Agile in the business environment and after great amounts of research, tests and trials - I am proud to say I have significant depth and knowledge on the subject matter!'
@@ -209,7 +210,7 @@ adora = User.create!(
   email: 'adora.g@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552291674/adora.jpg',
-  address: '14 The Bend, Port Melbourne, VIC 3207',
+  address: '14 The Bend, Port Melbourne',
   radius: 300,
   professional_goal: '',
   bio: 'I work in marketing for a software company and am now learning to code part-time in the hopes to expand my skillsets!'
@@ -221,7 +222,7 @@ alex = User.create!(
   email: 'alex.vassiliou@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304849/alex.jpg',
-  address: '225 Abbotsford St, North Melbourne, VIC 3051',
+  address: '225 Abbotsford St, North Melbourne',
   radius: 700,
   professional_goal: '',
   bio: 'Worked in business development for a solar company. After being part a healthy and truly functional team, I hope to ascend into managament and more leadership roles'
@@ -233,7 +234,7 @@ rutger = User.create!(
   email: 'rutger.swirski@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304285/rutger.jpg',
-  address: '463 Victoria St, West Melbourne, VIC 3003',
+  address: '463 Victoria St, West Melbourne',
   radius: 750,
   professional_goal: '',
   bio: 'Started coding when I was 13, I have always wanted to become a web developer. This is the area I hope to expand into the future!'
@@ -245,7 +246,7 @@ chris = User.create!(
   email: 'chris.ward@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304608/chris.jpg',
-  address: '149 Alfred St, North Melbourne, VIC 3051',
+  address: '149 Alfred St, North Melbourne',
   radius: 650,
   professional_goal: '',
   bio: 'I’m a skilled digital marketer with experience in social media (Facebook, Instagram, Twitter, Snapchat), EDM, SEO and web design. I have a bachelor of Commerce from the University of Melbourne, majoring in Marketing and Finance, which has allowed me to be data driven, customer-focused and motivated to create meaningful results. My campaigns have grown reach, followership, impressions and most importantly, sales!'
@@ -257,7 +258,7 @@ giulia = User.create!(
   email: 'giulia.goella@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304288/giulia.jpg',
-  address: '12 Hotham St, South Melbourne, VIC 3205 ',
+  address: '12 Hotham St, South Melbourne',
   radius: 450,
   professional_goal: '',
   bio: 'I was in the sector of management consulting previously, however, now I recognise that my true calling is to build value-based businesses. Currently, I am looking for oppotunities to connect with people that are interested in entreprenuership and business development.'
@@ -267,174 +268,230 @@ puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
 
+
 juan_running = Activity.create!(
   description: 'go running',
+  symbol: "fas fa-running",
   user_id: juan.id
 )
 
 juan_lunch = Activity.create!(
   description: 'have lunch',
+  symbol: "fas fa-utensils",
   user_id: juan.id
 )
 
 winson_coffee = Activity.create(
   user_id: winson.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 winson_jogging = Activity.create(
   user_id: winson.id,
+  symbol: "fas fa-walking",
   description: 'go jogging')
 
 paal_bubbles = Activity.create(
   user_id: paal.id,
+  symbol: "fas fa-comments",
   description: 'blow bubbles')
 
 paal_swimming = Activity.create!(
   description: 'go swimming',
+  symbol: "fas fa-swimmer",
   user_id: paal.id
 )
 
 fritz_beer = Activity.create(
   user_id: fritz.id,
+  symbol: "fas fa-beer",
   description: 'drink a beer')
 
 frity_coffee = Activity.create(
   user_id: fritz.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 dale_dog = Activity.create(
   description: 'walk the dog',
+  symbol: "fas fa-walking",
   user_id: dale.id
   )
 
 dale_coffee = Activity.create(
   user_id: dale.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 damon_beer = Activity.create(
   description: 'drink a beer',
+  symbol: "fas fa-beer",
   user_id: damon.id
   )
 
 damon_running = Activity.create(
   user_id: damon.id,
+  symbol: "fas fa-running",
   description: 'go running')
 
 ben_jogging = Activity.create(
   description: 'go jogging',
+  symbol: "fas fa-walking",
   user_id: ben.id
   )
 
 ben_coffee = Activity.create(
   user_id: ben.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 marco_jogging = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-walking",
+
   description: 'go jogging')
 
 marco_dog = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-dog",
   description: 'walk the dog')
 
 marco_coffee = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 filippo_running = Activity.create(
   user_id: filippo.id,
+    symbol: "fas fa-running",
+
   description: 'go running')
 
 filippo_walkthedog = Activity.create(
   user_id: filippo.id,
+    symbol: "fas fa-dog",
+
   description: 'walk the dog')
 
 hannah_coffee = Activity.create(
   user_id: hannah.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffe')
 
 hannah_bubbles = Activity.create(
   user_id: hannah.id,
+  symbol: "fas fa-comments",
   description: 'blow bubbles')
 
 robert_coffee = Activity.create(
   user_id: robert.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 rober_lunch = Activity.create!(
   description: 'have lunch',
+  symbol: "fas fa-utensils",
   user_id: robert.id
 )
 
 hans_coffee = Activity.create(
   user_id: hans.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 hans_swimming = Activity.create!(
   description: 'go swimming',
+  symbol: "fas fa-swimmer",
   user_id: hans.id
 )
 
 valerie_coffee = Activity.create(
   user_id: valerie.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 felix_bubbles = Activity.create(
   user_id: felix.id,
+      symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 felix_lunch = Activity.create(
   user_id: felix.id,
+    symbol: "fas fa-utensils",
+
   description: 'have lunch')
 
 robert_coffee = Activity.create(
   user_id: robert.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 hans_coffee = Activity.create(
   user_id: hans.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 jonas_lunch = Activity.create!(
   description: 'have lunch',
+    symbol: "fas fa-utensils",
+
   user_id: jonas.id
 )
 
 valerie_dog = Activity.create(
   user_id: valerie.id,
+    symbol: "fas fa-dog",
+
   description: 'walk the dog')
 
 felix_swimming = Activity.create!(
   description: 'go swimming',
+    symbol: "fas fa-swimmer",
+
   user_id: felix.id
 )
 
 felix_jogging = Activity.create(
   user_id: felix.id,
+    symbol: "fas fa-walking",
+
   description: 'go jogging')
 
 jonas_lazy = Activity.create(
   user_id: jonas.id,
+    symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 jonas_coffee = Activity.create(
   user_id: jonas.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 adora_running = Activity.create(
   user_id: adora.id,
+      symbol: "fas fa-running",
+
   description: 'go running')
 
 adora_beer = Activity.create(
   description: 'drink a beer',
+    symbol: "fas fa-beer",
+
   user_id: adora.id
   )
 
 alex_coffee = Activity.create(
   user_id: alex.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 alex_dog = Activity.create(
@@ -444,20 +501,28 @@ alex_dog = Activity.create(
 
 rutger_running = Activity.create!(
   description: 'go running',
+    symbol: "fas fa-running",
+
   user_id: rutger.id
 )
 
 rutger_lunch = Activity.create!(
   description: 'have lunch',
+    symbol: "fas fa-utensils",
+
   user_id: rutger.id
 )
 
 chris_coffee = Activity.create(
   user_id: chris.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 chris_bubbles = Activity.create(
   user_id: chris.id,
+    symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 giulia_dog = Activity.create(
@@ -466,6 +531,8 @@ giulia_dog = Activity.create(
 
 giulia_coffee = Activity.create(
   user_id: giulia.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 puts "Finished creating #{Activity.all.count} activities"

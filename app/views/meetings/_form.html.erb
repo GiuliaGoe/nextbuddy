@@ -1,32 +1,30 @@
 <div class="request-meeting">
   <div class="request-welcome">
-    <h4>Send request to <%= @user.first_name %> <%= @user.first_name[0,1] %>.</h4>
+    <h4>Send request to <%= @user.first_name.partition(" ").first %> <%= @user.first_name[0,1] %>.</h4>
   </div>
   <div class="request-form">
-
-
 
     <%= simple_form_for ([@user, @meeting]) do |f|%>
       <div class="request-margin request-meeting-time">
         <strong>When would you like to meet?</strong>
         <br>
         <em>Select one day</em>
-        <% @relevant_dates.each do |r| %>
-          <li>
-            <input type="radio" value=<%= r %> name="radrelevant_dates" id="relevant_dates" />
-            <%= r.strftime("%a, %d %B '%y") %>
-            <br>
-        </li>
-        <% end %>
-
-        <br>
+        <ul class="list-inline">
+          <% @relevant_dates.each do |day| %>
+            <li>
+              <%= day.strftime("%a, %d %B '%y") %>
+              <input type="radio" value=<%= day %> name="radrelevant_dates" id="relevant_dates" />
+            </li>
+          <% end %>
+        </ul>
         <em>Pick a time</em>
         <br>
-        <% @relevant_times.each do |t| %>
-          <input name="radrelevant_times" value=<%= t %> id="relevant_times" type="radio">
-          <%= t %>
-          <br>
-        <% end %>
+        <ul class="list-inline">
+          <% @relevant_times.each do |time| %>
+            <%= time %>
+            <input name="radrelevant_times" value=<%= time %> id="relevant_times" type="radio">
+          <% end %>
+        </ul>
       </div>
       <div class="request-margin request-meeting-location"><strong>Where would you like to meet?</strong>
         <br>
@@ -39,9 +37,9 @@
       </div>
       <div class="request-margin request-meeting-activity"><strong>What activity would you like to be doing?</strong>
         <br>
-          <% @relevant_activities.each do |a| %>
-            <input name="radrelevant_activities" value=<%= a.capitalize %> id="relevant_activities" type="radio">
-            <%= a.capitalize %>
+          <% @relevant_activities.each do |activity| %>
+            <input name="radrelevant_activities" value="<%= activity %>" id="relevant_activities" type="radio">
+            <%= activity %>
             <br>
           <% end %>
       </div>
@@ -50,6 +48,7 @@
         <%= text_field_tag :topic, params[:topic], placeholder: "Define one topic" %>
       </div>
       <div id="preview">
+
       </div>
       <div class="request-margin request-meeting-button">
         <%= f.submit %>

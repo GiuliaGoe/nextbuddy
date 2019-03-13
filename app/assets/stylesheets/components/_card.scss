@@ -105,6 +105,7 @@
   position: absolute;
   left: 73px;
   top: 44px;
+  max-width: 50px;
 
   p {
     font-size: 12px;
@@ -213,7 +214,7 @@
 
   .interests {
     position: absolute;
-    top: 120px;
+    top: 131px;
     padding-left: 21px;
   }
 
@@ -225,7 +226,7 @@
 
   .bio {
     position: absolute;
-    top: 298px;
+    top: 283px;
     padding-left: 21px;
     max-width: 340px;
   }
@@ -233,13 +234,13 @@
 
   .activity {
     position: absolute;
-    top: 421px;
+    top: 390px;
     padding-left: 21px;
   }
 
   .availability {
     position: absolute;
-    top: 503px;
+    top: 486px;
     padding-left: 21px;
   }
 
@@ -258,6 +259,10 @@
       justify-content: space-around;
       border-radius: 10px;
     }
+  }
+
+  .modal-content {
+    margin-top: 231px;
   }
 }
 
