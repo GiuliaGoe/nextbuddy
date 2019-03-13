@@ -1,0 +1,56 @@
+.preview {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  background-color: rgba(224,224,224,0.6);
+  h3 {
+    margin-top: 0px;
+  }
+  p {
+    margin: 0px;
+  }
+}
+.preview:last-child {
+  border-bottom: none;
+}
+.preview-body {
+  flex-grow: 1;
+}
+.preview-sender {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.preview-sender h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.preview-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.preview-body {
+  padding: 5px;
+  color: rgba(0,0,0,0.4);
+}
+.preview-body .strong{
+  color: rgba(0,0,0,0.9);
+}
+
+.preview-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}

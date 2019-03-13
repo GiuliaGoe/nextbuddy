@@ -268,174 +268,230 @@ puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
 
+
 juan_running = Activity.create!(
   description: 'go running',
+  symbol: "fas fa-running",
   user_id: juan.id
 )
 
 juan_lunch = Activity.create!(
   description: 'have lunch',
+  symbol: "fas fa-utensils",
   user_id: juan.id
 )
 
 winson_coffee = Activity.create(
   user_id: winson.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 winson_jogging = Activity.create(
   user_id: winson.id,
+  symbol: "fas fa-walking",
   description: 'go jogging')
 
 paal_bubbles = Activity.create(
   user_id: paal.id,
+  symbol: "fas fa-comments",
   description: 'blow bubbles')
 
 paal_swimming = Activity.create!(
   description: 'go swimming',
+  symbol: "fas fa-swimmer",
   user_id: paal.id
 )
 
 fritz_beer = Activity.create(
   user_id: fritz.id,
+  symbol: "fas fa-beer",
   description: 'drink a beer')
 
 frity_coffee = Activity.create(
   user_id: fritz.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 dale_dog = Activity.create(
   description: 'walk the dog',
+  symbol: "fas fa-walking",
   user_id: dale.id
   )
 
 dale_coffee = Activity.create(
   user_id: dale.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 damon_beer = Activity.create(
   description: 'drink a beer',
+  symbol: "fas fa-beer",
   user_id: damon.id
   )
 
 damon_running = Activity.create(
   user_id: damon.id,
+  symbol: "fas fa-running",
   description: 'go running')
 
 ben_jogging = Activity.create(
   description: 'go jogging',
+  symbol: "fas fa-walking",
   user_id: ben.id
   )
 
 ben_coffee = Activity.create(
   user_id: ben.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 marco_jogging = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-walking",
+
   description: 'go jogging')
 
 marco_dog = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-dog",
   description: 'walk the dog')
 
 marco_coffee = Activity.create(
   user_id: marco.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 filippo_running = Activity.create(
   user_id: filippo.id,
+    symbol: "fas fa-running",
+
   description: 'go running')
 
 filippo_walkthedog = Activity.create(
   user_id: filippo.id,
+    symbol: "fas fa-dog",
+
   description: 'walk the dog')
 
 hannah_coffee = Activity.create(
   user_id: hannah.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffe')
 
 hannah_bubbles = Activity.create(
   user_id: hannah.id,
+  symbol: "fas fa-comments",
   description: 'blow bubbles')
 
 robert_coffee = Activity.create(
   user_id: robert.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 rober_lunch = Activity.create!(
   description: 'have lunch',
+  symbol: "fas fa-utensils",
   user_id: robert.id
 )
 
 hans_coffee = Activity.create(
   user_id: hans.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 hans_swimming = Activity.create!(
   description: 'go swimming',
+  symbol: "fas fa-swimmer",
   user_id: hans.id
 )
 
 valerie_coffee = Activity.create(
   user_id: valerie.id,
+  symbol: "fas fa-coffee",
   description: 'have a coffee')
 
 
 felix_bubbles = Activity.create(
   user_id: felix.id,
+      symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 felix_lunch = Activity.create(
   user_id: felix.id,
+    symbol: "fas fa-utensils",
+
   description: 'have lunch')
 
 robert_coffee = Activity.create(
   user_id: robert.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 hans_coffee = Activity.create(
   user_id: hans.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 jonas_lunch = Activity.create!(
   description: 'have lunch',
+    symbol: "fas fa-utensils",
+
   user_id: jonas.id
 )
 
 valerie_dog = Activity.create(
   user_id: valerie.id,
+    symbol: "fas fa-dog",
+
   description: 'walk the dog')
 
 felix_swimming = Activity.create!(
   description: 'go swimming',
+    symbol: "fas fa-swimmer",
+
   user_id: felix.id
 )
 
 felix_jogging = Activity.create(
   user_id: felix.id,
+    symbol: "fas fa-walking",
+
   description: 'go jogging')
 
 jonas_lazy = Activity.create(
   user_id: jonas.id,
+    symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 jonas_coffee = Activity.create(
   user_id: jonas.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 adora_running = Activity.create(
   user_id: adora.id,
+      symbol: "fas fa-running",
+
   description: 'go running')
 
 adora_beer = Activity.create(
   description: 'drink a beer',
+    symbol: "fas fa-beer",
+
   user_id: adora.id
   )
 
 alex_coffee = Activity.create(
   user_id: alex.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 alex_dog = Activity.create(
@@ -445,20 +501,28 @@ alex_dog = Activity.create(
 
 rutger_running = Activity.create!(
   description: 'go running',
+    symbol: "fas fa-running",
+
   user_id: rutger.id
 )
 
 rutger_lunch = Activity.create!(
   description: 'have lunch',
+    symbol: "fas fa-utensils",
+
   user_id: rutger.id
 )
 
 chris_coffee = Activity.create(
   user_id: chris.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 chris_bubbles = Activity.create(
   user_id: chris.id,
+    symbol: "fas fa-comments",
+
   description: 'blow bubbles')
 
 giulia_dog = Activity.create(
@@ -467,6 +531,8 @@ giulia_dog = Activity.create(
 
 giulia_coffee = Activity.create(
   user_id: giulia.id,
+    symbol: "fas fa-coffee",
+
   description: 'have a coffee')
 
 puts "Finished creating #{Activity.all.count} activities"

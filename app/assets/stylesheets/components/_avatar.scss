@@ -25,7 +25,14 @@
   text-align: center;
   border-radius: 50%;
   box-shadow: 0 0.5px 1px rgba(0,0,0,0.2);
-  border: white 0.5px solid; position: absolute;
+  border: white 0.5px solid;
+  position: absolute;
   left: 5px;
   top: 5px;
+}
+
+.avatar-preview {
+  width: 57px;
+  border-radius: 50%;
+  border: white 0.5px solid;
 }
