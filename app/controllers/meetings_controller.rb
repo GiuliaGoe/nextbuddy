@@ -4,7 +4,7 @@ class MeetingsController < ApplicationController
   def index
     @mymeetings = Meeting.where(sender_id: current_user.id).or(Meeting.where(recipient_id: current_user.id))
     @pending_meetings = @mymeetings.where(status: "pending").where("meeting_date_time > :time", time: Time.now.beginning_of_day)
-    @past_meetings = @mymeetings.where("meeting_date_time < :time", time: Time.now.beginning_of_day)
+    @past_meetings = @mymeetings.where(status: "accepted").where("meeting_date_time < :time", time: Time.now.beginning_of_day)
     @accepted_meetings = @mymeetings.where(status: "accepted").where("meeting_date_time > :time", time: Time.now.beginning_of_day)
   end
 
