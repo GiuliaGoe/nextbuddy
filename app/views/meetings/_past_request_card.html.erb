@@ -2,7 +2,6 @@
 <% sender = User.find(meeting.sender_id) %>
 <% receiver = User.find(meeting.recipient_id) %>
 
-
 <% if current_user.id == meeting.sender_id %>
   <div class="card-meetings">
     <%= link_to user_path(receiver), :action => 'go' do %>

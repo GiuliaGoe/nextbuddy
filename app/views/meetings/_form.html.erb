@@ -56,6 +56,7 @@
           <option>Halfway location between us</option>
           ".html_safe, placeholder: "Select where to meet", class: 'request-meeting-select' %> -->
       </div>
+
       <div class="request-margin request-meeting-activity">
         <h3 class="request-meeting-heading">What?</h3>
         <ul>
@@ -63,7 +64,7 @@
             <li class="request-meeting-option">
               <input name="radrelevant_activities" value="<%= activity %>" id="activity_ <%= i %>" type="radio">
               <label for="activity_ <%= i %>"><%= activity %></label>
-            </li>
+            </li>      
           <% end %>
         </ul>
       </div>

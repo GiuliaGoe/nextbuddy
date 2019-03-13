@@ -32,19 +32,26 @@ border-bottom: 1px solid #eee;
 }
 .meeting-name {
   position: absolute;
-  left: 25px;
-  top: 60px;
-  font-weight: bold;
-  padding-top: 3px;
-  max-width: 80px;
+    left: 68px;
+    top: 5px;
+    font-weight: bold;
+    padding-top: 3px;
+    /* max-width: 104px; */
+    font-size: 20px;
+    color: black;
+    :hover {
+      text-decoration: underline;
+    }
 }
+
+
 .meeting-message {
   position: absolute;
-  left: 140px;
-  top: 10px;
-  width: auto;
-  font-weight: lighter;
-  margin-bottom: 10px;
+    left: 5px;
+    top: 66px;
+    width: auto;
+    font-weight: lighter;
+    margin-bottom: 10px;
 }
 .meeting-date {
   position: absolute;
@@ -55,33 +62,46 @@ border-bottom: 1px solid #eee;
 }
 .meeting-title {
   position: absolute;
-  left: 25px;
-  top: 76px;
-  font-weight: lighter;
-  padding: 0px;
-  max-width: auto;
+    left: 68px;
+    top: 30px;
+    font-weight: lighter;
+    padding: 0px;
+    max-width: auto;
 }
 .meeting-company {
   position: absolute;
-  left: 25px;
-  top: 90px;
-  font-weight: lighter;
-  padding: 0px;
-  max-width: auto;
+    left: 68px;
+    top: 45px;
+    font-weight: lighter;
+    padding: 0px;
+    max-width: auto;
 }
 .meeting-status {
-  position: absolute;
-  left: 25px;
-  top: 120px;
-  font-weight: bold;
-  padding: 0px;
+  right: 15px;
+    position: absolute;
+    /* left: 291px; */
+    top: 39px;
+    font-weight: bold;
+    padding: 0px;
+    .pending {
+      color: $orange;
+    }
+
+    .accepted {
+      color: green;
+    }
 }
 .meeting-responsibility {
-  position: absolute;
-  left: 40px;
-  top: 135px;
-  font-weight: lighter;
-  padding: 0px;
+    right: 10px;
+    position: absolute;
+    /* left: 6px; */
+    top: 10px;
+    font-weight: lighter;
+    padding: 0px;
+
+  .responsibility-icon {
+    height: 26px;
+  }
 }
 
 .request-meeting-select {
