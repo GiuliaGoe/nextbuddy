@@ -65,6 +65,7 @@
 
 <div class="scrolling-wrapper" id="card-scroller">
   <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
       <div class="card-user js-card-user" data-user-id="<%= user.id %>">
         <div class="card-user-name">
           <h2>
@@ -88,13 +89,11 @@
             <p>#<%= interest.name %></p>
           <% end %>
         </div>
-
-
-        <%= link_to "See my profile :-)", user_path(user), :class => "card-user-link btn-orange" %>
         <div class="card-user-user">
           <%= image_tag user.photo, class: "card-user-user avatar-bordered" %>
         </div>
       </div>
+    <% end %>
   <% end %>
 </div>
 
