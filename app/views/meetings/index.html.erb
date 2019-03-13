@@ -1,5 +1,5 @@
 <div class="mymeetings">
-  <h4>My upcoming meetings </h4>
+  <h4 class="header-4">My upcoming meetings </h4>
   <% @pending_meetings.each do |meeting| %>
     <%= render "meetings/pending_request_card", meeting: meeting %>
   <% end %>
@@ -8,7 +8,7 @@
     <%= render "meetings/accepted_request_card", meeting: meeting %>
   <% end %>
 
-  <h4>My past meetings</h4>
+  <h4 class="header-4">My past meetings</h4>
    <% @past_meetings.each do |meeting| %>
     <%= render "meetings/past_request_card", meeting: meeting %>
   <% end %>

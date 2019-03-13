@@ -53,6 +53,27 @@ border-bottom: 1px solid #eee;
     font-weight: lighter;
     margin-bottom: 10px;
 }
+
+.header-4 {
+  padding-left: 10px;
+}
+
+.meeting-message-past {
+    position: absolute;
+    left: 56px;
+    top: 77px;
+    // border: 2px solid grey;
+    width: auto;
+    padding: 6px 6px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+  p {
+    line-height: 120%;
+  font-size: 15px;
+  margin: 0 0;
+  }
+}
+
 .meeting-date {
   position: absolute;
   left: 130px;
@@ -102,6 +123,31 @@ border-bottom: 1px solid #eee;
   .responsibility-icon {
     height: 26px;
   }
+}
+
+.mail-user {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 25px;
+  .fa-envelope{
+  color: black;
+  }
+}
+
+.smaller-font {
+  font-size: 14px;
+}
+
+.meeting-responsibility-past {
+  right: 10px;
+  position: absolute;
+  /* left: 6px; */
+  top: 10px;
+  font-weight: lighter;
+  padding-right: 7px;
+  font-size: 28px;
+  color: green;
 }
 
 .request-meeting-select {

@@ -155,8 +155,6 @@ def create
   selected_activity
   @meeting.suggested_activity = @selected_activity
   # @meeting.save
-  # raise
-
   if @meeting.save
     redirect_to pending_meeting_path(@meeting), notice: "Congrats. You have sent a meeting request."
   else
