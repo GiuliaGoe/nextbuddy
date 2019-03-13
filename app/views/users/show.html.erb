@@ -12,7 +12,6 @@
   <div class="career-position">
         <% @user.career_positions.each do |career| %>
           <h5><%= career.job_title.name %> @<%= career.company.name %> </h5>
-          <p><%= career.job_function.name %>, <%= career.industry.name %></p>
         <% end %>
   </div>
 
