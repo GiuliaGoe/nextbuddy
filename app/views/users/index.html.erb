@@ -30,21 +30,21 @@
             <%= range_field_tag :radius, params[:radius], in: 0..10, step: 1, class: 'range-slider__range'%>
             <span class="range-slider__value">0</span>
           </div>
-          <p> Interest: <%= text_field_tag :interest, params[:interest], placeholder: "uxdesign" %></p>
+          <p> Interest: <%= text_field_tag :interest, params[:interest], placeholder: "UX design,..." %></p>
 
           <p> Activity: <%= select_tag :activity, '
               <option value="" disabled selected hidden>Select an activity</option>
-              <option>Lunch</option>
-              <option>Swimming</option>
-              <option>Running</option>
-              <option>Jogging</option>
+              <option>Have lunch</option>
+              <option>Go swimming</option>
+              <option>Go running</option>
+              <option>Go jogging</option>
               <option>Have a coffee</option>
               <option>Blow bubbles</option>
               <option>Drink a Beer</option>
               <option>Walk the dog</option>
             '.html_safe %></p>
           </p>
-          <p> Skill: <%= text_field_tag :skill, params[:skill], placeholder: "finance" %></p>
+          <p> Skill: <%= text_field_tag :skill, params[:skill], placeholder: "Finance,..." %></p>
           <p> Availability: <%= select_tag :availability, '
             <option value="" disabled selected hidden>Select a Weekday</option>
             <option>Monday</option>
