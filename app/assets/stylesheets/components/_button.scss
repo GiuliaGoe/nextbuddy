@@ -99,3 +99,44 @@
 .button-space{
    display: flex;
 }
+
+ul.btn-home-list {
+  position: relative;
+  margin-top: 100px;
+}
+li {
+  display: inline;
+}
+.btn-home-page {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 10px;
+  margin: 0px 30px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.btn-home-page:hover {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 10px 10px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.btn-linkedin{
+  color:#fff;
+  background-color:#007bb6;
+  border-color:rgba(0,0,0,0.2);
+  padding: 10px 8px 10px 16px;
+  height: 40px;
+}.btn-linkedin:focus,.btn-linkedin.focus{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:hover{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:active,.btn-linkedin.active,.open>.dropdown-toggle.btn-linkedin{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}.btn-linkedin:active:hover,.btn-linkedin.active:hover,.open>.dropdown-toggle.btn-linkedin:hover,.btn-linkedin:active:focus,.btn-linkedin.active:focus,.open>.dropdown-toggle.btn-linkedin:focus,.btn-linkedin:active.focus,.btn-linkedin.active.focus,.open>.dropdown-toggle.btn-linkedin.focus{color:#fff;background-color:#00405f;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:active,.btn-linkedin.active,.open>.dropdown-toggle.btn-linkedin{background-image:none}
+.btn-linkedin.disabled:hover,.btn-linkedin[disabled]:hover,fieldset[disabled] .btn-linkedin:hover,.btn-linkedin.disabled:focus,.btn-linkedin[disabled]:focus,fieldset[disabled] .btn-linkedin:focus,.btn-linkedin.disabled.focus,.btn-linkedin[disabled].focus,fieldset[disabled] .btn-linkedin.focus{background-color:#007bb6;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin .badge{color:#007bb6;background-color:#fff}

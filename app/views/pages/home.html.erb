@@ -7,10 +7,19 @@
   <div class="home-intro-container ">
       Meet <strong>the last</strong> networking tool you'll ever use...
   </div>
-    <a class='btn-log-in-with home-login-btn' href="#">
+
+    <!-- <a class='btn-log-in-with home-login-btn' href="#">
       <i class="fab fa-linkedin-in"></i>
-      <%= "Log in with Linkedin" %>
-    </a>
+       Login with Linkedin
+    </a> -->
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>
+    <% else %>
+    <ul class="btn-home-list">
+      <li> <%= link_to "Login", new_user_session_path, :class => 'btn-home-page'  %> </li>
+    </ul>
+    <% end %>
+
   <div class="center-items">
     <div class="home-click-down">
       <a href="#screen-2" class="js-animate-to">
@@ -26,7 +35,7 @@
         DISCOVER
       </h2>
       <p class="home-screen-banner-description">
-        Discover how great this app is.
+        Discover your network according to your interests.
       </p>
     </div>
     <a href="#top" class="js-animate-to home-screen-banner-top">Back to Top</a>
@@ -58,7 +67,7 @@
         CONNECT
       </h2>
       <p class="home-screen-banner-description">
-        Find your next buddy based on your location.
+        Connect with your buddy doing what you enjoy!
       </p>
     </div>
     <a href="#top" class="js-animate-to home-screen-banner-top">Back to Top</a>
