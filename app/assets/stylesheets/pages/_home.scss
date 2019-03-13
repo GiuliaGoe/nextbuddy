@@ -3,8 +3,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // background: linear-gradient($orange, #e66465);
-  // background: linear-gradient($darkblue, white);
   background: $darkblue;
   height: 100vh;
   width: 100%;
@@ -12,11 +10,6 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-
-// .home-logo {
-//   margin-top: 80px;
-// }
-
 .center-items {
   text-align: center;
 }
@@ -59,10 +52,10 @@
   padding-right: 10px;
   position: ralative;
 
-  a {
-    position: absolute;
-    right: 10px;
-  }
+  // a {
+  //   position: absolute;
+  //   right: 10px;
+  // }
   img {
     margin-left: 25px;
   }
@@ -88,16 +81,14 @@
 
 }
 
+#top, #screen-2, #screen-3, #screen-4 {
+  position: relative;
+}
 #screen-2 {
   background: #24C6DC;
-  // background: -webkit-linear-gradient(to left, #514A9D, #24C6DC);
-  // background: linear-gradient(to left, #514A9D, #24C6DC);
   background: linear-gradient($darkblue, white);
 }
 #screen-3 {
-  // background: -webkit-linear-gradient(left, #fc6767, #ec008c);
-  // background: -o-linear-gradient(left, #fc6767, #ec008c);
-  // background: linear-gradient(to right, #fc6767, #ec008c);
   background: linear-gradient($orange, white);
 }
 #screen-2 .home-screen-banner .home-screen-banner-content .home-screen-banner-description {
@@ -112,8 +103,6 @@
 
 #screen-4 {
   background: linear-gradient($middleblue, white);
-  // background: $lightblue;
-  // color: black;
 }
 
 
