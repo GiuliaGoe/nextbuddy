@@ -937,7 +937,6 @@ career_position0 = CareerPosition.create(
   )
 
 career_position1 = CareerPosition.create(
-  company: company1,
   user_id: damon.id,
   company: company1,
   job_title: title1
@@ -953,16 +952,18 @@ marcos_career_position = CareerPosition.create(
   user_id: marco.id,
   job_title: designer,
   company: stern,
+)
 
 filippos_career_position = CareerPosition.create(
   user_id: filippo.id,
   job_title: analyst,
   company: hyve,
+)
 
-hannah_career1 = CareerPosition.create!(
+hannah_career1 = CareerPosition.create(
   user_id: hannah.id,
   job_title: ux_designer,
-  company: merck,
+  company: merck
 )
 
 robert_career = CareerPosition.create(
