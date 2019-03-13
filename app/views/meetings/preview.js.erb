@@ -1,5 +1,5 @@
 function updateDOM() {
-  const activity = document.getElementById('relevant_activities').value;
+  const activity = document.querySelector('input[name="radrelevant_activities"]:checked').value;
   const topic = document.getElementById('topic').value;
 
   const time = document.querySelector('input[name="radrelevant_times"]:checked').value;
@@ -7,7 +7,7 @@ function updateDOM() {
 
   const dateObject = new Date(date + ' ' + time);
 
-  const meeting_location = document.getElementById('meeting_location').value;
+  const meeting_location = document.querySelector('input[name="meeting_location"]:checked').value;
   console.log(activity, topic, date, time, meeting_location);
 
   const preview = document.getElementById('preview');
