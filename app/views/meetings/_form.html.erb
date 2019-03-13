@@ -60,17 +60,17 @@
       <div class="request-margin request-meeting-activity">
         <h3 class="request-meeting-heading">What?</h3>
         <ul>
-          <% @relevant_activities.each do |activity, i| %>
+          <% @user.activities.each do |activity, i| %>
             <li class="request-meeting-option">
               <input name="radrelevant_activities" value="<%= activity %>" id="activity_ <%= i %>" type="radio">
               <label for="activity_ <%= i %>"><%= activity %></label>
-            </li>      
+            </li>
           <% end %>
         </ul>
       </div>
       <div class="request-margin request-meeting-topic"><h3 class="request-meeting-heading">Why?</h3>
         <br>
-        <%= text_field_tag :topic, params[:topic], placeholder: "Specify what do you want to talk about" class: => "request-meeting-option request-meeting-option--topic"%>
+        <%= text_field_tag :topic, params[:topic], placeholder: "Specify what do you want to talk about"%>
       </div>
       <div class="request-margin request-meeting-button">
         <%= f.submit class: 'btn btn-primary', value: 'Send Request' %>
