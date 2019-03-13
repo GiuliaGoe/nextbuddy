@@ -56,7 +56,7 @@
   <div class="activity">
     <h6>What I like to do:</h6>
     <% @user.activities.each do |activity| %>
-      <p><%= activity.description%></p>
+    <i class="<%= activity.symbol %>" ></i>
     <% end %>
     </p>
   </div>
