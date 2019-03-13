@@ -6,56 +6,83 @@
 
     <%= simple_form_for ([@user, @meeting]) do |f|%>
       <div class="request-margin request-meeting-time">
-        <strong>When would you like to meet?</strong>
-        <br>
-        <em>Select one day</em>
-        <ul class="list-inline">
+        <h3 class="request-meeting-heading">When?</h3>
+        <p>Select a day</p>
+        <ul>
           <% @relevant_dates.each do |day| %>
-            <li>
-              <%= day.strftime("%a, %d %B '%y") %>
-              <input type="radio" value=<%= day %> name="radrelevant_dates" id="relevant_dates" />
+            <li class="request-meeting-option request-meeting-option--date">
+
+              <input type="radio" value="<%= day %>" name="radrelevant_dates" id="relevant_dates_<%= day %>" />
+               <label for="relevant_dates_<%= day %>"><%= day.strftime("%a, %d %b") %></label>
             </li>
           <% end %>
         </ul>
-        <em>Pick a time</em>
-        <br>
-        <ul class="list-inline">
+        <p>Pick a time</p>
+        <ul>
           <% @relevant_times.each do |time| %>
-            <%= time %>
-            <input name="radrelevant_times" value=<%= time %> id="relevant_times" type="radio">
+            <li class="request-meeting-option request-meeting-option--time">
+              <input name="radrelevant_times" value="<%= time %>" type="radio" id="relevant_times_<%= time %>">
+              <label for="relevant_times_<%= time %>"><%= time %></label>
+            </li>
           <% end %>
         </ul>
       </div>
-      <div class="request-margin request-meeting-location"><strong>Where would you like to meet?</strong>
-        <br>
-        <%= select_tag :meeting_location, "
+      <div class="request-margin request-meeting-location">
+        <h3 class="request-meeting-heading">Where?</h3>
+        <ul>
+          <li class="request-meeting-option">
+            <input name="meeting_location" value="yours" type="radio" id="meeting_location_yours">
+              <label for="meeting_location_yours">
+                Yours place
+              </label>
+          </li>
+          <li class="request-meeting-option">
+            <input name="meeting_location" value="mine" type="radio" id="meeting_location_mine">
+              <label for="meeting_location_mine">
+                My place
+              </label>
+          </li>
+          <li class="request-meeting-option">
+            <input name="meeting_location" value="half-way" type="radio" id="meeting_location_half_way">
+              <label for="meeting_location_half_way">
+                half way
+              </label>
+          </li>
+        </ul>
+     <!--    <%= select_tag :meeting_location, "
           <option><em>Select one meeting point</em></option>
           <option>#{ @user.address} (#{ @user.first_name}'s address)</option>
           <option>#{current_user.address} (#{ current_user.first_name}'s address)</option>
           <option>Halfway location between us</option>
-          ".html_safe, placeholder: "Select where to meet" %>
+          ".html_safe, placeholder: "Select where to meet", class: 'request-meeting-select' %> -->
       </div>
-      <div class="request-margin request-meeting-activity"><strong>What activity would you like to be doing?</strong>
-        <br>
-          <% @user.activities.each do |activity| %>
-            <input name="radrelevant_activities" value="<%= activity %>" id="relevant_activities" type="radio">
-            <%= activity.description %>
-            <i class="<%= activity.symbol %>" ></i>
-            <br>
-          <% end %>
-      </div>
-      <div class="request-margin request-meeting-topic"><strong>What do you want to talk about?</strong>
-        <br>
-        <%= text_field_tag :topic, params[:topic], placeholder: "Define one topic" %>
-      </div>
-      <div id="preview">
 
+      <div class="request-margin request-meeting-activity">
+        <h3 class="request-meeting-heading">What?</h3>
+        <ul>
+          <% @relevant_activities.each do |activity, i| %>
+            <li class="request-meeting-option">
+              <input name="radrelevant_activities" value="<%= activity %>" id="activity_ <%= i %>" type="radio">
+              <label for="activity_ <%= i %>"><%= activity %></label>
+            </li>      
+          <% end %>
+        </ul>
+      </div>
+      <div class="request-margin request-meeting-topic"><h3 class="request-meeting-heading">Why?</h3>
+        <br>
+        <%= text_field_tag :topic, params[:topic], placeholder: "Specify what do you want to talk about" class: => "request-meeting-option request-meeting-option--topic"%>
       </div>
       <div class="request-margin request-meeting-button">
-        <%= f.submit %>
+        <%= f.submit class: 'btn btn-primary', value: 'Send Request' %>
+        <button class="btn request-preview-button">Preview</button>
+          <div id="preview">
+
+          </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
 
 
