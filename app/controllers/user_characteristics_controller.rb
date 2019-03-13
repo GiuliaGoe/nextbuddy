@@ -22,14 +22,12 @@ class UserCharacteristicsController < ApplicationController
     @selected_activities << params[:select_beer]
     @selected_activities << params[:select_bubbles]
     @selected_activities.compact!
-    current_user.activities = @selected_activities
     @selected_periods = []
     @selected_periods << params[:select_morning]
     @selected_periods << params[:select_noon]
     @selected_periods << params[:select_afternoon]
     @selected_periods << params[:select_evening]
     @selected_periods.compact!
-    current_user.availabilities.period_of_day = @selected_periods
     @selected_days = []
     @selected_days << params[:select_mondays]
     @selected_days << params[:select_tuesdays]
@@ -37,55 +35,83 @@ class UserCharacteristicsController < ApplicationController
     @selected_days << params[:select_thursdays]
     @selected_days << params[:select_fridays]
     @selected_days.compact!
-    current_user.availabilities.day_of_week = @selected_days
 
-
-    current_user.radius = params[:user][:radius].to_i
     current_user.address = params[:user][:address]
     current_user.bio = params[:user][:bio]
+
+    @selected_activities.each do |activity|
+      current_user.activities.create(description: activity)
+    end
+
+    @selected_periods.each do |period|
+      current_user.availabilities.create(period_of_day: period)
+    end
+
+    @selected_days.each do |day|
+      current_user.availabilities.create(day_of_week: day)
+    end
+
+    selected_skills = []
+    selected_skills << params[:skills1]
+    selected_skills << params[:skills2]
+    selected_skills << params[:skills3]
+    @selected_skills = selected_skills
+
+    @selected_skills.each do |skill|
+      current_user.skills.create(name: skill)
+    end
+
+    selected_pi_names = []
+    selected_pi_names << params[:pi_name_1]
+    selected_pi_names << params[:pi_name_2]
+    selected_pi_names << params[:pi_name_3]
+    @selected_pi_names = selected_pi_names
+    @selected_pi_names.each do |pi_name|
+      current_user.professional_interests.create(name: pi_name)
+    end
+
     current_user.save
+
     update_professional
-    raise
   end
 
   def update_professional
-    if !current_user.career_positions.any?
-      job_title = JobTitle.create(name: params["cp-job-title"])
-      company = Company.create(name: params["cp-company"])
-      # industry = Industry.create(name: params["cp-industry"])
+
+      # if current_user.career_positions.any?
+      # current_user.career_positions.destroy_all
+      # end
+      # # industry = Industry.create(name: params["cp-industry"])
       # job_function = JobFunction.create(name: params["cp-functions"])
 
-      career_position = CareerPosition.create(user: current_user)
 
-      career_position.company = company
-      career_position.job_title = job_title
-      # career_position.industry = industry
-      # career_position.job_function = job_function
-    else
-      career_position = current_user.current_position
+      @career_position = CareerPosition.create(user_id: current_user.id)
 
-      job_title = JobTitle.find_by(career_position: career_position)
-      job_title.name = params["cp-job-title"]
+      newcomp = Company.create(name: params[:cp_company])
+      newjob = JobTitle.create(name: params[:cp_job_title])
+      @career_position.company_id = newcomp.id
+      @career_position.job_title_id = newjob.id
+      # raise
 
-      company = Company.find_by(career_position: career_position)
-      company.name = params["cp-company"]
+    # else
+    #   career_position = current_user.current_position
 
-      # industry = Industry.find(career_position: career_position)
-      # industry.name = params["cp-industry"]
+    #   job_title = career_position.job_title
+    #   job_title.name = params["cp-job-title"]
 
-      # job_function = JobFunction.find(career_position: career_position)
-      # job_function.name = params["cp-functions"]
+    #   company = career_position.company
+    #   company.name = params["cp-company"]
 
-    end
+    @career_position.save!
+    # professional_interest = ProfessionalInterest.create(name: params["pi-name"])
+    # @selected_professionalinterests = []
 
-    career_position.save!
+    # current_user.professional_interests.create(name: params[])
+    # skills = Skill.create(name: params["skills"])
+    current_user.save
 
-    raise
-
-    ProfessionalInterest.find(career_position.id).name = params["pi-name"]
-    current_user.professional_goal = params[:user][:professional_goal]
     # Skill.find(current_user.id) = params["skills"]
     # save
+    redirect_to users_path
   end
 
   private
