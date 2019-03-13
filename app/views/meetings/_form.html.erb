@@ -37,9 +37,10 @@
       </div>
       <div class="request-margin request-meeting-activity"><strong>What activity would you like to be doing?</strong>
         <br>
-          <% @relevant_activities.each do |activity| %>
+          <% @user.activities.each do |activity| %>
             <input name="radrelevant_activities" value="<%= activity %>" id="relevant_activities" type="radio">
-            <%= activity %>
+            <%= activity.description %>
+            <i class="<%= activity.symbol %>" ></i>
             <br>
           <% end %>
       </div>
