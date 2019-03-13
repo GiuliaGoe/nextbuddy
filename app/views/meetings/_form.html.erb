@@ -31,13 +31,13 @@
         <h3 class="request-meeting-heading">Where?</h3>
         <ul>
           <li class="request-meeting-option request-meeting-option--location">
-            <input name="meeting_location" value="<%= "near your address" %>" type="radio" id="meeting_location_yours">
+            <input name="meeting_location" value="<%= "your address" %>" type="radio" id="meeting_location_yours">
               <label for="meeting_location_yours">
                 <%= "#{@user.first_name}'s address" %>
               </label>
           </li>
           <li class="request-meeting-option request-meeting-option--location">
-            <input name="meeting_location" value="<%= "near my address" %>" type="radio" id="meeting_location_mine">
+            <input name="meeting_location" value="<%= "my address" %>" type="radio" id="meeting_location_mine">
               <label for="meeting_location_mine">
                 <%= "#{current_user.first_name}'s address" %>
               </label>
