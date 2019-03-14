@@ -7,18 +7,13 @@
   <div class="home-intro-container ">
       Make <strong>connections</strong> <span id="banner-typed-text"></span>
   </div>
-
-    <!-- <a class='btn-log-in-with home-login-btn' href="#">
-      <i class="fab fa-linkedin-in"></i>
-       Login with Linkedin
-    </a> -->
     <% if user_signed_in? %>
       <ul class="btn-home-list">
         <li> <%= link_to "DISCOVER", users_path, :class => 'btn-home-page'  %> </li>
       </ul>
     <% else %>
       <ul class="btn-home-list">
-        <li> <%= link_to "DICOVER", new_user_session_path, :class => 'btn-home-page'  %> </li>
+        <li> <%= link_to "DISCOVER", new_user_session_path, :class => 'btn-home-page'  %> </li>
       </ul>
     <% end %>
 
