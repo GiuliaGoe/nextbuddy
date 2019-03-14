@@ -50,7 +50,13 @@
     padding: 5px 0;
     position: relative;
     padding-left: 25px;
+    input {
+      -webkit-appearance: none;
+      border: 0;
+      outline: none!important;
+    }
   }
+
   .navbar-search-icon {
     position: absolute;
     top: 10px;
