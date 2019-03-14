@@ -248,7 +248,7 @@ chris = User.create!(
 )
 
 laura = User.create!(
-  first_name: 'laura',
+  first_name: 'Laura',
   last_name: 'Crawley',
   email: 'crawley.l@gmail.com',
   password: '123456',
@@ -295,8 +295,8 @@ paal_bubbles = Activity.create(
 
 paal_swimming = Activity.create!(
   user_id: paal.id,
-  symbol: "fas fa-swimme",
-  description: 'have a chat'
+  symbol: "fas fa-swimmer",
+  description: 'go swimming'
 )
 
 fritz_beer = Activity.create(
