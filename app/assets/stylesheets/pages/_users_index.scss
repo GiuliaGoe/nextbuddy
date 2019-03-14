@@ -33,3 +33,11 @@
   min-height: calc(100vh - 324px);
   }
 }
+
+.no-users-search-error {
+  padding-top: 71px;
+  p {
+    font-size: 17px;
+    font-style: italic;
+  }
+}

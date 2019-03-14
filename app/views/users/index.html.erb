@@ -77,7 +77,10 @@
 <div class="scrolling-wrapper" id="card-scroller">
 
   <% if @users.empty? %>
-    <p>No users</p>
+    <div class="no-users-search-error">
+      <p>Your search criteria didn't render any results.</p>
+      <p>Please <strong>redefine</strong> your search!</p>
+    </div>
   <% else %>
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
