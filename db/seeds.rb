@@ -374,7 +374,7 @@ filippo_walkthedog = Activity.create(
 hannah_coffee = Activity.create(
   user_id: hannah.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffe'
+  description: 'have a coffee'
 )
 
 hannah_bubbles = Activity.create(
