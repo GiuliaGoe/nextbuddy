@@ -1,31 +1,30 @@
 <div class="card-user-show">
-
-  <div class="name">
-    <h2><%= @user.first_name.partition(" ").first %> <%= @user.last_name[0,1] %>.</h2>
-  </div>
-
-  <div class="photo">
-    <%= image_tag @user.photo, class: "avatar" %>
-  </div>
-
-
-  <div class="career-position">
+  <div class="card-user-show-header">
+    <div class="name">
+      <h2><%= @user.first_name.partition(" ").first %> <%= @user.last_name[0,1] %>.</h2>
+      <div class="career-position">
         <% @user.career_positions.each do |career| %>
           <h5><%= career.job_title.name %>
             <br>
             @<%= career.company.name %> </h5>
         <% end %>
   </div>
+    </div>
 
-  <div class="interests">
-    <h6>Professional Interests:</h6>
+    <div class="photo">
+      <%= image_tag @user.photo, class: "avatar" %>
+    </div>
+  </div>
+
+  <div class="card-user-show-section">
+    <h6>Professional Interests</h6>
     <% @user.professional_interests.each do |interest| %>
       <p>#<%= interest.name %></p>
     <% end %>
   </div>
 
-  <div class="skills">
-    <h6>Skills:</h6>
+  <div class="card-user-show-section">
+    <h6>Skills</h6>
     <% @user.skills.each do |skill| %>
       <p>
         <%= skill.name.capitalize %>
@@ -33,36 +32,21 @@
     <% end %>
   </div>
 
-  <div class="bio">
-    <h6>Bio:</h6>
-    <p><%= @user.bio[0, 100] %>...</p>
-    <p><a data-toggle="modal" href="#showBio">Read more</a></p>
+  <div class="card-user-show-section">
+    <h6>Bio</h6>
+    <p class="js-bio-teaser"><%= @user.bio[0, 100] %>... <a href="#showBio" id="showBio">Read more</a></p>
+    <p class="js-bio-full hide"><%= @user.bio %></p>
   </div>
 
-
-  <div id="showBio" class="modal fade">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h5> <%= @user.first_name.partition(" ").first %>'s Bio: </h5>
-      </div>
-      <div class="modal-body-not-uppercase">
-        <p> <%= @user.bio %> </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="activity">
-    <h6>What I like to do:</h6>
+  <div class="card-user-show-section">
+    <h6>What I like to do</h6>
     <% @user.activities.each do |activity|  %>
     <i class="fas <%= activity.symbol %>" ></i>
     <% end %>
     </p>
   </div>
 
-  <div class="availability">
+  <div class="card-user-show-section">
     <h6>Availabilities</h6>
       <% @user.availabilities.each do |availability| %>
         <p><%= availability.day_of_week %> <%= availability.period_of_day %>s<p>

@@ -22,13 +22,15 @@
 
 // Style for  _pending_request_card and _accepted_request_card views
 .card-meetings {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 3px;
   margin: 5px 5px;
   padding: 5px 5px;
-  height: 170px;
   font-size: 14px;
   position: relative;
+  margin: 20px 15px 15px 15px;
+  border-bottom: 1px solid #eee;
+  height: 190px;
+  outline: none!important;
 }
 .card-meetings:hover {
   box-shadow: 0 0 10px;
@@ -59,7 +61,7 @@
 }
 
 .header-3 {
-  padding-left: 10px;
+  padding-left: 15px;
   font-size: 30px;
   color: $orange;
 }
@@ -134,7 +136,7 @@
 
 .mail-user {
   position: absolute;
-  bottom: 5px;
+  bottom: 20px;
   left: 10px;
   font-size: 25px;
   .fa-envelope{

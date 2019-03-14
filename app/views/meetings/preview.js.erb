@@ -22,12 +22,12 @@ function updateDOM() {
         <% end %>
       </div>
       <div class="preview-body">
-        <h3 class='strong'>
-          <% if current_user.career_positions.any? %>
+        <% if current_user.career_positions.any? %>
+          <h3 class='strong'>
             <div class="meeting-title"> <%= current_user.current_title.name %> </div>
             <div class="meeting-company"> @ <%= current_user.current_company.name %></div>
-         <% end %>
-        </h3>
+          </h3>
+        <% end %>
         <p>
           Would you like to ${activity} with me ${meeting_location} on ${dateObject.toDateString()} @ ${time}? I would like to talk about ${topic} with you.
         </p>

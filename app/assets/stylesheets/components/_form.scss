@@ -23,14 +23,20 @@ body {
     background: white;
     border: 0 none;
     border-radius: 0px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
+    width: 100%;
 
     /*stacking fieldsets above each other*/
     position: relative;
+
+    label {
+      display: block;
+      display: block;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
 }
 
 /*Hide all except first fieldset*/
