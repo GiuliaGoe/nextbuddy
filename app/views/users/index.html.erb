@@ -38,10 +38,18 @@
           <label class="filter-modal__section">
 
             <div>Activity</div>
-            <%= select_tag :activity,
-              options_for_select(Activity.pluck(:description).uniq,
-              "Select one activity" )
-            %>
+              <%= select_tag :activity, '
+              <option value="" disabled selected hidden>Select one activity</option>
+              <option>Have lunch</option>
+              <option>Go swimming</option>
+              <option>Go running</option>
+              <option>Go jogging</option>
+              <option>Have a coffee</option>
+              <option>Blow bubbles</option>
+              <option>Drink a Beer</option>
+              <option>Walk the dog</option>
+            '.html_safe %>
+
           </label>
           <label class="filter-modal__section">
             <div>Skill</div> <%= text_field_tag :skill, params[:skill], placeholder: "e.g. UX design" %>
@@ -49,10 +57,14 @@
 
           <label class="filter-modal_section">
             <div>Availability</div>
-              <%= select_tag :availability,
-                options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
-                "Select one weekday" )
-              %>
+              <%= select_tag :availability, '
+              <option value="" disabled selected hidden>Select one weekday</option>
+              <option>Monday</option>
+              <option>Tuesday</option>
+              <option>Wednesday</option>
+              <option>Thursday</option>
+              <option>Friday</option>
+            '.html_safe %>
           </label>
           <p><%= submit_tag ("Filter"), class: "btn-orange-filter" %></p>
         <% end  %>
