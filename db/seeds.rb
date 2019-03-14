@@ -122,7 +122,7 @@ filippo = User.create(
   email: 'filippo.faguzzi@gmail.com',
   password: '123456',
   photo: "https://res.cloudinary.com/giugoe/image/upload/v1552543642/filippo_F.jpg",
-  address: "177 Cecil St, South Melbourne'",
+  address: "177 Cecil St, South Melbourne",
   radius: 2.4,
   professional_goal: '',
   bio: 'An industry expert with more than 20 years of successful experience in full life cycle Procurement and Business Development.')
