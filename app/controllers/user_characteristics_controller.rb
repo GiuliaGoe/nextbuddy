@@ -3,44 +3,33 @@ class UserCharacteristicsController < ApplicationController
   before_action :set_professional, only: [:edit_professional, :update_professional]
   before_action :set_meeting_availability, only: [:edit_meeting_availability, :update_meeting_availability]
 
-  # def edit_personal
-  # end
-
-  # def edit_professional
-  # end
-
-
   def update_personal
     # add in availabilities and activities
-    @selected_activities = []
-    @selected_activities << params[:select_coffee]
-    @selected_activities << params[:select_running]
-    @selected_activities << params[:select_jogging]
-    @selected_activities << params[:select_lunch]
-    @selected_activities << params[:select_swimming]
-    @selected_activities << params[:select_dog]
-    @selected_activities << params[:select_beer]
-    @selected_activities << params[:select_bubbles]
-    @selected_activities.compact!
-    @selected_periods = []
-    @selected_periods << params[:select_morning]
-    @selected_periods << params[:select_noon]
-    @selected_periods << params[:select_afternoon]
-    @selected_periods << params[:select_evening]
-    @selected_periods.compact!
-    @selected_days = []
-    @selected_days << params[:select_mondays]
-    @selected_days << params[:select_tuesdays]
-    @selected_days << params[:select_wednesdays]
-    @selected_days << params[:select_thursdays]
-    @selected_days << params[:select_fridays]
-    @selected_days.compact!
+    @selected_activities = [
+      params[:select_coffee], params[:select_running],
+      params[:select_jogging], params[:select_lunch],
+      params[:select_swimming], params[:select_dog],
+      params[:select_beer], params[:select_bubbles]
+    ].compact!
 
-    current_user.address = params[:user][:address]
-    current_user.bio = params[:user][:bio]
+    @selected_periods = [
+      params[:select_morning], params[:select_noon],
+      params[:select_afternoon], params[:select_evening]
+    ].compact!
 
+    @selected_days = [
+      params[:select_mondays], params[:select_tuesdays],
+      params[:select_wednesdays], params[:select_thursdays],
+      params[:select_fridays]
+    ].compact!
+
+    current_user.address = params[:user][:address] if params[:user][:address]
+    current_user.bio = params[:user][:bio] if params[:user][:bio]
+
+    activities = current_user.activities.pluck(:description)
     @selected_activities.each do |activity|
-      current_user.activities.create(description: activity)
+      # We make sure that we only add the activity to the user if he or she does not have it yet.
+      current_user.activities.create(description: activity) unless activities.include?(activity)
     end
 
     @selected_periods.each do |period|
