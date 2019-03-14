@@ -14,22 +14,19 @@ class UserCharacteristicsController < ApplicationController
       params[:select_coffee], params[:select_running],
       params[:select_jogging], params[:select_lunch],
       params[:select_swimming], params[:select_dog],
-      params[:select_beer], params[:select_bubbles],
-      nil
-    ].compact!
+      params[:select_beer], params[:select_bubbles]
+    ].delete_if(&:blank?)
 
     @selected_periods = [
       params[:select_morning], params[:select_noon],
-      params[:select_afternoon], params[:select_evening],
-      nil
-    ].compact!
+      params[:select_afternoon], params[:select_evening]
+    ].delete_if(&:blank?)
 
     @selected_days = [
       params[:select_mondays], params[:select_tuesdays],
       params[:select_wednesdays], params[:select_thursdays],
-      params[:select_fridays],
-      nil
-    ].compact!
+      params[:select_fridays]
+    ].delete_if(&:blank?)
 
     current_user.address = params[:user][:address] if params[:user][:address]
     current_user.bio = params[:user][:bio] if params[:user][:bio]
@@ -40,7 +37,7 @@ class UserCharacteristicsController < ApplicationController
       current_user.activities.create(description: activity) unless activities.include?(activity)
     end
 
-    if @selected_days && @selected_periods
+    if @selected_days.any? && @selected_periods.any?
       current_user.availabilities.create(
         day_of_week: @selected_days.first,
         period_of_day: @selected_periods.first
@@ -49,9 +46,8 @@ class UserCharacteristicsController < ApplicationController
 
     @selected_skills = [
       params[:skills1], params[:skills2],
-      params[:skills3],
-      nil
-    ].compact!
+      params[:skills3]
+    ].delete_if(&:blank?)
 
     user_skills = current_user.skills.pluck(:name)
     @selected_skills.each do |skill|
@@ -60,9 +56,9 @@ class UserCharacteristicsController < ApplicationController
 
     @selected_pi_names = [
       params[:pi_name_1], params[:pi_name_2],
-      params[:pi_name_3],
-      nil
-    ].compact!
+      params[:pi_name_3]
+    ].delete_if(&:blank?)
+    # raise
 
     user_pis = current_user.professional_interests.pluck(:name)
     @selected_pi_names.each do |pi_name|
