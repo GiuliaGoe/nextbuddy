@@ -842,7 +842,7 @@ puts "Finished creating #{JobTitle.all.count} Job Titles"
 puts "Creating some Companies!"
 
 law_firm = Company.create!(
-  name: 'Roberts own f****** empire',
+  name: 'F****** empire',
 )
 
 andreanum = Company.create(
