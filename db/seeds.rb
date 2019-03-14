@@ -27,10 +27,10 @@ brian = User.create!(
   email: 'brian.daly@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552535552/brian.jpg',
-  address: '14-16 Church St, Queenstown 9300, New Zealand',
+  address: '14-16 Church St, South Melbourne',
   radius: 500,
   professional_goal: '',
-  bio: 'Colorado love, New Zealand living, Adventure enthusiast. The next experience is right around the corner.'
+  bio: 'Colorado love, Australia living, Adventure enthusiast. The next experience is right around the corner.'
 )
 
 winson = User.create!(
@@ -110,7 +110,7 @@ marco = User.create(
   last_name: "Materazzi",
   email: 'marco.materazzi@gmail.com',
   password: '123456',
-  photo: "Thttps://res.cloudinary.com/giugoe/image/upload/v1552293209/marco.jpg",
+  photo: "https://res.cloudinary.com/giugoe/image/upload/v1552293209/marco.jpg",
   address: "9/271 William St, Melbourne",
   radius: 5.0,
   professional_goal: '',
@@ -121,7 +121,7 @@ filippo = User.create(
   last_name: "Faguzzi",
   email: 'filippo.faguzzi@gmail.com',
   password: '123456',
-  photo: "https://res.cloudinary.com/giugoe/image/upload/v1552293529/filippo.jpg",
+  photo: "https://res.cloudinary.com/giugoe/image/upload/v1552543642/filippo_F.jpg",
   address: "177 Cecil St, South Melbourne'",
   radius: 2.4,
   professional_goal: '',
@@ -132,7 +132,7 @@ hannah = User.create!(
   last_name: "Fuzzi",
   email: 'hannah.fuzzi@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294147/hannah.jpg',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552543642/hannah_f.jpg',
   address: '16 Morris St, South Melbourne',
   radius: 900,
   professional_goal: '',
@@ -144,7 +144,7 @@ robert = User.create!(
   last_name: 'Pfeiffer',
   email: 'robert.pfeiffer@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552294124/robert.jpg',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552543642/robert_p.jpg',
   address: '117 Farrell St, Port Melbourne',
   radius: 700,
   professional_goal: '',
@@ -156,7 +156,7 @@ hans = User.create!(
   last_name: 'Von Der Heyde',
   email: 'hans.heyde@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552293963/hans.jpg',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552543643/hans_v.jpg',
   address: '90 Collins St, Melbourne',
   radius: 700,
   professional_goal: '',
@@ -800,9 +800,6 @@ designer = JobTitle.create(
 analyst = JobTitle.create(
   name: 'Analyst')
 
-title0 = JobTitle.create(
-  name: 'Jr Developer'
-  )
 title1 = JobTitle.create(
   name: 'IT Analyst'
   )
@@ -818,7 +815,7 @@ puts "Finished creating #{JobTitle.all.count} Job Titles"
 puts "Creating some Companies!"
 
 law_firm = Company.create!(
-  name: 'F****** empire',
+  name: 'PWC',
 )
 
 andreanum = Company.create(
@@ -834,14 +831,14 @@ talent = Company.create!(
 )
 
 company0 = Company.create(
-  name: 'Le Wagon'
+  name: 'BMW'
   )
 company1 = Company.create(
-  name: 'Catch Up'
+  name: 'Samsung'
   )
 
 company2 = Company.create(
-  name: 'Next Buddy'
+  name: 'Adidas'
   )
 
 
@@ -862,19 +859,19 @@ merck = Company.create!(
 )
 
 stern = Company.create(
-  name: 'SternStewart')
+  name: 'Stern Stewart')
 
 hyve = Company.create(
   name: 'Hyve')
 
 self_owned = Company.create(
-  name: "Rutger's Empire")
+  name: "Zendesk")
 
 health_coach = Company.create(
-  name: "Your Health Coach")
+  name: "Fitness First")
 
 solar_energy = Company.create(
-  name: 'Solar Energy')
+  name: 'Commonwealth Bank')
 
 puts "Finished creating #{Company.all.count} Companies"
 
@@ -908,7 +905,7 @@ fritz_career = CareerPosition.create(
 
 career_position0 = CareerPosition.create(
   user_id: dale.id,
-  job_title: title0,
+  job_title: junior_developer,
     company: merck
   )
 
@@ -1014,7 +1011,7 @@ brian_eman_meeting = Meeting.create!(
   status: 'accepted',
   meeting_date_time: DateTime.new(2020,3,10,6,0,0),
   suggested_activity: 'go running',
-  meeting_location: 'at your place',
+  meeting_location: "Brian's address",
   sender_id: brian.id,
   recipient_id: eman.id,
   topic: 'Business Development'
@@ -1024,7 +1021,7 @@ filippo_marco_meeting = Meeting.create!(
   status: 'pending',
   meeting_date_time: DateTime.new(2021,3,14,8,0,0),
   suggested_activity: 'blow bubbles',
-  meeting_location: 'at my place',
+  meeting_location: "Marco's address",
   sender_id: filippo.id,
   recipient_id: marco.id,
   topic: 'Recruiting'
@@ -1034,7 +1031,7 @@ marco_brian_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
   suggested_activity: 'go running',
-  meeting_location: '20 Bourke St',
+  meeting_location: "Brian's address",
   sender_id: marco.id,
   recipient_id: brian.id,
   topic: 'Business in Latin America'
@@ -1044,7 +1041,7 @@ eman_filippo_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,7,9,8,0,0),
   suggested_activity: 'go swimming',
-  meeting_location: '20 Bourke St',
+  meeting_location: "Eman's address",
   sender_id: eman.id,
   recipient_id: filippo.id,
   topic: 'Tech in Italy'
@@ -1054,10 +1051,10 @@ eman_marco_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,1,11,6,0,0),
   suggested_activity: 'go swimming',
-  meeting_location: '20 Bourke St',
+  meeting_location: "Marco's address",
   sender_id: eman.id,
   recipient_id: marco.id,
-  topic: 'Italian Startups'
+  topic: 'Italian startups'
 )
 
 marco_brian_meeting = Meeting.create(
@@ -1066,8 +1063,8 @@ marco_brian_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
   suggested_activity: 'go swimming',
-  meeting_location: '70 Dorcas St',
-  topic: 'Professional Skiing'
+  meeting_location: "Brian's address",
+  topic: 'professional skiing'
 )
 
 
@@ -1078,8 +1075,8 @@ eman_robert_meeting = Meeting.create(
   meeting_date_time: DateTime.new(2019,3,12,8,0,0),
 
   suggested_activity: 'go jogging',
-  meeting_location: 'McDonalds Swanston Street',
-  topic: 'Law in general'
+  meeting_location: "Robert's address",
+  topic: 'law in general'
 )
 
 
@@ -1300,7 +1297,7 @@ professional_interest0 = ProfessionalInterest.create(
   )
 professional_interest1 = ProfessionalInterest.create(
   name: 'Ruby',
-  user_id: damon.id
+  user_id: ben.id
   )
 professional_interest2 = ProfessionalInterest.create(
   name: 'CSS',
