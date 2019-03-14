@@ -27,4 +27,9 @@
 .map-flexbox {
   display: flex;
   position: relative;
+
+  .mapboxgl-map {
+  max-height: calc(100vh - 324px);
+  min-height: calc(100vh - 324px);
+  }
 }
