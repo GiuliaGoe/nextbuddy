@@ -37,8 +37,16 @@
 .modal-body {
   color: #999;
     margin-bottom: 5px;
-    // text-transform: ;
+    text-transform: UPPERCASE ;
     font-size: 12px;
-    text-align: justify;
+    font-weight: bold;
+}
+
+.modal-body-uncapitalise{
+  color: #999;
+    margin-bottom: 5px;
+    // text-transform: UPPERCASE ;
+    font-size: 12px;
+    // text-align: justify;
     // font-weight: bold;
 }
