@@ -35,26 +35,9 @@
       <%= image_tag 'https://res.cloudinary.com/giugoe/image/upload/v1552435485/Icon_out.png', class: "responsibility-icon" %>
     </div>
 
-    <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", type: "button", class: "btn btn-book-meeting", "data-toggle" => "modal", 'data-target' => '#cancelmodal' %>
+    <%= link_to "Cancel", cancel_meeting_path(meeting), id: "cancel", type: "button", class: "btn btn-book-meeting", data: { confirm: "That's sad. You might miss a great networking opportunity." } %>
 
-    <div id="cancelmodal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Filter nextBuddys by</h4>
-          </div>
-          <div class="modal-body">
-            That's sad. You'll lose a great networking opportunity.
-          </div>
-          <div class="modal-footer">
-            <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="mail-user">
       <%= mail_to receiver.email do %>
         <i class='far fa-envelope'></i>
