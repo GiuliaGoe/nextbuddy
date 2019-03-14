@@ -1,6 +1,6 @@
 <div class="request-meeting">
   <div class="request-welcome">
-    <h3>Let's meet <%= @user.first_name.partition(" ").first %> <%= @user.first_name[0,1] %>.
+    <h3>Let's meet <%= @user.first_name.partition(" ").first %> <%= @user.last_name[0,1] %>.
     <%= image_tag @user.photo, class: "avatar-bordered-show" %></h3>
   </div>
   <div class="request-form">
@@ -33,13 +33,13 @@
           <li class="request-meeting-option request-meeting-option--location">
             <input name="meeting_location" value="<%= "near your address" %>" type="radio" id="meeting_location_yours">
               <label for="meeting_location_yours">
-                <%= "#{@user.first_name}'s address" %>
+                <%= "#{@user.first_name.partition(" ").first}'s address" %>
               </label>
           </li>
           <li class="request-meeting-option request-meeting-option--location">
             <input name="meeting_location" value="<%= "near my address" %>" type="radio" id="meeting_location_mine">
               <label for="meeting_location_mine">
-                <%= "#{current_user.first_name}'s address" %>
+                <%= "#{current_user.first_name.partition(" ").first}'s address" %>
               </label>
           </li>
           <li class="request-meeting-option request-meeting-option--location">
