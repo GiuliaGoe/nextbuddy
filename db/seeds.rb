@@ -27,7 +27,7 @@ brian = User.create!(
   email: 'brian.daly@gmail.com',
   password: '123456',
   photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552535552/brian.jpg',
-  address: '14-16 Church St, South Melbourne',
+  address: '16 Church St, South Melbourne',
   radius: 500,
   professional_goal: '',
   bio: 'Colorado love, Australia living, Adventure enthusiast. The next experience is right around the corner.'
