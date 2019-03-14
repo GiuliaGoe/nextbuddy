@@ -21,16 +21,16 @@ User.destroy_all
 
 puts "Creating Users"
 
-juan = User.create!(
-  first_name: 'Juan',
-  last_name: 'Cardenas',
-  email: 'juan.cardenas@gmail.com',
+brian = User.create!(
+  first_name: 'Brian',
+  last_name: 'Daly',
+  email: 'brian.daly@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552290231/juan.png',
-  address: '99 Beacon Rd, Port Melbourne',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552535552/brian.jpg',
+  address: '14-16 Church St, Queenstown 9300, New Zealand',
   radius: 500,
   professional_goal: '',
-  bio: 'Standing at the forefront of the fastest moving technology industry trend: cloud services. I have spent the past five years evangelizing an industry-wide shift to the cloud and has helped position Microsoft as a leader in the public cloud space.'
+  bio: 'Colorado love, New Zealand living, Adventure enthusiast. The next experience is right around the corner.'
 )
 
 winson = User.create!(
@@ -45,7 +45,6 @@ winson = User.create!(
   bio: 'Data scientist and analyst with experience in various industries including consulting, banking and SaaS. Passionate about solving real problems and creating value by leveraging the latest technologies.'
 )
 
-
 paal = User.create!(
   first_name: 'Paal',
   last_name: 'Ringstad',
@@ -57,7 +56,6 @@ paal = User.create!(
   professional_goal: '',
   bio: 'Passionate about education and building projects, I launched Le Wagon Coding Bootcamp in Australia. Le Wagon believes that education has to be redefined, by providing a whole new type of education, based on collaboration and self-learning, in a startup-style environment.'
 )
-
 
 fritz = User.create!(
   first_name: 'Fritz',
@@ -177,7 +175,6 @@ valerie = User.create!(
   bio: 'After 3.5 great years of working as a Country Manager for Green Claim, I felt it was time for a change. I flew across the ocean to do Le Wagon’s Full Stack Coding Bootcamp in Bali, which equipped me with a new set of skills. I am excited to further develop these skills and to combine them with my previous work experience.'
 )
 
-
 felix = User.create!(
   first_name: 'Felix',
   last_name: 'Herrmann',
@@ -190,13 +187,13 @@ felix = User.create!(
   bio: 'Education is the area that I am greatly passionate about. Apart from being a high-school teacher, I would say that I am a coffee connoisseur - definitely need 5 coffees a day - so might as well have one with you!'
 )
 
-jonas = User.create!(
-  first_name: 'Jonas',
-  last_name: 'Japing',
-  email: 'jonasjaping@gmail.com',
+eman = User.create!(
+  first_name: 'Eman',
+  last_name: 'Watson',
+  email: 'emanw@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304606/jonas.jpg',
-  address: '7 Orion Mews, Port Melbourne',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552535563/eman.jpg',
+  address: '37A Bray St, Plympton Park SA 5038',
   radius: 550,
   professional_goal: '',
   bio: 'I am a business graduate with a focus on International Management. Recently, I have been researching and trying to understand the functionality of Agile in the business environment and after great amounts of research, tests and trials - I am proud to say I have significant depth and knowledge on the subject matter!'
@@ -250,12 +247,12 @@ chris = User.create!(
   bio: 'I’m a skilled digital marketer with experience in social media (Facebook, Instagram, Twitter, Snapchat), EDM, SEO and web design. I have a bachelor of Commerce from the University of Melbourne, majoring in Marketing and Finance, which has allowed me to be data driven, customer-focused and motivated to create meaningful results. My campaigns have grown reach, followership, impressions and most importantly, sales!'
 )
 
-giulia = User.create!(
-  first_name: 'Giulia',
-  last_name: 'Goella',
-  email: 'giulia.goella@gmail.com',
+laura = User.create!(
+  first_name: 'laura',
+  last_name: 'Crawley',
+  email: 'crawley.l@gmail.com',
   password: '123456',
-  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552304288/giulia.jpg',
+  photo: 'https://res.cloudinary.com/giugoe/image/upload/v1552535862/laura.jpg',
   address: '12 Hotham St, South Melbourne',
   radius: 450,
   professional_goal: '',
@@ -266,511 +263,490 @@ puts "Created #{User.all.length} users"
 
 puts "Creating some Activities!"
 
-
-juan_running = Activity.create!(
-  description: 'go running',
+brian_running = Activity.create!(
+  user_id: brian.id,
   symbol: "fas fa-running",
-  user_id: juan.id
+  description: 'go running'
 )
 
-juan_lunch = Activity.create!(
-  description: 'have lunch',
+brian_lunch = Activity.create!(
+  user_id: brian.id,
   symbol: "fas fa-utensils",
-  user_id: juan.id
+  description: 'have lunch'
 )
 
 winson_coffee = Activity.create(
   user_id: winson.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
 
 winson_jogging = Activity.create(
   user_id: winson.id,
   symbol: "fas fa-walking",
-  description: 'go jogging')
+  description: 'go jogging'
+)
 
 paal_bubbles = Activity.create(
   user_id: paal.id,
   symbol: "fas fa-comments",
-  description: 'blow bubbles')
+  description: 'have a chat'
+)
 
 paal_swimming = Activity.create!(
-  description: 'go swimming',
-  symbol: "fas fa-swimmer",
-  user_id: paal.id
+  user_id: paal.id,
+  symbol: "fas fa-swimme",
+  description: 'have a chat'
 )
 
 fritz_beer = Activity.create(
   user_id: fritz.id,
   symbol: "fas fa-beer",
-  description: 'drink a beer')
+  description: 'drink a beer'
+)
 
-frity_coffee = Activity.create(
+fritz_coffee = Activity.create(
   user_id: fritz.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
 
 dale_dog = Activity.create(
-  description: 'walk the dog',
+  user_id: dale.id,
   symbol: "fas fa-walking",
-  user_id: dale.id
-  )
+  description: 'walk the dog'
+)
 
 dale_coffee = Activity.create(
   user_id: dale.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
 
 damon_beer = Activity.create(
-  description: 'drink a beer',
+  user_id: damon.id,
   symbol: "fas fa-beer",
-  user_id: damon.id
-  )
+  description: 'drink a beer'
+)
 
 damon_running = Activity.create(
   user_id: damon.id,
   symbol: "fas fa-running",
-  description: 'go running')
+  description: 'go running'
+)
 
 ben_jogging = Activity.create(
-  description: 'go jogging',
+  user_id: ben.id,
   symbol: "fas fa-walking",
-  user_id: ben.id
-  )
+  description: 'go jogging'
+)
 
 ben_coffee = Activity.create(
   user_id: ben.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
-
+  description: 'have a coffee'
+)
 
 marco_jogging = Activity.create(
   user_id: marco.id,
   symbol: "fas fa-walking",
-
-  description: 'go jogging')
+  description: 'go jogging'
+)
 
 marco_dog = Activity.create(
   user_id: marco.id,
   symbol: "fas fa-dog",
-  description: 'walk the dog')
-
-marco_coffee = Activity.create(
-  user_id: marco.id,
-  symbol: "fas fa-coffee",
-  description: 'have a coffee')
-
+  description: 'walk the dog'
+)
 
 filippo_running = Activity.create(
   user_id: filippo.id,
-    symbol: "fas fa-running",
-
-  description: 'go running')
+  symbol: "fas fa-running",
+  description: 'go running'
+)
 
 filippo_walkthedog = Activity.create(
   user_id: filippo.id,
-    symbol: "fas fa-dog",
-
-  description: 'walk the dog')
+  symbol: "fas fa-dog",
+  description: 'walk the dog'
+)
 
 hannah_coffee = Activity.create(
   user_id: hannah.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffe')
+  description: 'have a coffe'
+)
 
 hannah_bubbles = Activity.create(
   user_id: hannah.id,
   symbol: "fas fa-comments",
-  description: 'blow bubbles')
+  description: 'have a chat'
+)
 
 robert_coffee = Activity.create(
   user_id: robert.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
 
-rober_lunch = Activity.create!(
-  description: 'have lunch',
+robert_lunch = Activity.create!(
+  user_id: robert.id,
   symbol: "fas fa-utensils",
-  user_id: robert.id
+  description: 'have lunch'
 )
 
 hans_coffee = Activity.create(
   user_id: hans.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
 
 hans_swimming = Activity.create!(
-  description: 'go swimming',
+  user_id: hans.id,
   symbol: "fas fa-swimmer",
-  user_id: hans.id
+  description: 'go swimming'
 )
 
 valerie_coffee = Activity.create(
   user_id: valerie.id,
   symbol: "fas fa-coffee",
-  description: 'have a coffee')
+  description: 'have a coffee'
+)
+
+valerie_swimming = Activity.create(
+  user_id: valerie.id,
+  symbol: "fas fa-swimmer",
+  description: 'go swimming'
+)
 
 
 felix_bubbles = Activity.create(
   user_id: felix.id,
-      symbol: "fas fa-comments",
-
-  description: 'blow bubbles')
+  symbol: "fas fa-comments",
+  description: 'have a chat'
+)
 
 felix_lunch = Activity.create(
   user_id: felix.id,
-    symbol: "fas fa-utensils",
-
-  description: 'have lunch')
-
-robert_coffee = Activity.create(
-  user_id: robert.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
-
-hans_coffee = Activity.create(
-  user_id: hans.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
-
-jonas_lunch = Activity.create!(
-  description: 'have lunch',
-    symbol: "fas fa-utensils",
-
-  user_id: jonas.id
+  symbol: "fas fa-utensils",
+  description: 'have lunch'
 )
 
-valerie_dog = Activity.create(
-  user_id: valerie.id,
-    symbol: "fas fa-dog",
-
-  description: 'walk the dog')
-
-felix_swimming = Activity.create!(
-  description: 'go swimming',
-    symbol: "fas fa-swimmer",
-
-  user_id: felix.id
+eman_lunch = Activity.create!(
+  user_id: eman.id,
+  symbol: "fas fa-utensils",
+  description: 'have lunch'
 )
 
-felix_jogging = Activity.create(
-  user_id: felix.id,
-    symbol: "fas fa-walking",
-
-  description: 'go jogging')
-
-jonas_lazy = Activity.create(
-  user_id: jonas.id,
-    symbol: "fas fa-comments",
-
-  description: 'blow bubbles')
-
-jonas_coffee = Activity.create(
-  user_id: jonas.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
+eman_coffee = Activity.create(
+  user_id: eman.id,
+  symbol: "fas fa-coffee",
+  description: 'have a coffee'
+)
 
 adora_running = Activity.create(
   user_id: adora.id,
-      symbol: "fas fa-running",
-
-  description: 'go running')
+  symbol: "fas fa-running",
+  description: 'go running'
+)
 
 adora_beer = Activity.create(
-  description: 'drink a beer',
-    symbol: "fas fa-beer",
-
-  user_id: adora.id
-  )
+  user_id: adora.id,
+  symbol: "fas fa-beer",
+  description: 'drink a beer'
+)
 
 alex_coffee = Activity.create(
   user_id: alex.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
+  symbol: "fas fa-coffee",
+  description: 'have a coffee'
+)
 
 alex_dog = Activity.create(
-  description: 'walk the dog',
-  user_id: alex.id
-  )
+  user_id: alex.id,
+  symbol: "fas fa-dog",
+  description: 'walk the dog'
+)
 
 rutger_running = Activity.create!(
-  description: 'go running',
-    symbol: "fas fa-running",
-
-  user_id: rutger.id
+  user_id: rutger.id,
+  symbol: "fas fa-running",
+  description: 'go running'
 )
 
 rutger_lunch = Activity.create!(
-  description: 'have lunch',
-    symbol: "fas fa-utensils",
-
-  user_id: rutger.id
+  user_id: rutger.id,
+  symbol: "fas fa-utensils",
+  description: 'have lunch'
 )
 
 chris_coffee = Activity.create(
   user_id: chris.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
+  symbol: "fas fa-coffee",
+  description: 'have a coffee'
+)
 
 chris_bubbles = Activity.create(
   user_id: chris.id,
-    symbol: "fas fa-comments",
+  symbol: "fas fa-comments",
+  description: 'have a chat'
+)
 
-  description: 'blow bubbles')
+laura_dog = Activity.create(
+  user_id: laura.id,
+  symbol: "fas fa-dog",
+  description: 'walk the dog'
+)
 
-giulia_dog = Activity.create(
-  user_id: giulia.id,
-  description: 'walk the dog')
-
-giulia_coffee = Activity.create(
-  user_id: giulia.id,
-    symbol: "fas fa-coffee",
-
-  description: 'have a coffee')
+laura_coffee = Activity.create(
+  user_id: laura.id,
+  symbol: "fas fa-coffee",
+  description: 'have a coffee'
+)
 
 puts "Finished creating #{Activity.all.count} activities"
 
 puts "Creating some Availabilities!"
 
-afternoon = Availability.create!(
+afternoon_brian = Availability.create!(
+  user_id: brian.id,
   day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: juan.id
+  period_of_day: 'afternoon'
 )
 
-noon = Availability.create!(
-  day_of_week: 'Tuesday',
-  period_of_day: 'noon',
-  user_id: juan.id
-)
-
-morning = Availability.create!(
+morning_brian = Availability.create!(
+  user_id: brian.id,
   day_of_week: 'Wednesday',
-  period_of_day: 'morning',
-  user_id: juan.id
+  period_of_day: 'morning'
 )
 
-
-afternoon = Availability.create!(
+afternoon_winson = Availability.create!(
+  user_id: winson.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: winson.id
+  period_of_day: 'afternoon'
 )
 
-marco_avail2 = Availability.create(
+evening_winson = Availability.create(
   user_id: winson.id,
   day_of_week: 'Friday',
-  period_of_day: 'evenings' )
+  period_of_day: 'evening'
+)
 
-
-afternoon = Availability.create!(
+afternoon_paal = Availability.create!(
+  user_id: paal.id,
   day_of_week: 'Wednesday',
-  period_of_day: 'afternoon',
-  user_id: paal.id
+  period_of_day: 'afternoon'
 )
 
-afternoon = Availability.create!(
-  day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: fritz.id
-)
-
-afternoon = Availability.create!(
-  day_of_week: 'Friday',
-  period_of_day: 'afternoon',
-  user_id: fritz.id
-)
-
-availability0 = Availability.create(
-  day_of_week: 'Monday',
-  period_of_day: 'noon',
-  user_id: dale.id)
-
-availability1 = Availability.create(
+morning_paal = Availability.create!(
+  user_id: paal.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: dale.id
-  )
-
-availability1 = Availability.create(
-  day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: damon.id
-  )
-availability2 = Availability.create(
-  day_of_week: 'Friday',
-  period_of_day: 'evening',
-  user_id: damon.id
-  )
-
-
-afternoon = Availability.create!(
-  day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: ben.id
+  period_of_day: 'morning'
 )
 
-availability2 = Availability.create(
-  day_of_week: 'Friday',
-  period_of_day: 'evening',
-  user_id: ben.id
-  )
+noon_fritz = Availability.create!(
+  user_id: fritz.id,
+  day_of_week: 'Monday',
+  period_of_day: 'noon'
+)
 
-marco_avail1 = Availability.create(
+afternoon_fritz = Availability.create!(
+  user_id: fritz.id,
+  day_of_week: 'Friday',
+  period_of_day: 'afternoon'
+)
+
+noon_dale = Availability.create(
+  user_id: dale.id,
+  day_of_week: 'Monday',
+  period_of_day: 'noon'
+)
+
+afternoon_dale = Availability.create(
+  user_id: dale.id,
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon'
+)
+
+afternoon_damon = Availability.create(
+  user_id: damon.id,
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon'
+)
+
+evening_damon = Availability.create(
+  user_id: damon.id,
+  day_of_week: 'Friday',
+  period_of_day: 'evening'
+)
+
+
+afternoon_ben = Availability.create!(
+  user_id: ben.id,
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon'
+)
+
+evening_ben = Availability.create(
+  user_id: ben.id,
+  day_of_week: 'Friday',
+  period_of_day: 'evening'
+)
+
+morning_marco = Availability.create(
   user_id: marco.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'morning' )
+  period_of_day: 'morning'
+)
 
-marco_avail2 = Availability.create(
+evening_marco = Availability.create(
   user_id: marco.id,
   day_of_week: 'Friday',
-  period_of_day: 'evening' )
+  period_of_day: 'evening'
+)
 
-filippo_avail1 = Availability.create(
+noon_filipo = Availability.create(
   user_id: filippo.id,
   day_of_week: 'Monday',
-  period_of_day: 'noon' )
+  period_of_day: 'noon'
+)
 
-filippo_avail2 = Availability.create(
+afternoon_filipo = Availability.create(
   user_id: filippo.id,
   day_of_week: 'Thursday',
-  period_of_day: 'afternoon' )
+  period_of_day: 'afternoon'
+)
 
-morning = Availability.create!(
+morning_hannah = Availability.create!(
+  user_id: hannah.id,
   day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: hannah.id
+  period_of_day: 'morning'
 )
 
-afternoon = Availability.create!(
-  day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: robert.id
-)
-
-afternoon = Availability.create!(
+afternoon_hannah = Availability.create!(
+  user_id: hannah.id,
   day_of_week: 'Thursday',
-  period_of_day: 'afternoon',
-  user_id: robert.id
+  period_of_day: 'afternoon'
 )
 
-afternoon = Availability.create!(
+afternoon_robert = Availability.create!(
+  user_id: robert.id,
   day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: hans.id
+  period_of_day: 'afternoon'
 )
 
-afternoon = Availability.create!(
+noon_robert = Availability.create!(
+  user_id: robert.id,
+  day_of_week: 'Thursday',
+  period_of_day: 'noon'
+)
+
+afternoon_hans = Availability.create!(
+  user_id: hans.id,
+  day_of_week: 'Monday',
+  period_of_day: 'afternoon'
+)
+
+morning_hans = Availability.create!(
+  user_id: hans.id,
   day_of_week: 'Friday',
-  period_of_day: 'afternoon',
-  user_id: hans.id
+  period_of_day: 'morning'
 )
 
-afternoon = Availability.create!(
+afternoon_valerie = Availability.create!(
+  user_id: valerie.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: valerie.id
+  period_of_day: 'afternoon'
 )
 
-morning = Availability.create!(
+morning_valerie = Availability.create!(
+  user_id: valerie.id,
   day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: valerie.id
+  period_of_day: 'morning'
 )
 
-morning = Availability.create!(
+morning_felix = Availability.create!(
+  user_id: felix.id,
   day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: felix.id
+  period_of_day: 'morning'
 )
 
-afternoon = Availability.create!(
+afternoon_felix = Availability.create!(
+  user_id: felix.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: jonas.id
+  period_of_day: 'afternoon'
 )
 
-morning = Availability.create!(
+afternoon_eman = Availability.create!(
+  user_id: eman.id,
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon'
+)
+
+morning_eman = Availability.create!(
+  user_id: eman.id,
   day_of_week: 'Wednesday',
-  period_of_day: 'morning',
-  user_id: jonas.id
+  period_of_day: 'morning'
 )
 
-availability0 = Availability.create(
+noon_adora = Availability.create(
+  user_id: adora.id,
   day_of_week: 'Monday',
-  period_of_day: 'noon',
-  user_id: adora.id
-  )
-availability1 = Availability.create(
-  day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: adora.id
-  )
+  period_of_day: 'noon'
+)
 
-availability1 = Availability.create(
+afternoon_adora = Availability.create(
+  user_id: adora.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: alex.id
-  )
+  period_of_day: 'afternoon'
+)
 
-afternoon = Availability.create!(
+afternoon_alex = Availability.create(
+  user_id: alex.id,
+  day_of_week: 'Tuesday',
+  period_of_day: 'afternoon'
+)
+
+morning_alex = Availability.create!(
+  user_id: alex.id,
   day_of_week: 'Wednesday',
-  period_of_day: 'afternoon',
-  user_id: alex.id
+  period_of_day: 'morning'
 )
 
-availability2 = Availability.create(
-  day_of_week: 'Friday',
-  period_of_day: 'evening',
-  user_id: alex.id
-  )
-
-
-afternoon = Availability.create!(
+afternoon_rutger = Availability.create!(
+  user_id: rutger.id,
   day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: rutger.id
+  period_of_day: 'afternoon'
 )
 
-afternoon = Availability.create!(
+morning_rutger = Availability.create!(
+  user_id: rutger.id,
   day_of_week: 'Friday',
-  period_of_day: 'afternoon',
-  user_id: rutger.id
+  period_of_day: 'morning'
 )
 
-afternoon = Availability.create!(
+afternoon_chris = Availability.create!(
+  user_id: chris.id,
   day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: chris.id
+  period_of_day: 'afternoon'
 )
 
-morning = Availability.create!(
+morning_chris = Availability.create!(
+  user_id: chris.id,
   day_of_week: 'Friday',
-  period_of_day: 'morning',
-  user_id: chris.id
+  period_of_day: 'morning'
 )
 
-afternoon = Availability.create!(
+afternoon_laura = Availability.create!(
+  user_id: laura.id,
   day_of_week: 'Monday',
-  period_of_day: 'afternoon',
-  user_id: giulia.id
+  period_of_day: 'afternoon'
 )
 
-afternoon = Availability.create!(
+morning_laura = Availability.create!(
+  user_id: laura.id,
   day_of_week: 'Tuesday',
-  period_of_day: 'afternoon',
-  user_id: giulia.id
-)
-
-morning = Availability.create!(
-  day_of_week: 'Wednesday',
-  period_of_day: 'morning',
-  user_id: giulia.id
+  period_of_day: 'morning'
 )
 
 puts "Created #{Availability.all.count} availabilities"
@@ -905,8 +881,8 @@ puts "Finished creating #{Company.all.count} Companies"
 
 puts "Creating some Career Positions!"
 
-juan_career = CareerPosition.create(
-  user_id: juan.id,
+brian_career = CareerPosition.create(
+  user_id: brian.id,
   job_title: junior_developer,
   company: microsoft,
 )
@@ -991,8 +967,8 @@ felix_career = CareerPosition.create(
   company: andreanum,
 )
 
-jonas_career = CareerPosition.create(
-  user_id: jonas.id,
+eman_career = CareerPosition.create(
+  user_id: eman.id,
   job_title: agile_coach,
   company: talent,
 )
@@ -1022,8 +998,8 @@ chris_career = CareerPosition.create(
   company: merck
 )
 
-giulia_career = CareerPosition.create(
-  user_id: giulia.id,
+laura_career = CareerPosition.create(
+  user_id: laura.id,
   job_title: entrepreneur,
   company: health_coach ,
 )
@@ -1034,13 +1010,13 @@ puts "Finished creating #{CareerPosition.all.count} Career Positions"
 puts "Creating some Meetings!"
 
 
-juan_jonas_meeting = Meeting.create!(
+brian_eman_meeting = Meeting.create!(
   status: 'accepted',
   meeting_date_time: DateTime.new(2020,3,10,6,0,0),
   suggested_activity: 'go running',
   meeting_location: 'at your place',
-  sender_id: juan.id,
-  recipient_id: jonas.id,
+  sender_id: brian.id,
+  recipient_id: eman.id,
   topic: 'Business Development'
 )
 
@@ -1054,39 +1030,39 @@ filippo_marco_meeting = Meeting.create!(
   topic: 'Recruiting'
 )
 
-marco_juan_meeting = Meeting.create(
+marco_brian_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
   suggested_activity: 'go running',
   meeting_location: '20 Bourke St',
   sender_id: marco.id,
-  recipient_id: juan.id,
+  recipient_id: brian.id,
   topic: 'Business in Latin America'
 )
 
-jonas_filippo_meeting = Meeting.create(
+eman_filippo_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,7,9,8,0,0),
   suggested_activity: 'go swimming',
   meeting_location: '20 Bourke St',
-  sender_id: jonas.id,
+  sender_id: eman.id,
   recipient_id: filippo.id,
   topic: 'Tech in Italy'
 )
 
-jonas_marco_meeting = Meeting.create(
+eman_marco_meeting = Meeting.create(
   status: 'pending',
   meeting_date_time: DateTime.new(2019,1,11,6,0,0),
   suggested_activity: 'go swimming',
   meeting_location: '20 Bourke St',
-  sender_id: jonas.id,
+  sender_id: eman.id,
   recipient_id: marco.id,
   topic: 'Italian Startups'
 )
 
-marco_juan_meeting = Meeting.create(
+marco_brian_meeting = Meeting.create(
   sender_id: marco.id,
-  recipient_id: juan.id,
+  recipient_id: brian.id,
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,10,6,0,0),
   suggested_activity: 'go swimming',
@@ -1095,8 +1071,8 @@ marco_juan_meeting = Meeting.create(
 )
 
 
-jonas_robert_meeting = Meeting.create(
-  sender_id: jonas.id,
+eman_robert_meeting = Meeting.create(
+  sender_id: eman.id,
   recipient_id: robert.id,
   status: 'pending',
   meeting_date_time: DateTime.new(2019,3,12,8,0,0),
@@ -1111,13 +1087,13 @@ puts "Finished creating #{Meeting.all.count} meetings"
 
 puts "Creating some Skills!"
 
-juan_skill_1 = Skill.create(
-  user_id: juan.id,
-  name: 'Ruby on Rails')
+brian_skill_1 = Skill.create(
+  user_id: brian.id,
+  name: 'Personal Training')
 
-juan_skill_2 = Skill.create(
-  user_id: juan.id,
-  name: 'CSS')
+brian_skill_2 = Skill.create(
+  user_id: brian.id,
+  name: 'Sports')
 
 winson_skill_1 = Skill.create(
   user_id: winson.id,
@@ -1223,12 +1199,12 @@ felix_skill_2 = Skill.create(
   user_id: felix.id,
   name: 'Ancient History')
 
-jonas_skill_1 = Skill.create(
-  user_id: jonas.id,
+eman_skill_1 = Skill.create(
+  user_id: eman.id,
   name: 'Business Analysis')
 
-jonas_skill_2 = Skill.create(
-  user_id: jonas.id,
+eman_skill_2 = Skill.create(
+  user_id: eman.id,
   name: 'Coaching')
 
 adora_skill_1 = Skill.create(
@@ -1263,12 +1239,12 @@ chris_skill_2 = Skill.create(
   user_id: chris.id,
   name: 'Venture Capital')
 
-giulia_skill_1 = Skill.create(
-  user_id: giulia.id,
+laura_skill_1 = Skill.create(
+  user_id: laura.id,
   name: 'Chemistry')
 
-giulia_skill_2 = Skill.create(
-  user_id: giulia.id,
+laura_skill_2 = Skill.create(
+  user_id: laura.id,
   name: 'Consulting')
 
 puts "Finished creating #{Skill.all.count} skills"
@@ -1276,7 +1252,7 @@ puts "Finished creating #{Skill.all.count} skills"
 puts 'Creating some professional interests'
 
 cloud = ProfessionalInterest.create(
-  user_id: juan.id,
+  user_id: brian.id,
   name: "Cloud computing"
 )
 
@@ -1379,7 +1355,7 @@ education = ProfessionalInterest.create(
 )
 
 management = ProfessionalInterest.create(
-  user_id: jonas.id,
+  user_id: eman.id,
   name: "Management"
 )
 
@@ -1413,12 +1389,12 @@ marketing = ProfessionalInterest.create(
 )
 
 management = ProfessionalInterest.create(
-  user_id: giulia.id,
+  user_id: laura.id,
   name: "Education"
 )
 
 business_development = ProfessionalInterest.create(
-  user_id: giulia.id,
+  user_id: laura.id,
   name: "Business Development"
 )
 
