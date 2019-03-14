@@ -14,7 +14,7 @@
 </div>
 
 <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog filter-modal" >
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -24,16 +24,21 @@
       </div>
       <div class="modal-body">
         <!-- Here goes the friggin fooooooorm -->
-        <p> Radius near me (km): </p>
+        <label>
+          <div> Radius near me (km): </div>          </label>
         <%= form_tag users_path, method: :get do %>
           <div class="range-slider">
             <%= range_field_tag :radius, params[:radius], in: 0..10, step: 1, class: 'range-slider__range'%>
             <span class="range-slider__value">0</span>
           </div>
-          <p> Interest: <%= text_field_tag :interest, params[:interest], placeholder: "UX design,..." %></p>
 
-          <p> Activity: <%= select_tag :activity, '
-              <option value="" disabled selected hidden>Select an activity</option>
+          <label class="filter-modal__section">
+            <div>Interest</div> <%= text_field_tag :interest, params[:interest], placeholder: "e.g. innovation" %>
+          </label>
+          <label class="filter-modal__section">
+
+          <div>Activity</div> <%= select_tag :activity, '
+              <option value="" disabled selected hidden>Select one activity</option>
               <option>Have lunch</option>
               <option>Go swimming</option>
               <option>Go running</option>
@@ -42,20 +47,25 @@
               <option>Blow bubbles</option>
               <option>Drink a Beer</option>
               <option>Walk the dog</option>
-            '.html_safe %></p>
+            '.html_safe %>
           </p>
-          <p> Skill: <%= text_field_tag :skill, params[:skill], placeholder: "Finance,..." %></p>
-          <p> Availability: <%= select_tag :availability, '
-            <option value="" disabled selected hidden>Select a Weekday</option>
+        </label>
+                  <label class="filter-modal__section">
+
+          <div>Skill</div> <%= text_field_tag :skill, params[:skill], placeholder: "e.g. UX design" %>
+        </label>
+                  <label class="filter-modal__section">
+
+          <div>Availability</div> <%= select_tag :availability, '
+            <option value="" disabled selected hidden>Select one weekday</option>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
             <option>Thursday</option>
             <option>Friday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
-          '.html_safe %></p>
-          <p><%= submit_tag ("Filter"), class: "btn-orange" %></p>
+          '.html_safe %>
+        </label>
+          <p><%= submit_tag ("Filter"), class: "btn-orange-filter" %></p>
         <% end  %>
       </div>
     </div>
