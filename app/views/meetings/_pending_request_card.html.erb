@@ -23,7 +23,7 @@
     <% end %>
 
     <div class="meeting-message">
-      <em>You would like to <%= meeting.suggested_activity %> with <%= receiver.first_name %> <%= receiver.last_name[0,1] %>. at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>. You would like to talk about <%= meeting.topic %>.</em>
+      <em>You would like to <%= meeting.suggested_activity %> with <%= receiver.first_name.partition(" ").first %> <%= receiver.last_name[0,1] %>. at <%= meeting.meeting_location %> on <%= meeting.meeting_date_time.try(:strftime, "%A, %e %B at%l:%M %p")  %>. You would like to talk about <%= meeting.topic %>.</em>
     </div>
     <div class="meeting-status">
       <div class="pending">
