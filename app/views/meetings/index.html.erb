@@ -9,7 +9,13 @@
   <% end %>
 
   <h3 class="header-3">My past meetings</h3>
-   <% @past_meetings.each do |meeting| %>
-    <%= render "meetings/past_request_card", meeting: meeting %>
+  <% if @past_meetings.any? %>
+    <% @past_meetings.each do |meeting| %>
+      <%= render "meetings/past_request_card", meeting: meeting %>
+    <% end %>
+  <% else %>
+    <div class="no-meetings-message">
+      <p> You haven't had any meetings yet. </p>
+    </div>
   <% end %>
 </div>
