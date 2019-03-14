@@ -59,8 +59,10 @@
 
 .card-user h2 {
   font-size: 23px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
+  color: $orange;
+
 }
 .card-user h3 {
   font-size: 15px;
@@ -68,7 +70,7 @@
 }
 .card-user p {
   font-size: 13px;
-  // opacity: .7;
+  opacity: .8;
   margin: 0;
 }
 .card-user .card-user-infos {
@@ -206,6 +208,8 @@
     h5 {
       font-size: 20px;
       margin: 0px 0px;
+          opacity: 0.8;
+    font-weight: normal;
     }
 
     p {

@@ -65,7 +65,7 @@
           <%= f.label :photo %>
           <%= image_tag(@user.photo, :alt => "@user.first_name", :class => "avatar-bordered") %><br>
           <%= f.label :bio %>
-          <%= f.text_field :bio, :placeholder => "Tell something personal about yourself..." %>
+          <%= f.text_field :bio, :placeholder => "Something personal about you..." %>
 
           <input type="button" name="previous" class="form-step-previous" value="Previous"/>
           <input type="button" name="next" class="form-step-next" value="Next"/>
@@ -78,20 +78,20 @@
 
 
           <%= f.label :job_title %>
-          <input type="text" name="cp_job_title" placeholder="What job title do you currently have?">
+          <input type="text" name="cp_job_title" placeholder="Your current job title...">
 
           <%= f.label :company %>
-          <input type="text"s name="cp_company" placeholder="What company do you currently work at?">
+          <input type="text"s name="cp_company" placeholder="The company you currently work at...">
 
           <%= f.label :professional_interests %>
-          <input type="text" name="pi_name_1" placeholder="Specifiy your professional interests like entrepreneurship">
-          <input type="text" name="pi_name_2" placeholder="Specifiy in case you have more professional interests">
-          <input type="text" name="pi_name_3" placeholder="Specifiy in case you have more professional interests">
+          <input type="text" name="pi_name_1" placeholder="Your professional interests are...">
+          <input type="text" name="pi_name_2" placeholder="e.g. Innovation">
+          <input type="text" name="pi_name_3" placeholder="e.g. Psychology">
 
           <%= f.label :skills %>
-          <input type="text" name="skills1" placeholder="Specify your professional skills like 'coding'" >
-          <input type="text" name="skills2" placeholder="Specifiy in case you have more professional skills">
-          <input type="text" name="skills3" placeholder="Specifiy in case you have more professional skills">
+          <input type="text" name="skills1" placeholder="Your professional skills are..." >
+          <input type="text" name="skills2" placeholder="e.g. Ruby">
+          <input type="text" name="skills3" placeholder="e.g. Coaching">
           <input type="button" name="previous" class="form-step-previous" value="Previous" />
           <%= f.submit 'submit', :class => 'form-step-submit' %>
         </fieldset>
