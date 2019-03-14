@@ -2,19 +2,19 @@ class Activity < ApplicationRecord
   belongs_to :user
 
   Categories = {
-    have_lunch: "fa-utensils",
-    have_a_coffee: "fa-coffee",
-    go_swimming: "fa-swimmer",
-    go_running: "fa-running",
-    walk_the_dog: "fa-dog",
-    go_jogging: "fa-walking",
-    have_a_beer: "fa-beer",
-    blow_bubbles: "fa-comment"
+    "have lunch" => "fas fa-utensils",
+    "have a coffee" =>  "fas fa-coffee",
+    "go swimming" =>  "fas fa-swimmer",
+    "go running" =>  "fas fa-running",
+    "walk the dog" =>  "fas fa-dog",
+    "go jogging" =>  "fas fa-walking",
+    "have a beer" =>  "fas fa-beer",
+    "blow bubbles" =>  "fas fa-comment"
   }
 
-  after_create :set_symbol
+  before_create :set_symbol
 
   def set_symbol
-    self.symbol = Categories[self.description.to_sym]
+    self.symbol = Categories[self.description]
   end
 end
