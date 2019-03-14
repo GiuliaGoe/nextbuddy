@@ -84,7 +84,7 @@
           <div class="card-user-inner">
             <div class="card-user-name">
               <h2>
-                <%= user.first_name %>
+                <%= user.first_name.partition(" ").first %>
                 <%= user.last_name[0] %>.
               </h2>
             </div>

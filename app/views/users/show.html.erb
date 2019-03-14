@@ -1,7 +1,7 @@
 <div class="card-user-show">
 
   <div class="name">
-    <h2><%= @user.first_name %> <%= @user.last_name[0,1] %>.</h2>
+    <h2><%= @user.first_name.partition(" ").first %> <%= @user.last_name[0,1] %>.</h2>
   </div>
 
   <div class="photo">
