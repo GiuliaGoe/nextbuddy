@@ -47,7 +47,7 @@
     </div>
      <div class="navbar-search">
       <%= form_tag(users_path, method: "get") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+        <%= text_field_tag :search, params[:search], placeholder: "e.g. Marketing or Ruby" %>
       <% end %>
       <span class="fa fa-search navbar-search-icon"></span>
     </div>
