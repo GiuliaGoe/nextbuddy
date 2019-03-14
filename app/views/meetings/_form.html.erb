@@ -66,7 +66,7 @@
         <%= text_field_tag :topic, params[:topic], placeholder: "I would like to talk about...", :class => "request-meeting-option request-meeting-option--topic", :id => "topic" %>
       </div>
       <div class=" request-meeting-button">
-        <%= f.submit class: 'btn-orange', value: 'Send Request' %>
+        <%= f.submit class: 'btn-orange-request', value: 'Send Request' %>
         <button class="btn request-preview-button"> <%= link_to 'PREVIEW', preview_meeting_path(@user), remote: true  %></button>
 
           </div>

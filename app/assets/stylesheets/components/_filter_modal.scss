@@ -1,0 +1,43 @@
+.filter-modal {
+  .modal-title {
+    color: $orange;
+  }
+  .range-slider {
+    margin-bottom: 20px;
+  }
+}
+.filter-modal__section {
+  margin-bottom: 20px;
+  display: block;
+
+  input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #eee;
+
+    &:focus {
+      border-bottom-color: $orange;
+      outline: none;
+    }
+  }
+
+  select {
+    width: 100%;
+  }
+
+  > div {
+    color: #999;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.modal-body {
+  color: #999;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}

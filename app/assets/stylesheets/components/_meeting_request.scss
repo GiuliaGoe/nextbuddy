@@ -7,11 +7,14 @@
 // CSS for meetings/new view!
 .request-meeting {
   padding: 20px;
+  h3 {
+    font-size: 30px;
+  }
 }
 .request-margin {
   margin: 20px 0px;
-border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
 // preview cards on make a request view!
 .card-user-preview-infos {
@@ -52,10 +55,13 @@ border-bottom: 1px solid #eee;
     width: auto;
     font-weight: lighter;
     margin-bottom: 10px;
+    margin-right: 4px
 }
 
-.header-4 {
+.header-3 {
   padding-left: 10px;
+  font-size: 30px;
+  color: $orange;
 }
 
 .meeting-message-past {
@@ -225,7 +231,7 @@ border-bottom: 1px solid #eee;
 //     max-width: 80px;
 // }
 .request-meeting-heading {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   margin: 0 0 20px 0;
 }
