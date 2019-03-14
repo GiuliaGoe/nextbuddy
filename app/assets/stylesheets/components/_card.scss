@@ -41,18 +41,20 @@
 }
 // This section is for the cards displaying a nextBuddy used in the views/users/index
 .card-user {
+  padding: 7px 0px 7px 12px;
+}
+.card-user-inner {
   overflow: hidden;
   background: white;
   width: 280.5px;
   height: 220px;
-  margin: 7px 5px;
   display: flex;
   position: relative;
   border: 1px solid #ddd;
   border-top-width: 5px;
 }
 
-.card-user-active {
+.card-user-active .card-user-inner {
   border-top-color: $orange;
 }
 

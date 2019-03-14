@@ -33,7 +33,17 @@ const selectUser = (userId) => {
   const scrollTo = card.offsetLeft - spaceOnEitherSideOfCard;;
 
   const cardScroller = document.getElementById('card-scroller');
-  cardScroller.scrollLeft = scrollTo;
+
+  const scrollIns = new ScrollTo({
+    container: cardScroller,
+    target: card,
+    animationFn: 'easeOut',
+    axis: 'x',
+    duration: 400
+  });
+  scrollIns.scroll();
+
+  //cardScroller.scrollLeft = scrollTo;
 }
 
 
@@ -42,6 +52,9 @@ const initMapbox = () => {
 
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
+    if (markers.length === 0) {
+      return;
+    }
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
     map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
   };
