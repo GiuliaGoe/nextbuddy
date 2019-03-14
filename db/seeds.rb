@@ -1020,7 +1020,7 @@ brian_eman_meeting = Meeting.create!(
 filippo_marco_meeting = Meeting.create!(
   status: 'pending',
   meeting_date_time: DateTime.new(2021,3,14,8,0,0),
-  suggested_activity: 'blow bubbles',
+  suggested_activity: 'have a chat',
   meeting_location: "Marco's address",
   sender_id: filippo.id,
   recipient_id: marco.id,
