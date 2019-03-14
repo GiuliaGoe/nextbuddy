@@ -3,71 +3,70 @@ class UserCharacteristicsController < ApplicationController
   before_action :set_professional, only: [:edit_professional, :update_professional]
   before_action :set_meeting_availability, only: [:edit_meeting_availability, :update_meeting_availability]
 
-  # def edit_personal
-  # end
+  def edit_personal
 
-  # def edit_professional
-  # end
-
+  end
 
   def update_personal
+    @user = current_user
     # add in availabilities and activities
-    @selected_activities = []
-    @selected_activities << params[:select_coffee]
-    @selected_activities << params[:select_running]
-    @selected_activities << params[:select_jogging]
-    @selected_activities << params[:select_lunch]
-    @selected_activities << params[:select_swimming]
-    @selected_activities << params[:select_dog]
-    @selected_activities << params[:select_beer]
-    @selected_activities << params[:select_bubbles]
-    @selected_activities.compact!
-    @selected_periods = []
-    @selected_periods << params[:select_morning]
-    @selected_periods << params[:select_noon]
-    @selected_periods << params[:select_afternoon]
-    @selected_periods << params[:select_evening]
-    @selected_periods.compact!
-    @selected_days = []
-    @selected_days << params[:select_mondays]
-    @selected_days << params[:select_tuesdays]
-    @selected_days << params[:select_wednesdays]
-    @selected_days << params[:select_thursdays]
-    @selected_days << params[:select_fridays]
-    @selected_days.compact!
+    @selected_activities = [
+      params[:select_coffee], params[:select_running],
+      params[:select_jogging], params[:select_lunch],
+      params[:select_swimming], params[:select_dog],
+      params[:select_beer], params[:select_bubbles],
+      nil
+    ].compact!
 
-    current_user.address = params[:user][:address]
-    current_user.bio = params[:user][:bio]
+    @selected_periods = [
+      params[:select_morning], params[:select_noon],
+      params[:select_afternoon], params[:select_evening],
+      nil
+    ].compact!
 
+    @selected_days = [
+      params[:select_mondays], params[:select_tuesdays],
+      params[:select_wednesdays], params[:select_thursdays],
+      params[:select_fridays],
+      nil
+    ].compact!
+
+    current_user.address = params[:user][:address] if params[:user][:address]
+    current_user.bio = params[:user][:bio] if params[:user][:bio]
+
+    activities = current_user.activities.pluck(:description)
     @selected_activities.each do |activity|
-      current_user.activities.create(description: activity)
+      # We make sure that we only add the activity to the user if he or she does not have it yet.
+      current_user.activities.create(description: activity) unless activities.include?(activity)
     end
 
-    @selected_periods.each do |period|
-      current_user.availabilities.create(period_of_day: period)
+    if @selected_days && @selected_periods
+      current_user.availabilities.create(
+        day_of_week: @selected_days.first,
+        period_of_day: @selected_periods.first
+      )
     end
 
-    @selected_days.each do |day|
-      current_user.availabilities.create(day_of_week: day)
-    end
+    @selected_skills = [
+      params[:skills1], params[:skills2],
+      params[:skills3],
+      nil
+    ].compact!
 
-    selected_skills = []
-    selected_skills << params[:skills1]
-    selected_skills << params[:skills2]
-    selected_skills << params[:skills3]
-    @selected_skills = selected_skills
-
+    user_skills = current_user.skills.pluck(:name)
     @selected_skills.each do |skill|
-      current_user.skills.create(name: skill)
+      current_user.skills.create(name: skill) unless user_skills.include?(skill)
     end
 
-    selected_pi_names = []
-    selected_pi_names << params[:pi_name_1]
-    selected_pi_names << params[:pi_name_2]
-    selected_pi_names << params[:pi_name_3]
-    @selected_pi_names = selected_pi_names
+    @selected_pi_names = [
+      params[:pi_name_1], params[:pi_name_2],
+      params[:pi_name_3],
+      nil
+    ].compact!
+
+    user_pis = current_user.professional_interests.pluck(:name)
     @selected_pi_names.each do |pi_name|
-      current_user.professional_interests.create(name: pi_name)
+      current_user.professional_interests.create(name: pi_name) unless user_pis.include?(pi_name)
     end
 
     current_user.save
@@ -76,42 +75,33 @@ class UserCharacteristicsController < ApplicationController
   end
 
   def update_professional
-
-      # if current_user.career_positions.any?
-      # current_user.career_positions.destroy_all
-      # end
-      # # industry = Industry.create(name: params["cp-industry"])
-      # job_function = JobFunction.create(name: params["cp-functions"])
-
-
+    if current_user.career_positions.none?
+      # If the user does not have a career yet we create one.
       @career_position = CareerPosition.create(user_id: current_user.id)
 
-      newcomp = Company.create(name: params[:cp_company])
-      newjob = JobTitle.create(name: params[:cp_job_title])
-      @career_position.company_id = newcomp.id
-      @career_position.job_title_id = newjob.id
-      # raise
+      newcomp = Company.create(name: params["cp_company"])
+      @career_position.company = newcomp
 
-    # else
-    #   career_position = current_user.current_position
+      newjob = JobTitle.create(name: params["cp_job_title"])
+      @career_position.job_title = newjob
+    else
+      # if the user has a career we update it.
+      @career_position = current_user.current_position
 
-    #   job_title = career_position.job_title
-    #   job_title.name = params["cp-job-title"]
+      job_title = @career_position.job_title
+      job_title.name = params["cp-job-title"]
 
-    #   company = career_position.company
-    #   company.name = params["cp-company"]
-
+      company = @career_position.company
+      company.name = params["cp-company"]
+    end
     @career_position.save!
-    # professional_interest = ProfessionalInterest.create(name: params["pi-name"])
-    # @selected_professionalinterests = []
-
-    # current_user.professional_interests.create(name: params[])
-    # skills = Skill.create(name: params["skills"])
-    current_user.save
-
-    # Skill.find(current_user.id) = params["skills"]
-    # save
-    redirect_to users_path
+    if current_user.save
+      redirect_to user_path(current_user)
+      flash[:notice] = "Great Succes"
+    else
+      redirect_to profile_personal_path
+      flash[:error] = "Something went wrong."
+    end
   end
 
   private
