@@ -4,6 +4,7 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+
   #  :confirmable, :lockable and :timeoutable, :trackable
   devise :database_authenticatable, :validatable, :registerable,
          :recoverable, :rememberable,
@@ -19,14 +20,15 @@ class User < ApplicationRecord
   has_many :availabilities
   has_many :professional_interests
   has_many :skills
+  validates_length_of :availabilities, maximum: 2
   # accepts_nested_attributes_for :career_positions, :professional_interests, :availabilities, :activities, :skills
 
   def current_title
-    self.career_positions.first.job_title
+    self.career_positions.first.try(:job_title)
   end
 
   def current_company
-    self.career_positions.first.company
+    self.career_positions.first.try(:company)
   end
 
   def current_position
