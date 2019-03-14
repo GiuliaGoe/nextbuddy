@@ -15,9 +15,11 @@ class UsersController < ApplicationController
     filter_for_activity
     filter_for_skill
     filter_for_availability
-
+    # raise
     # See only users which have an address so that number of map markers corresponds to number of cards below
     @users = @users.where.not(latitude: nil, longitude: nil)
+    # Make current user invisible on landing page
+    @users = @users.where.not(id: current_user.id)
 
     # Set markers to display on the map
     @markers = @users.map do |user|
