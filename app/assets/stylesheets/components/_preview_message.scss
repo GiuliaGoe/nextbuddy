@@ -1,14 +1,18 @@
 .preview {
   display: flex;
-  align-items: center;
-  padding: 5px;
+  align-items: flex-start;
   border-bottom: 1px solid rgba(220,224,244,0.4);
   background-color: rgba(224,224,224,0.6);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
   h3 {
     margin-top: 0px;
   }
   p {
-    margin: 0px;
+    font-size: 16px;
+    color: black;
   }
 }
 .preview:last-child {
@@ -16,12 +20,17 @@
 }
 .preview-body {
   flex-grow: 1;
+
+  p {
+    margin: 0;
+  }
 }
 .preview-sender {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-right: 15px;
 }
 .preview-sender h3 {
   font-size: 13px;
@@ -29,14 +38,12 @@
 }
 
 .preview-body {
-  padding-left: 10px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);
   width: 280px;
   padding-left: 7px;
 }
 .preview-body {
-  padding: 5px;
   color: rgba(0,0,0,0.4);
 }
 .preview-body .strong{

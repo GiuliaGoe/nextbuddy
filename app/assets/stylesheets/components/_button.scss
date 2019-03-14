@@ -1,3 +1,6 @@
+button, div, a, input {
+  outline: none!important;
+}
 .btn-log-in-with {
   cursor: pointer;
   display: inline-block;
@@ -32,6 +35,12 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
+  transition: transform 0.1s;
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-orange-request {
   background-color: $orange;
@@ -42,6 +51,12 @@
   font-weight: bold;
   padding: 12px 16px;
   font-size: 16px;
+  transition: transform 0.1s;
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-orange-filter {
   background-color: $orange;
@@ -52,10 +67,22 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
+  transition: transform 0.1s;
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-pill {
   border-radius: 23px;
   padding: 7px 15px;
+  transition: transform 0.1s;
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-orange:hover {
   // background-color: $orangehover;
@@ -94,6 +121,12 @@
   position: absolute;
   padding: 2px 6px;
   margin-right: 5px;
+  transition: transform 0.1s;
+
+  &:focus,
+  &:active {
+    transform: scale(0.95);
+  }
 }
 .btn-book-meeting:hover {
   background: $orangehover;

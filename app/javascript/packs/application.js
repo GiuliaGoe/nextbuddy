@@ -10,6 +10,7 @@ import { arrow } from '../plugins/arrow';
 import { rangeSlider } from '../plugins/slider';
 
 import { loadDynamicBannerText } from '../components/firstscroll';
+import { initBio } from '../plugins/bio';
 
 // import { accept_button } from '../plugins/request-buttons';;
 // import { decline_button } from '../plugins/request-buttons';
@@ -17,3 +18,4 @@ initMapbox();
 // activitiesList();
 rangeSlider();
 loadDynamicBannerText();
+initBio();
