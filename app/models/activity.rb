@@ -9,7 +9,7 @@ class Activity < ApplicationRecord
     "walk the dog" =>  "fas fa-dog",
     "go jogging" =>  "fas fa-walking",
     "have a beer" =>  "fas fa-beer",
-    "blow bubbles" =>  "fas fa-comment"
+    "have a chat" =>  "fas fa-comments"
   }
 
   before_create :set_symbol
