@@ -5,7 +5,7 @@ function updateDOM() {
   const time = document.querySelector('input[name="radrelevant_times"]:checked').value;
   const date = document.querySelector('input[name="radrelevant_dates"]:checked').value;
 
-  const dateObject = new Date(date + ' ' + time);
+  const dateObject = new Date(date + 'T' + time);
 
   const meeting_location = document.querySelector('input[name="meeting_location"]:checked').value;
   console.log(activity, topic, date, time, meeting_location);
