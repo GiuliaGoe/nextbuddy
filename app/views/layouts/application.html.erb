@@ -12,6 +12,12 @@
  -->    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link href=’https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel=’stylesheet’ />
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#FD5F00">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FD5F00">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FD5F00">
   </head>
   <body>
     <% unless action_name == "new" %>
